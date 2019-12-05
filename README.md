@@ -8,7 +8,6 @@
   |------|----|-------|
   |name|string|null: false, add_index: item, unique: true|
   |user_id|integer|null: false, foreign_key: true|
-  |image_id|integer|null: false, foreign_key: true|
   |category_id|integer|null: false, foreign_key: true|
   |brand_id|integer|null:false, foreign_key: true|
   |price|integer|null: false|
@@ -26,7 +25,7 @@
 - belongs_to :category
 - belongs_to :prefecture
 - has_many: comments
-- has-many: images
+- has_many: images
 
 
 ## commentsテーブル
@@ -93,7 +92,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post-number|integer|null: false|
+|post_number|integer|null: false|
 |city|string|null: false|
 |town|string|null: false|
 |building|string||
