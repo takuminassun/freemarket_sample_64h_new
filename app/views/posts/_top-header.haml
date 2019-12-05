@@ -29,7 +29,8 @@
         .todolistbox
           .todolistbox__image
             %i.fas.fa-check
-            やることリスト
+            = link_to  new_user_session_path do
+              やることリスト
         .mypage
           .mypage__box
             = image_tag src="/images/mypage.jpg/",alt:"",class:"face",width: "32"
