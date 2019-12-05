@@ -45,20 +45,20 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
+
 
 ### Association
-- has_one :item
+- has_many :items
 
 
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
+
 
 ### Association
-- has_one :item
+- has_many :items
 
 
 ## imageテーブル
@@ -97,7 +97,6 @@
 |city|string|null: false|
 |town|string|null: false|
 |building|string||
-|prefecture_id|integer| foreign_key: true|
 |user_id|integer| foreign_key: true|
 
 ### Association
@@ -117,14 +116,3 @@
 ### Association
 - belongs_to :user
 
-
-##prefectureテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|string|null: false|
-|item_id|integer| foreign_key: true|
-|address_id|integer| foreign_key: true|
-
-### Association
-- has_one :address
-- has_one :item
