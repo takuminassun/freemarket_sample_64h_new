@@ -3,7 +3,7 @@
 lock '3.11.2'
 
 # Capistranoのログの表示に利用する
-set :application, 'freemarket_sample_64h'
+set :application, 'freemarket_sample_64h_new'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:takuminassun/freemarket_sample_64h_new.git'
