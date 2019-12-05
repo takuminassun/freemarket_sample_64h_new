@@ -1,3 +1,14 @@
+<<<<<<< Updated upstream
+=======
+.slick-slide {
+  position: relative;
+}
+.textphoto {
+  box-sizing: border-box;
+}
+
+
+>>>>>>> Stashed changes
 .slick-prev{
   left: 50px;
   height: 80px;
@@ -9,6 +20,23 @@
   background-position: center;
 }
 
+<<<<<<< Updated upstream
+=======
+.textphoto { 
+  width:    100%;
+  font-size:100%;
+  text-align:right;
+  bottom:    4px;
+  margin:    0;
+  padding:0;
+  color:    #fff;
+  background:rgba(0,0,0,0.4); 
+  position:absolute;
+  padding-right:1rem;
+}
+
+
+>>>>>>> Stashed changes
 .slick-dots {
   li button{
     &::before{
@@ -20,10 +48,89 @@
   }
 }
 
+<<<<<<< Updated upstream
 .slick-track {
  img {
    text-aline:center;
 
  }
 
+=======
+.slick-prev{
+  left: 50px;
+  height: 80px;
+  width: 80px;
+  background-image: image-url("hidari.png");
+  z-index: 100;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.slide-all{
+  position: relative;
+} 
+
+.slick-track {
+  top:0px;
+  background-color: #f5f5f5;
+  background-image:  image-url("/images/top_back.jpg");
+}
+
+
+
+.slick-track{
+  .title{
+  font-size:40px;
+  font-family: Arial;
+  font-weight:bold;
+  position: absolute;
+  left:100px;
+  } 
+  .subtitle{
+    font-size:16px;
+    font-family: Arial;
+    position: absolute;
+    top:180px;
+    left:100px; 
+  } 
+   .apple_dl{
+    position: absolute;
+    top:262px;
+    left:100px;
+    height: 46px;
+  }
+
+  .google_dl{
+  position: absolute;
+  top:255px;
+  left:250px;
+   
+  }
+.smartphone{
+  position: absolute;
+  top:0px;
+  right:200px;
+  left:350px;
+  bottom:200px;
+}
+
+.app_download{ 
+  position: absolute;
+  margin-left:500px; 
+}
+}
+.slide_img{
+   width:100%;
+   vertical-align:bottom;
+
+  }
+
+.slick-slide img {
+  margin: 0 auto;
+  margin-top:0;
+  padding-top:0;
+  top:0;
+>>>>>>> Stashed changes
 }
