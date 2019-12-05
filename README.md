@@ -15,7 +15,7 @@
   |prefecture_id|integer|null: false|
   |description|text|null: false|
   |shipping_burden|integer|null: false|
-  |shipping method|integer|null: false|
+  |shipping_method|integer|null: false|
   |shipping_date|integer|null: false|
   |size|integre|
   
