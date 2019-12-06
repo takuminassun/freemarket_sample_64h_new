@@ -1,0 +1,96 @@
+.warpper { 
+  display: block;
+}
+.itemcontent {
+  background-color: blue;
+  padding: 24px 40px 40px;
+  width: 620px;
+  margin: 40px 39.5px 0 39.5px;
+
+  .itemname {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.4;
+    // 文の折り返し
+    word-wrap: break-word;
+  }
+
+  .maincontent {
+    width: 620px;
+    height: 420px;
+    margin: 16px 0 0;
+    background-color: coral;
+
+
+    .itemimage {
+      // 画像と横並びにするフロート
+      float: left;
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 375px;
+
+      &__box {
+        position: relative;
+        &__main {
+          position: relative;
+        // 指定の大きさ以上なら非表示
+          overflow: hidden;
+        }
+        &__sub {
+        }
+      }
+    }
+    .itemdate {
+      display: inline-block;
+      float: right;
+      max-width: 300px;
+      height: 420px;
+      margin: 0 auto;
+      background-color: chartreuse;
+      
+        tr{
+          th{
+            width: 39%;
+            //display: inline-block;
+            background-color: #ffffff;
+            font-weight: 400;
+            text-align: left;
+          }
+          td{
+            width: 61%;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+    .price {
+      margin: 24px 0 0;
+      &__item{
+        margin: 0 16px 0 0;
+        font-size: 50px;
+        margin-left: 140px;
+      }
+      &__tax{
+        font-size: 10px;
+      }
+      &__postage{
+        font-size: 16px;
+        // 強調するため
+        //display: inline-block;
+      }
+    }
+    .pricebtn {
+      font-size: 24px;
+      line-height: 60px;
+      margin-top: 16px;
+      background-color: #e21d23;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 600px;
+      transition: all ease-out .3s;
+
+
+    }
+
+    
+}

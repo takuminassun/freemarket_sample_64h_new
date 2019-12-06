@@ -1,0 +1,62 @@
+
+.itemcontent
+  .itemname
+    %h1 伝説のバッグ
+
+  .maincontent
+    .itemimage
+      -# 画像は仮置き
+      .itemimage__box
+        .itemimage__box__main
+        = image_tag src="/images/mypage.jpg/",alt:"",width: "80"
+        .itemimage__box__sub
+        = image_tag src="/images/mypage.jpg/",alt:"",width: "80"
+    .itemdate
+      %table
+        %tr 
+          %th 出品者
+          %td
+            %a{ href:'#'}プロフ見てね！
+            -# いいねボタンの仮置き 
+        %tr
+          %th カテゴリー
+          -# パンクず仮置き
+          -# 並び肩はcssで調整予定
+          %td
+            %a{ href: '#'}レディース
+            %a{ href: '#'}バッグ
+            %a{ href: '#'}超バッグ
+        %tr
+          %th ブランド
+          %td 
+            %a{ href: '#'}シャネル
+        %tr
+          %th 商品の状態
+          %td 未使用に近い
+        %tr
+          %th 配送料の負担
+          %td 送料込み（出品者負担）
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送地域
+          %td 
+            %a{ href: '#'}兵庫県
+        %tr
+          %th 発送日の目安
+          %td 2~3日で発送
+  .price
+    %span.price__item
+      仮¥2,000,000
+    %span.price__tax
+      (税込)
+    %span.price__postage
+      送料込み
+  
+  %a.pricebtn{href: '#'}購入ボタンに進む
+
+
+
+
+
