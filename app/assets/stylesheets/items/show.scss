@@ -1,0 +1,43 @@
+.itemcontent {
+  background-color: brown;
+  padding: 24px 40px 40px;
+
+  .itemname {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.4;
+    // 文の折り返し
+    word-wrap: break-word;
+  }
+
+  .maincontent {
+    margin: 16px 0 0;
+    background-color: coral;
+
+
+    .itemimage {
+      // 画像と横並びにするフロート
+      float: left;
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 375px;
+
+      &__box {
+        position: relative;
+        &__main {
+          position: relative;
+        // 指定の大きさ以上なら非表示
+          overflow: hidden;
+        }
+        &__sub {
+        }
+      }
+      .itemdate{
+        background-color: chartreuse;
+        .itemhownice{
+
+        }
+      }
+    }
+  }
+}
