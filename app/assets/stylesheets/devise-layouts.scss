@@ -57,9 +57,72 @@
 
 
 // 会員情報入力 //
-
 .content-form {
   width: 350px;
   margin: 0 auto;
-  padding: 24px 0 40px;
+  padding-bottom: 40px;
+  p {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  p2 {
+    font-size: 15px;
+  }
+  p3 {
+    color: #888;
+    font-size: 12px;
+  }
+  h2 {
+    font-weight: bold;
+  }
+  .requiredtext {
+    font-size: 12px;
+    background-color: $fma-red;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+    vertical-align: top;
+  }
+  input {
+    display: block;
+    margin-top: 5px;
+    width: calc(100% - 32px);
+    height: 27px;
+    padding: 10px 16px 8px;
+  }
+  .content-box {
+    margin-top: 24px;
+  }
+  .input-box {
+    display: flex;
+    align-items: center;
+    span {
+      margin: 0 5px;
+    }
+  } 
+  &-password-checkbtn {
+    display: flex;
+    align-items: center;
+    input {
+      width: 25px;
+      margin-top: 0;
+    }
+  }
+  .family-name {
+    margin-right: 15px;
+  }
+  .next-btn {
+    height: 50px;
+    width: 350px;
+    background-color: $fma-red;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+  }
+  .privacy {
+    text-align: right;
+    color: $fma-blue;
+    font-size: 15px;
+  }
 }

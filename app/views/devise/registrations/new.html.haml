@@ -5,44 +5,54 @@
     .content-header
       %h1 会員情報入力
     .content-form
-      .content-form-nickname
+      .content-form-nickname.content-box
         %p ニックネーム
-        %p.requiredtext 必須
-        %input
-      .content-form-mail
+        %p2.requiredtext 必須
+        %input{placeholder: "例)フリマ太郎"}
+      .content-form-mail.content-box
         %p メールアドレス
-        %p.requiredtext 必須
-        %input
-      .content-form-password
+        %p2.requiredtext 必須
+        %input{placeholder: "PC・携帯どちらでも可"}
+      .content-form-password.content-box
         %p パスワード
-        %p.requiredtext 必須
-        %input
-        %input{:type => "checkbox"}>/
-        パスワードを表示する
+        %p2.requiredtext 必須
+        %input{placeholder: "7文字以上の半角英数字"}
+        %p3 ※ 英字と数字の両方を含めて設定してください
+      .content-form-password-checkbtn.content-box
+        %input{type: "checkbox"}
+        %p2 パスワードを表示する
+      .content-box
+        %h2 本人確認
+        %p2 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-      %h1 本人確認
-      %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-      .content-form-fullname-kanji
+      .content-form-fullname-kanji.content-box
         %p お名前(全角)
-        %p.requiredtext 必須
-        %input
-        %input
-      .content-form-fullname-kana
+        %p2.requiredtext 必須
+        .input-box
+          %input.family-name{placeholder: "例) 山田"}
+          %input{placeholder: "例) 彩"}
+      .content-form-fullname-kana.content-box
         %p お名前カナ(全角)
-        %p.requiredtext 必須
-        %input
-        %input
-      .content-form-birthday
+        %p2.requiredtext 必須
+        .input-box
+          %input.family-name{placeholder: "例) ヤマダ"}
+          %input{placeholder: "例) アヤ"}
+      .content-form-birthday.content-box
         %p 生年月日
-        %p.requiredtext 必須
-        %input 年
-        %input 月
-        %input 日
-      %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-      .robot-check
-      %p 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-      .next-btn
+        %p2.requiredtext 必須
+        .input-box
+          %input 
+          %span 年
+          %input 
+          %span 月
+          %input 
+          %span 日
+      %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .robot-check.content-box
+      %p2 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+      .next-btn.content-box
         次へ進む
+      .privacy.content-box
+        本人情報の登録について＞
 
 = render "devise/layouts/footer"
