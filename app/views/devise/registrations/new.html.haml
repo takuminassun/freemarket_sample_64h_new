@@ -48,11 +48,14 @@
           %input 
           %span 日
       %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-      .robot-check.content-box
-      %p2 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+      %br
+      %br
+      %p2 「次へ進む」のボタンを押すことにより、
+      %a{href: "#"} yahoo表示
+      %p2に同意したものとみなします
       .next-btn.content-box
-        次へ進む
+        %a{href: "#"} 次へ進む
       .privacy.content-box
-        本人情報の登録について＞
+        %a{href: "#"} 本人情報の登録について＞
 
 = render "devise/layouts/footer"

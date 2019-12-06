@@ -76,6 +76,10 @@
   h2 {
     font-weight: bold;
   }
+  a {
+    text-decoration: none;
+    color: $fma-blue;
+  }
   .requiredtext {
     font-size: 12px;
     background-color: $fma-red;
@@ -112,13 +116,20 @@
   .family-name {
     margin-right: 15px;
   }
+  .robot-check {
+    text-align: center;
+  }
   .next-btn {
     height: 50px;
     width: 350px;
     background-color: $fma-red;
-    color: #fff;
     line-height: 50px;
     text-align: center;
+    display: block;
+    cursor: pointer;
+    a {
+      color: #fff;
+    }
   }
   .privacy {
     text-align: right;
