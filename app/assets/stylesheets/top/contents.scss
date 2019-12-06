@@ -31,14 +31,13 @@
   }
 
   .category{
-              width: 1440px;
               height: 85px;
               padding: 56px 0px 30px 0px;
+              text-align: center;
               background-color: #fff;
               display: block;
 
     &__top{
-              width: 1440px;
               height: 39px;
               margin-bottom: 6px;
               font-size: 28px;
@@ -46,7 +45,6 @@
               font-family: Arial, 游ゴシック体;
     }
     &__genre{
-              width: 1440px;
               height: 40px;
               display: inline-block;
               text-align: center;
