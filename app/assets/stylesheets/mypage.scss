@@ -9,18 +9,72 @@
     display: inline-block;
     float: right;
     margin-top: 10px;
-    background-color: #ffffff;
     font-family: Arial, 游ゴシック体;
 
     .back-image{
       width: 660px;
       height: 160px;
       padding: 20px;
+      background-image: url(profile-images.jpeg);
+      background-size: cover;
+
+      .user{
+        width: 660px;
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        
+
+
+
+        &__icon{
+          height: 60px;
+          width: 60px;
+          margin: 20px auto 0 auto;
+          border-radius: 50%;
+        }
+
+        h2{
+          margin-top: 8px;
+        }
+
+        &__number{
+          margin-top: 8px;
+
+          &__box{
+            display: inline-block;
+            margin-right: 16px;
+
+            &__text{
+              float: left;
+            }
+
+            &__count{
+              margin-left: 10px;
+              float: left;
+              height: 21px;
+              line-height: 21px;
+            }
+          }
+        }
+      }
+    }
+
+    .mypaga-head{
+      margin-top: 40px;
+      padding: 0 16px 0 16px;
+      width: 668px;
+      height: 72px;
+      background-color: #ffffff;
+      font-size: 16px;
+      line-height: 72px;
     }
 
     .mypaga-log{
       width: 700px;
       display: inline-block;
+      background-color: #ffffff;
 
       &__tab{
         width: 700px;
@@ -39,7 +93,7 @@
           &__do{
             width: 350px;
             height: 74px;
-            background-color: #f2f2f2;
+            background-color: #e2e2e2;
             float: left;
             text-align: center;
             line-height: 74px;
@@ -48,7 +102,6 @@
       }
 
       &__content{
-        display: inline-block;
 
         ul{
           display: inline-block;
@@ -56,9 +109,86 @@
           li{
             width: 700px;
             height: 80px;
-            border-bottom: solid 1px rgb(240, 240, 240);
+            cursor: pointer;
 
+            &:hover{
+              background-color: rgb(248, 248, 248);
+            }
+
+            .box{
+              width: 668px;
+              height: 48px;
+              padding: 16px;
+              font-size: 14px;
+
+              &__image{
+                background-color: #e2e2e2;
+                width: 48px;
+                height: 43px;
+                padding-top: 5px;
+                text-align: center;
+                float: left;
+              }
+
+              &__body{
+                width: 560px;
+                display: inline-block;
+                float: left;
+
+                &__text{
+                  width: 560px;
+                  height: 21px;
+                  margin-left: 20px;
+                  color: #262626;
+                }
+
+                &__time{
+                  display: inline-block;
+                  color: #e2e2e2;
+                  i{
+                    font-size: 16px;
+                    margin: 2px 5px 0 20px;
+                  }
+                  
+                }
+              }
+            }
           }
+
+          .list{
+            border-bottom: solid 1px rgb(240, 240, 240);
+          }
+
+          .show{
+            display: inline-block;
+            &__box{
+              width: 668px;
+              height: 48px;
+              margin: 16px;
+              font-size: 14px;
+              background-color: #e2e2e2;
+              text-align: center;
+              line-height: 48px;
+            }
+            
+          }
+        }
+      }
+      .mypage-log__transaction{
+        width: 700px;
+        height: 236px;
+
+        &__icon{
+          height: 100px;
+          width: 100px;
+          margin: 50px auto 30px auto;
+        }
+
+        &__not-found{
+          width: 700px;
+          font-size: 16px;
+          text-align: center;
+          color: #e2e2e2;
         }
       }
     }
