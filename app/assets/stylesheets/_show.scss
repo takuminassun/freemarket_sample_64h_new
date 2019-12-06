@@ -5,7 +5,8 @@
   background-color: blue;
   padding: 24px 40px 40px;
   width: 620px;
-  margin: 40px 39.5px 0 39.5px;
+  margin: 40px auto 40px;
+  //margin: 40px 39.5px 0 39.5px;
 
   .itemname {
     font-size: 24px;
@@ -80,6 +81,8 @@
       }
     }
     .pricebtn {
+      display: inline-block;
+      //min-width: 768px;
       font-size: 24px;
       line-height: 60px;
       margin-top: 16px;
@@ -88,9 +91,31 @@
       text-align: center;
       font-weight: 600px;
       transition: all ease-out .3s;
-
-
+      width: 620px;
+      height: 60px;
     }
+    .apptext {
+      color: #2086ea;
+      // 下線消す
+      text-decoration: none;
+    }
+    .itemtext {
+      background-color: rgb(90, 26, 81);
+      padding: 32px 0 0;
+      line-height: 1.5;
 
-    
+        &__bb{
+          // 自動折り返し
+          white-space: nowrap;
+        }
+    }
+    .itemunder {
+
+      &__left{
+
+      }
+      &__right{
+        
+      }
+    }
 }
