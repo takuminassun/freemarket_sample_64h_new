@@ -2,42 +2,42 @@
 = render "devise/layouts/header"
 .container
   .contents
-    .content-header
+    .content__header
       %h1 会員情報入力
-    .content-form
-      .content-form-nickname.content-box
+    .content__form
+      .content__form__nickname.content-box
         %p ニックネーム
         %p2.requiredtext 必須
         %input{placeholder: "例)フリマ太郎"}
-      .content-form-mail.content-box
+      .content__form__mail.content-box
         %p メールアドレス
         %p2.requiredtext 必須
         %input{placeholder: "PC・携帯どちらでも可"}
-      .content-form-password.content-box
+      .content__form__password.content-box
         %p パスワード
         %p2.requiredtext 必須
         %input{placeholder: "7文字以上の半角英数字"}
         %p3 ※ 英字と数字の両方を含めて設定してください
-      .content-form-password-checkbtn.content-box
+      .content__form__password-checkbtn.content-box
         %input{type: "checkbox"}
         %p2 パスワードを表示する
       .content-box
         %h2 本人確認
         %p2 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-      .content-form-fullname-kanji.content-box
+      .content__form__fullname-kanji.content-box
         %p お名前(全角)
         %p2.requiredtext 必須
         .input-box
           %input.family-name{placeholder: "例) 山田"}
           %input{placeholder: "例) 彩"}
-      .content-form-fullname-kana.content-box
+      .content__form__fullname-kana.content-box
         %p お名前カナ(全角)
         %p2.requiredtext 必須
         .input-box
           %input.family-name{placeholder: "例) ヤマダ"}
           %input{placeholder: "例) アヤ"}
-      .content-form-birthday.content-box
+      .content__form__birthday.content-box
         %p 生年月日
         %p2.requiredtext 必須
         .input-box
