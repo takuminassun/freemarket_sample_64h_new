@@ -1,30 +1,34 @@
 .single-main
   .single-contener
-    .buy_head.single_haed
-    %h2 購入内容の確認
-    %section.buy-item
-    .buy-item-detail
-      JEANASIS／ニットタイトスカート／スリットあり／黒／美品
-    .buy-price
-      1777円
-    .buy-image
-    
+    .buy-head
+      %h2 購入内容の確認
+      .buy-item
+        .buy-item-detail
+          JEANASIS／ニットタイトスカート／スリットあり／黒／美品
+        .buy-price
+          ¥2,500 （税込）送料込み
+        .buy-image
+          image_tag()
 
-    .item-buy-confirmation
-    .item-k
-    .price__box
-    .item-shiping-fee
-    .form-buy
-    %span
-    aa
-    %buttom
- 
-      ¥2,500 （税込）送料込み
+    %form.form-buy
+      .buy-price      
+        .buy-price__tilte
+          支払い金額
+        .buy-price__price
+          ¥2,500
+        .buy-price__point
+          ポイントを使用（所持ポイント:P0）
+      .buy-shiping-fee
+        .item-shipping-fee__title
+          %h3 支払い方法 
+        .item-shipping-fee__link
+          %i.fas.fa-heart 
+          登録してください  
+      .buy-shipping-adress
+        .buy-shipping-adress__title
+          %h3 配送先
+        .buy-shipping-adress__link
+          登録してください
+        %buttom
 
-      支払い金額	¥2,500
-      ポイントを使用 (所持ポイント: P0)
-      支払い方法
-      登録してください
-
-      配送先
 
