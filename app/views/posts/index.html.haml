@@ -1,0 +1,102 @@
+.listing__wrapper
+  .listing__header
+    merucari
+  .listing__contents
+    %form{:action => "#", :method => "post"}
+    .listing__contents__info
+      %h2 商品の情報を入力
+    .listing__contents__image
+      .listing__contents__image__head
+        %h3 出品画像
+      %p 最大10枚までアップロードできます
+      .listing__contents__image__img
+        ドラッグアンドドロップ
+        またはクリックしてファイルをアップロード
+    .listing__contents__name
+      .group
+        %label 商品名 
+        %br/
+        %input{:class => "item", :name => "name", :placeholder => "商品名（必須40文字まで）" }
+      .group
+        %label 商品の説明
+        %br/
+        %textarea{:class => "explain", :name => "textarea", :placeholder => "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+    .listing__contents__detail
+      %h3 商品の詳細
+      .form-box
+        .group
+          %label カテゴリー
+          .select
+            %select{:class => "status", :name => "prefecture"}
+              %option{:hidden => "", :value => ""} ---
+            %br/
+        .group
+          %label 商品の状態
+          .select
+            %select{:class => "status", :name => "prefecture"}
+              %option{:hidden => "", :value => ""} ---
+    .listing__contents__deliver
+      %h3 配送について
+      .form-box
+        .group
+          %label 配送料の負担
+          .select
+            %select{:class => "status", :name => "prefecture"}
+              %option{:hidden => "", :value => ""} ---
+            %br/
+        .group
+          %label 発送元の地域
+          .select
+            %select{:class => "status", :name => "prefecture"}
+              %option{:hidden => "", :value => ""} ---
+            %br/
+        .group
+          %label 発送までの日数
+          .select
+            %select{:class => "status", :name => "prefecture"}
+              %option{:hidden => "", :value => ""} ---
+    .listing__contents__price
+      %h3 販売価格(300~9,999,999)
+      %ul.price-box
+        %li.prices
+          .group
+            .group__left
+              価格
+            .group__right
+              .input
+                ￥
+              %input{:class => "price", :placeholder => "例）300"}
+        %li.sale 
+          .sale-left
+            販売手数料(10%)
+          .sale-right
+            -
+        %li.benefit 
+          .benefit-left
+            販売利益
+          .benefit-right
+            -
+    .listing__contents__confirms
+      .listing__contents__confirms-confirm
+        %p 
+          =link_to '禁止されている出品', '#'
+          、
+          =link_to '行為', '#'
+          を必ずご確認ご確認ください。
+        %p 
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          =link_to '偽ブランドの販売', '#' 
+          は犯罪あり処罰される可能性があります。
+        %p 
+          また、出品をもちまして
+          =link_to '加盟販売店規約', '#'
+          に同意したことになります。
+      %input{:type => "submit",:class => "submit", :value => "出品する"}
+      .back-btn
+        =link_to 'もどる', "#"
+      
+  .listing__footer
+    プライバシーポリシー
+    メルカリ利用規約
+    特定商取引に関する表記
+    merucari
