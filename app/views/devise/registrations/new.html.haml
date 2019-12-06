@@ -1,18 +1,18 @@
 = render "devise/layouts/header"
 .container
-  .content
-    .first-content
-      .content-header
-        %h1 会員情報入力
-      .content-nickname-form
+  .contents
+    .content-header
+      %h1 会員情報入力
+    .content-form
+      .content-form-nickname
         %p ニックネーム
         %p.requiredtext 必須
         %input
-      .content-mail-form
+      .content-form-mail
         %p メールアドレス
         %p.requiredtext 必須
         %input
-      .content-password-form
+      .content-form-password
         %p パスワード
         %p.requiredtext 必須
         %input
@@ -22,17 +22,17 @@
       %h1 本人確認
       %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-      .content-fullname-kanji-form
+      .content-form-fullname-kanji
         %p お名前(全角)
         %p.requiredtext 必須
         %input
         %input
-      .content-fullname-kana-form
+      .content-form-fullname-kana
         %p お名前カナ(全角)
         %p.requiredtext 必須
         %input
         %input
-      .content-birthday-form
+      .content-form-birthday
         %p 生年月日
         %p.requiredtext 必須
         %input 年
