@@ -1,0 +1,66 @@
+.side-mypage{
+  width: 1020px;
+  height: 1252px;
+  margin: 40px auto 0 auto;
+  padding: 40px 0;
+
+  .contents{
+    width: 700px;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    background-color: #ffffff;
+    font-family: Arial, 游ゴシック体;
+
+    .back-image{
+      width: 660px;
+      height: 160px;
+      padding: 20px;
+    }
+
+    .mypaga-log{
+      width: 700px;
+      display: inline-block;
+
+      &__tab{
+        width: 700px;
+        height: 74px;
+
+          &__active{
+            width: 350px;
+            height: 74px;
+            border-top: solid 2px #e21d23;
+            float: left;
+            text-align: center;
+            line-height: 74px;
+            font-size: 16px;
+          }
+
+          &__do{
+            width: 350px;
+            height: 74px;
+            background-color: #f2f2f2;
+            float: left;
+            text-align: center;
+            line-height: 74px;
+            font-size: 16px;
+          }
+      }
+
+      &__content{
+        display: inline-block;
+
+        ul{
+          display: inline-block;
+
+          li{
+            width: 700px;
+            height: 80px;
+            border-bottom: solid 1px rgb(240, 240, 240);
+
+          }
+        }
+      }
+    }
+  }
+}
