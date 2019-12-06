@@ -1,28 +1,33 @@
 .side-list{
-        width: 280px;
-        display: inline-block;
-        margin-right: 40px;
-        color: #262626;
-        font-family: Arial, 游ゴシック体;
+  width: 280px;
+  display: inline-block;
+  margin-right: 40px;
+  color: #262626;
+  font-family: Arial, 游ゴシック体;
         
   ul{
-        width: 280px;
-        display: inline-block;
-        background-color: #fff;
-        margin-top: 10px;
+    width: 280px;
+    display: inline-block;
+    background-color: #fff;
+    margin-top: 10px;
 
     li{
-        width: 248px;
-        height: 16px;
-        padding: 16px;
-        font-size: 14px;
-        border-bottom: solid 1px rgb(240, 240, 240);
-        line-height: 16px;
-        cursor: pointer;
-        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-      
+      width: 248px;
+      height: 16px;
+      padding: 16px;
+      font-size: 14px;
+      border-bottom: solid 1px rgb(240, 240, 240);
+      line-height: 16px;
+      cursor: pointer;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    
       &:hover{
         background-color: rgb(248, 248, 248);
+      }
+
+      a{
+        text-decoration: none;
+        color: #262626;
       }
 
       i{
@@ -37,9 +42,9 @@
   }
 
   h2{
-        width: 280px;
-        height: 16px;
-        margin-top:40px;
-        font-size: 16px;
+    width: 280px;
+    height: 16px;
+    margin-top:40px;
+    font-size: 16px;
   }
 }
