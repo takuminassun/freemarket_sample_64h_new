@@ -1,0 +1,56 @@
+
+// deviseの新規登録関係のlayouts view
+
+// header部分
+.single-header {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  background-color: $fma-bg-gray;
+  align-items: center;
+}
+
+// 新規登録などの記述部分 /// .containerは共通でその中に記述していくようにしてください //
+.container {
+  background-color: $fma-bg-gray;
+  .content {
+    background-color: $fma-white;
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// footer部分
+.single-footer {
+  height: 140px;
+  text-align: center;
+  background-color: $fma-bg-gray;
+  padding: 40px 0;
+  ul {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0 5px;
+      font-size: 12px;
+    }
+  }
+  &-logo {
+    margin-top: 40px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+
+// 会員情報入力 //
+.first-content {
+  .content-header {
+    text-align: center;
+    height: 100px;
+    h1 {
+      font-size: 22px;
+      padding: 34px 0;
+    }
+  }
+}
