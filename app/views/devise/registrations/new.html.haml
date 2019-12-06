@@ -1,21 +1,47 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render "devise/layouts/header"
+.container
+  .content
+    .first-content
+      .content-header
+        %h1 会員情報入力
+      .content-nickname-form
+        %p ニックネーム
+        %p.requiredtext 必須
+        %input
+      .content-mail-form
+        %p メールアドレス
+        %p.requiredtext 必須
+        %input
+      .content-password-form
+        %p パスワード
+        %p.requiredtext 必須
+        %input
+        %input{:type => "checkbox"}>/
+        パスワードを表示する
+
+      %h1 本人確認
+      %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+      .content-fullname-kanji-form
+        %p お名前(全角)
+        %p.requiredtext 必須
+        %input
+        %input
+      .content-fullname-kana-form
+        %p お名前カナ(全角)
+        %p.requiredtext 必須
+        %input
+        %input
+      .content-birthday-form
+        %p 生年月日
+        %p.requiredtext 必須
+        %input 年
+        %input 月
+        %input 日
+      %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .robot-check
+      %p 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+      .next-btn
+        次へ進む
+
+= render "devise/layouts/footer"
