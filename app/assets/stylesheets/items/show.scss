@@ -33,11 +33,22 @@
         }
       }
       .itemdate{
+        display: inline-block;
+        
         background-color: chartreuse;
-        .itemhownice{
+        
+        tbody{
+          tr{
+            th{
+            width: 30px;
+            display: inline-block;
+            padding: 20px 5px;
+            background-color: cornflowerblue;
+            }
+          }
+        }
 
         }
       }
     }
   }
-}
