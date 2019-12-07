@@ -2,7 +2,8 @@
 @import "font-awesome";
 @import "./reset";
 @import "./colors";
-@import "./devise-layouts";
+@import "devise/layouts";
+@import "devise/new-first";
 @import "./new-second.scss";
 @import "slick/slick";
 @import "slick/slick-theme";
