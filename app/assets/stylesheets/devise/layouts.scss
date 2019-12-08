@@ -3,11 +3,29 @@
 
 // header部分
 .single__header {
-  height: 120px;
   display: flex;
   justify-content: center;
   background-color: $fma-bg-gray;
   align-items: center;
+  height: 120px;
+  &-logo {
+    margin-right: 10px;
+  }
+  &-bar {
+    ul {
+      display: flex;
+      li {
+        margin-right: 25px;
+        text-align: center;
+        font-size: 12px;
+        width: 96px;
+        height: 48px;
+        background-color: #fff;
+        display: inline-block;
+        position: relative;
+      }
+    }
+  }
 }
 
 // 新規登録などのフォーム記述部分 //
@@ -25,6 +43,7 @@
       h1 {
         font-size: 22px;
         padding: 34px 0;
+        font-weight: bold;
       }
     }
   }
