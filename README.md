@@ -1,117 +1,24 @@
 # README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# freemarket_sample DB設計
+Things you may want to cover:
 
-## item テーブル
-  |column|Type|Options|
-  |------|----|-------|
-  |name|string|null: false, add_index: item, unique: true|
-  |user_id|integer|null: false, foreign_key: true|
-  |category_id|integer|null: false, foreign_key: true|
-  |brand_id|integer|null:false, foreign_key: true|
-  |price|integer|null: false|
-  |status|integer|null: false|
-  |prefecture_id|integer|null: false|
-  |description|text|null: false|
-  |shipping_burden|integer|null: false|
-  |shipping_method|integer|null: false|
-  |shipping_date|integer|null: false|
-  |size|integre|
-  
-###  Association
-- belongs_to  :user
-- belongs_to  :brand
-- belongs_to :category
-- belongs_to :prefecture
-- has_many: comments
-- has_many: images
+* Ruby version
 
+* System dependencies
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
+* Configuration
 
-### Association
-- belongs_to :user
-- belongs_to :item
+* Database creation
 
+* Database initialization
 
-## categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
+* How to run the test suite
 
+* Services (job queues, cache servers, search engines, etc.)
 
-### Association
-- has_many :items
+* Deployment instructions
 
-
-## brandテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-
-### Association
-- has_many :items
-
-
-## imageテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
-|item_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-
-
-##userテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, uniqueness: true|
-|email|string|null: false|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana|string|null: false|
-|born_year|integer|null: false|
-|born_month|integer|null: false|
-|born_day|integer|null: false|
-|phone_number|integer|null: false, uniqueness: true|
-
-##Association
- - has_one :address
- - has_one :profile
-
-
-## addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_number|integer|null: false|
-|city|string|null: false|
-|town|string|null: false|
-|building|string||
-|user_id|integer| foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :prefecture
-
-
-
-## profileテーブル
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false|
-|avatar|string||
-|comment|text||
-|user_id|integer| foreign_key: true|
-
-### Association
-- belongs_to :user
-
+* ...
