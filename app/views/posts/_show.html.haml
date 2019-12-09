@@ -16,20 +16,20 @@
         %tr 
           %th 出品者
           %td
-            %a{ href:'#'}プロフ見てね！
+            = link_to "" "プロフ見てね！"
             -# いいねボタンの仮置き 
         %tr
           %th カテゴリー
           -# パンクず仮置き
           -# 並び肩はcssで調整予定
           %td
-            %a{ href: '#'}レディース
-            %a{ href: '#'}バッグ
-            %a{ href: '#'}超バッグ
+            = link_to "" "レディース"
+            = link_to "" "バッグ"
+            = link_to "" "超バッグ"
         %tr
           %th ブランド
           %td 
-            %a{ href: '#'}シャネル
+            = link_to "" "シャネル"
         %tr
           %th 商品の状態
           %td 未使用に近い
@@ -42,7 +42,7 @@
         %tr
           %th 配送地域
           %td 
-            %a{ href: '#'}兵庫県
+            = link_to "" "兵庫県"
         %tr
           %th 発送日の目安
           %td 2~3日で発送
@@ -54,9 +54,11 @@
     %span.price__postage
       送料込み
   
-  %a.pricebtn{href: '#'}購入ボタンに進む
+  //%a.pricebtn{href: '#'}購入ボタンに進む
+  .pricebtn
+    =link_to "" "購入ボタンに進む"
 
-  %a.apptext{href: '#'}アプリで購入
+  %a.apptext{href: '#'},'アプリで購入'
 
   .itemtext
     .itemtext-bb
@@ -67,12 +69,34 @@
       サイズ  縦22㎝   横下26㎝～上34㎝  マチ8㎝
   .itemunder 
     .itemunder__left
-      %i.far.fa-heart
-      %a
+      .itemunder__left__heart
+        %i.far.fa-heart
+          いいね！6
+      .itemunder__left__flag
+        %i.far.fa-flag
+          不適切な商品の警告
 
     .itemunder__right
-      %a
-
+      %i.fas.fa-lock
+        あんしん・安全への取り組み
+  .item-message
+    .item-message__box
+      .item-message__box__main
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.input.textcoment{name: "main", type: "text"}
+      %button.comentsubmit{name: "submit", type: "submit", value: ""}
+        %span コメントする
+  .itemelinknext
+    .linkleft
+      %i.fas.fa-arrow-left
+        %a{ href:'#'} 前の商品
+    .linkright
+      %i.fas.fa-arrow-right
+        %a{ href:'#'}プロフ見てね！
+  .external-link
+    .external-link__box
+      %ul
+        %li
 
 
 

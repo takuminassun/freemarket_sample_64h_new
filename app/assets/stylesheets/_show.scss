@@ -93,6 +93,7 @@
       transition: all ease-out .3s;
       width: 620px;
       height: 60px;
+      text-decoration: none;
     }
     .apptext {
       color: #2086ea;
@@ -110,12 +111,109 @@
         }
     }
     .itemunder {
-
+      background-color: chartreuse;
+      //color: #ffffff;
+      margin: 16px 0 0;
+      height: 30px;
       &__left{
-
+        float: left;
+        display: flex;
+        &__heart {
+          color: #333;
+          background: #f2f2f2;
+          border-radius: 40%;
+          border: 1px solid #f5f5f5;
+          .fa-heart{
+          font-size: 14px;
+          vertical-align: middle;
+        }
+      }
+        &__flag{
+          color: #333;
+          background: #f2f2f2;
+          border-radius: 40%;
+          border: 1px solid #f5f5f5;
+          .fa-flag{
+            font-size: 14px;
+            vertical-align: middle;
+          }
+        }
       }
       &__right{
-        
+        float: right;
+        .fa-lock{
+          color: #0099e8;
+          font-size: 14px;
+          vertical-align: middle;
+          
+        }
       }
     }
-}
+    .item-message {
+      background-color: rgb(161, 48, 82);
+      //width: 700px;
+      margin-top: 10px;
+      &__box {
+        padding: 24px;
+        &__main{
+          p {
+            padding: 8px;
+            font-size: 14px;
+            background-color: #fff6de;
+          }
+          .textcoment {
+            background-color: aquamarine;
+            margin: 8px 0 0;
+            width: 96%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid#ccc;
+            line-height: 1.5;
+          }
+
+        }
+        .comentsubmit {
+          //color: #fff;
+          width: 100%;
+          margin: 8px 0 0;
+          background-color: #f2f2f2;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+    .itemelinknext {
+      margin: 24px auto 0;
+      //width: 700px;
+      background-color: rgb(168, 23, 47);
+      display: flex;
+      color: #2086ea;
+      .linkleft {
+        width: 45%;
+        .fa-arrow-left {
+          text-decoration: none;
+        }
+      }
+      .linkright {
+        width: 45%;
+        float: right;
+        margin-left: 45%;
+        .fa-arrow-right {
+          text-decoration: none;
+        }
+      }
+    }
+    .external-link{
+      background-color: green;
+      //width: 700px;
+      margin: 24px auto;
+      padding: 32px 0 24px;
+      &__box {
+        background-color: grey;
+        margin: 16px 0 0;
+      }
+    }
+  }
