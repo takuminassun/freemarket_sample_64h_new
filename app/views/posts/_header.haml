@@ -1,0 +1,39 @@
+.header
+  .header__all
+
+    .headerform
+      -# TOPのメルカリのロゴ
+      .mercarilogo
+        = image_tag src="/images/fmarket_logo_red.svg/",alt:"mercari",width: "134",height:"36",class: "mercaribox"
+      .form
+        -#  検索フォーム formforに変更するかも
+        %input.input-default{name: "keywrod", placeholder: "何かお探しですか？", type: "search"}
+        .form__btn
+          %i.fa.fa-search
+    .menu
+      .menu__left
+        .categorybox
+          .categorybox__image
+            %i.fas.fa-list
+            カテゴリーから探す
+        .brandbox
+          .brandbox__image
+            %i.fas.fa-tags
+            ブランドから探す
+          -# この中にブランド一覧
+      .menu__right
+        .noticebox
+          .noticebox__image
+            %i.far.fa-bell
+            お知らせ
+        .todolistbox
+          .todolistbox__image
+            %i.fas.fa-check
+            = link_to  new_user_session_path do
+              やることリスト
+        .mypage
+          .mypage__box
+            = image_tag src="/images/mypage.jpg/",alt:"",class:"face",width: "32"
+            マイページ
+
+
