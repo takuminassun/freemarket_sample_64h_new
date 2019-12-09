@@ -1,20 +1,22 @@
-.single
-  .single__header
-    .single__header-logo
-      = image_tag src="/images/fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
-.container
-  .contents__login-box
-    .content__header
-      %p アカウントをお持ちでない方はこちら
-      = link_to"新規","#",class:"signup"
-  .content-form-box
-    %button.facebook-login
-      = icon('fab', 'facebook-square',class: "facebook-icon")
-      %p Facebookでログイン
-    %button.google-login
-      %i.fab.fa-google.google-icon
-      %p Googleでログイン
-    %input.login-information{type: "email", placeholder: "メールアドレス"}
-    %input.login-information{type: "password", placeholder: "パスワード"}
-    %input.submit-login{type: "submit", value: "ログイン"}
-= render "devise/layouts/footer"
+-# gem devise の new.html.haml にもともとあった記述。 削除してよければ削除。
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
