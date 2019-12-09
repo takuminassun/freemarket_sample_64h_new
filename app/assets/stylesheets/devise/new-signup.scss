@@ -1,0 +1,72 @@
+.content-form-box1 {
+  width: 350px;
+  height: calc(100vh - 476px);
+  margin: 0 auto;
+  padding: 24px 0 40px;
+
+  .mail-signup{
+    width: 100%;
+    height: 48px;
+    background-color: $fma-red;
+    margin-bottom: 15px;
+
+    .mail-icon{
+      color: #fff;
+      display: inline-block;
+      font-size: 30px;
+      float: left;
+      line-height: 48px;
+      margin-left: 10px;
+    }
+
+    p{
+      color: white;
+      font-size: 15px;
+      line-height: 48px;
+      display: inline-block;
+    }
+  }
+
+  .facebook-signup{
+    width: 100%;
+    height: 48px;
+    background-color: #385185;
+
+    .facebook-icon{
+      color: #fff;
+      display: inline-block;
+      font-size: 30px;
+      float: left;
+      line-height: 48px;
+      margin-left: 10px;
+    }
+    p{
+      color: white;
+      font-size: 15px;
+      line-height: 48px;
+      display: inline-block;
+    }
+  }
+  .google-signup{
+    width: 100%;
+    height: 48px;
+    background-color: #fff;
+    border: solid 1px $fma-gray;
+    margin: 15px 0 30px 0;
+
+    .google-icon{
+      color: green;
+      display: inline-block;
+      font-size: 30px;
+      float: left;
+      line-height: 48px;
+      margin-left: 10px;
+    }
+    p{
+      color: black;
+      font-size: 15px;
+      line-height: 48px;
+      display: inline-block;
+    }
+  }
+}

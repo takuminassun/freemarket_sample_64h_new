@@ -1,10 +1,12 @@
-
-= render "devise/layouts/header"
+.single
+  .single__header
+    .single__header-logo
+      = image_tag src="/images/fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
 .container
   .contents
     .content__header
       %h1 新規会員登録
-    .content-form
+    .content-form-box
       %button.mail-signup
         %i.fas.fa-envelope.mail-icon
         %p メールアドレスで登録する

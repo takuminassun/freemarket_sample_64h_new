@@ -1,0 +1,89 @@
+
+// devise関係のlayouts view
+
+// header部分
+.single__header {
+  display: flex;
+  justify-content: center;
+  background-color: $fma-bg-gray;
+  align-items: center;
+  height: 120px;
+  &-logo {
+    margin-right: 10px;
+  }
+  &-bar {
+    ul {
+      display: flex;
+      .active {
+        font-size: 12px;
+        width: 96px;
+        text-align: center;
+        &-status {
+          font-size: 30px;
+          color: $fma-gray;
+          position: relative;
+          z-index: 0;
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 96px;
+            height: 2px;
+            background-color: $fma-gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          }
+          &-last {
+            font-size: 30px;
+            color: $fma-gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 新規登録などのフォーム記述部分 //
+// .container .contentは共通部分なのでその中に記述していくようにしてください //
+.container {
+  background-color: $fma-bg-gray;
+  .contents {
+    background-color: $fma-white;
+    width: 700px;
+    margin: 0 auto;
+    .content-header {
+      text-align: center;
+      height: 100px;
+      border-bottom: 1px solid $fma-bg-gray;
+      h1 {
+        font-size: 22px;
+        padding: 34px 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// footer部分
+.single__footer {
+  height: 140px;
+  text-align: center;
+  background-color: $fma-bg-gray;
+  padding: 40px 0;
+  ul {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0 5px;
+      font-size: 12px;
+    }
+  }
+  &__logo {
+    margin-top: 40px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+
