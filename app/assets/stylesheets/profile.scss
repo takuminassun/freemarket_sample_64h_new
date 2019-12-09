@@ -1,0 +1,83 @@
+.side-profile{
+  width: 1020px;
+  margin: 40px auto 0 auto;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: block;
+
+  &__contents{
+    width: 700px;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    font-family: Arial, 游ゴシック体;
+
+    h2{
+      width: 100%;
+      font-optical-sizing: 24px;
+      text-align: center;
+      background-color: #ffffff;
+      font-size: 24px;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    }
+
+    &__back-image{
+      width: calc(100%-32px);
+      padding: 72px 16px 24px 16px;
+      background-image: url(profile-gazo.jpeg);
+      background-size: cover;
+      
+
+      &__box{
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        
+
+        &__dual{
+          width: 300px;
+          height: 60px;
+          margin: 0 auto;
+        }
+
+          .profile-icon{
+            height: 60px;
+            width: 60px;
+            float: left;
+            border-radius: 50%;
+          }
+
+          .profile-text{
+            width: 186px;
+            height: 28px;
+            padding: 10px 16px 8px 16px;
+            margin-left: 8px;
+            float: left;
+            margin-top: 5px;
+            border-radius: 5px;
+          }
+      }
+    }
+    &__under{
+      width: 668px;
+      height: 282px;
+      padding: 40px 16px;
+      background-color: white;
+
+      .profile-comment{
+        width: 646px;
+        height: 194px;
+        padding: 10px;
+      }
+
+      .change-btn{
+        width: 666px;
+        height: 48px;
+        margin-top: 16px;
+        background-color: #e21d23;
+        color: white;
+        font-size: 14px;
+      }
+    }
+  }
+}
