@@ -6,11 +6,13 @@ a {
   text-decoration: none;
 }
 .item-main{
+  background-color: rgb(248, 245, 245);
   .itemcontent {
-    background-color: blue;
+    //background-color: blue;
     padding: 24px 40px 40px;
     width: 620px;
     margin: 40px auto 40px;
+    background-color: #ffffff;
     //margin: 40px 39.5px 0 39.5px;
 
     .itemname {
@@ -25,7 +27,8 @@ a {
       width: 620px;
       height: 420px;
       margin: 16px 0 0;
-      background-color: coral;
+      background-color: #ffffff;
+      //background-color: coral;
 
       .itemimage {
         float: left;
@@ -50,7 +53,7 @@ a {
         max-width: 300px;
         height: 420px;
         margin: 0 auto;
-        background-color: chartreuse;
+        //background-color: chartreuse;
         
           tr{
             th{
@@ -105,10 +108,10 @@ a {
       .apptext {
         color: #2086ea;
         text-decoration: none;
-        font-size: 17px;
+        font-size: 14px;
       }
       .itemtext {
-        background-color: rgb(90, 26, 81);
+        //background-color: rgb(90, 26, 81);
         padding: 32px 0 0;
         line-height: 1.5;
 
@@ -118,7 +121,7 @@ a {
           }
       }
       .itemunder {
-        background-color: chartreuse;
+        //background-color: chartreuse;
         //color: #ffffff;
         margin: 16px 0 0;
         height: 30px;
@@ -140,6 +143,7 @@ a {
             background: #f2f2f2;
             border-radius: 40%;
             border: 1px solid #f5f5f5;
+            margin-left: 16px;
             .fa-flag{
               font-size: 14px;
               vertical-align: middle;
@@ -157,11 +161,11 @@ a {
         }
       }
       .item-message {
-        background-color: rgb(161, 48, 82);
+        //background-color: rgb(161, 48, 82);
         //width: 700px;
         margin-top: 10px;
         &__box {
-          padding: 24px;
+          //padding: 24px;
           &__main{
             p {
               padding: 8px;
@@ -169,7 +173,7 @@ a {
               background-color: #fff6de;
             }
             .textcoment {
-              background-color: aquamarine;
+              //background-color: aquamarine;
               margin: 8px 0 0;
               width: 96%;
               max-width: 100%;
@@ -185,7 +189,8 @@ a {
             //color: #fff;
             width: 100%;
             margin: 8px 0 0;
-            background-color: #f2f2f2;
+            background-color: #aaa;
+            color: #ffffff;
             line-height: 48px;
             font-size: 14px;
             cursor: pointer;
@@ -196,7 +201,7 @@ a {
   .itemelinknext {
     margin: 24px auto 0;
     width: 700px;
-    background-color: rgb(168, 23, 47);
+    //background-color: rgb(168, 23, 47);
     display: flex;
     color: #2086ea;
     .linkleft {
@@ -208,19 +213,20 @@ a {
     .linkright {
       width: 45%;
       float: right;
-      margin-left: 45%;
+      margin-left: 70%;
       .fa-arrow-right {
         text-decoration: none;
       }
     }
   }
   .external-link{
-    background-color: green;
+    //background-color: green;
+    background-color: #ffffff;
     width: 700px;
     margin: 24px auto;
     padding: 32px 0 24px;
     &__box {
-      background-color: grey;
+      //background-color: grey;
       //margin: 16px 0 0;
       text-align: center;
       li {
@@ -250,7 +256,7 @@ a {
   .item-list-profile {
     width: 700px;
     margin: 0 auto;
-    background-color: greenyellow;
+    //background-color: greenyellow;
     &__box1 {
       width: 700px;
       margin: 0 auto;
@@ -262,9 +268,10 @@ a {
     }
     &__list {
       width: auto;
-      height: 900px;
+      display: flex;
       .item-list-box {
-        background-color: hotpink;
+        //background-color: hotpink;
+        background-color: #ffffff;
         width: 220px;
         margin: 0 20px 20px 0;
         float: left;
@@ -272,6 +279,16 @@ a {
           color: #333;
           height: 220px;
           width: 220px;
+          margin: 0;
+          
+          .srcc {
+            // position: absolute;
+            // top: 0;
+            // right: 0;
+            // bottom: 0;
+            // left: 0;
+            width: 50%;
+          }
         }
         &__textbox {
           padding: 16px;
@@ -289,8 +306,8 @@ a {
             display: flex;
             align-items: center;
             margin: 8px 0 0;
-            background-color: red;
-            justify-content: space-around;
+            //background-color: red;
+            justify-content: space-between;
             &__price {
               font-size: 16px;
               color: #333;
@@ -301,9 +318,77 @@ a {
               font-weight: 400;
               color: #333;
               .fa-heart {
-                color: #ffffff;
+                color: gray;
                 float: right;
 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .otheritem {
+    //background-color: rgb(57, 67, 153);
+    width: 700px;
+    margin: 0 auto 40px;
+    
+    &__head {
+      font-size: 22px;
+      margin: 24px 0 8px;
+    }
+    .other-content {
+      //background-color: #ffffff;
+      width: auto;
+      display: flex;
+      &__box { 
+        width: 220px;
+        margin: 0 20px 20px 0;
+        background-color: #ffffff;
+        .other-box {
+          //background-color: #ffffff;
+          width: 220px;
+          height: 220px;
+          margin: 0;
+          .srcc2 {
+            // position: absolute;
+            // top: 0;
+            // right: 0;
+            // bottom: 0;
+            // left: 0;
+            width: 50%;
+          }
+        }
+        .othertext {
+          padding: 16px;
+          height: 110px;
+          &__name {
+            overflow: hidden;
+            position: relative;
+            font-weight: 400;
+            //height: 3px;
+            line-height: 1.5;
+            word-break: break-word;
+            white-space: normal;
+          }
+          &__num {
+            display: flex;
+            align-items: center;
+            margin: 8px 0 0;
+            //background-color: red;
+            justify-content: space-between;
+            &__price {
+              font-size: 16px;
+              color: #333;
+              font-weight: 600;
+            }
+            &__heart {
+              font-size: 16px;
+              font-weight: 400;
+              color: #333;
+              .fa-heart {
+                color: gray;
+                float: right;
               }
             }
           }
