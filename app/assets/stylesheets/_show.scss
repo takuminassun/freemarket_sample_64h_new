@@ -5,258 +5,310 @@ a {
   color: #0098e8;
   text-decoration: none;
 }
-.itemcontent {
-  background-color: blue;
-  padding: 24px 40px 40px;
-  width: 620px;
-  margin: 40px auto 40px;
-  //margin: 40px 39.5px 0 39.5px;
-
-  .itemname {
-    font-size: 24px;
-    text-align: center;
-    line-height: 1.4;
-    // 文の折り返し
-    word-wrap: break-word;
-  }
-
-  .maincontent {
+.item-main{
+  .itemcontent {
+    background-color: blue;
+    padding: 24px 40px 40px;
     width: 620px;
-    height: 420px;
-    margin: 16px 0 0;
-    background-color: coral;
+    margin: 40px auto 40px;
+    //margin: 40px 39.5px 0 39.5px;
 
-    .itemimage {
-      float: left;
-      min-width: 300px;
-      max-width: 300px;
-      min-height: 375px;
-
-      &__box {
-        position: relative;
-        &__main {
-          position: relative;
-        // 指定の大きさ以上なら非表示
-          overflow: hidden;
-        }
-        &__sub {
-        }
-      }
-    }
-    .itemdate {
-      display: inline-block;
-      float: right;
-      max-width: 300px;
-      height: 420px;
-      margin: 0 auto;
-      background-color: chartreuse;
-      
-        tr{
-          th{
-            width: 39%;
-            //display: inline-block;
-            background-color: #ffffff;
-            font-weight: 400;
-            text-align: left;
-            padding: 8px;
-            border: 1px;
-          }
-          td{
-            width: 61%;
-            background-color: #ffffff;
-          }
-        }
-      }
-    }
-    .price {
-      margin: 24px 0 0;
-      &__item{
-        margin: 0 16px 0 0;
-        font-size: 50px;
-        margin-left: 140px;
-      }
-      &__tax{
-        font-size: 10px;
-      }
-      &__postage{
-        font-size: 16px;
-        // 強調するため
-        //display: inline-block;
-      }
-    }
-    .pricebtn {
-      display: inline-block;
-      //min-width: 768px;
+    .itemname {
       font-size: 24px;
-      line-height: 60px;
-      margin-top: 16px;
-      background-color: #e21d23;
-      color: #ffffff;
       text-align: center;
-      font-weight: 600px;
-      transition: all ease-out .3s;
-      width: 620px;
-      height: 60px;
-      text-decoration: none;
-      line-height: 48px;
-      cursor: pointer;
+      line-height: 1.4;
+      // 文の折り返し
+      word-wrap: break-word;
     }
-    .apptext {
-      color: #2086ea;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    .itemtext {
-      background-color: rgb(90, 26, 81);
-      padding: 32px 0 0;
-      line-height: 1.5;
 
-        &__bb{
-          // 自動折り返し
-          //white-space: nowrap;
-        }
-    }
-    .itemunder {
-      background-color: chartreuse;
-      //color: #ffffff;
+    .maincontent {
+      width: 620px;
+      height: 420px;
       margin: 16px 0 0;
-      height: 30px;
-      &__left{
+      background-color: coral;
+
+      .itemimage {
         float: left;
-        display: flex;
-        &__heart {
-          color: #333;
-          background: #f2f2f2;
-          border-radius: 40%;
-          border: 1px solid #f5f5f5;
-          .fa-heart{
-          font-size: 14px;
-          vertical-align: middle;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 375px;
+
+        &__box {
+          position: relative;
+          &__main {
+            position: relative;
+          // 指定の大きさ以上なら非表示
+            overflow: hidden;
+          }
+          &__sub {
+          }
         }
       }
-        &__flag{
-          color: #333;
-          background: #f2f2f2;
-          border-radius: 40%;
-          border: 1px solid #f5f5f5;
-          .fa-flag{
+      .itemdate {
+        display: inline-block;
+        float: right;
+        max-width: 300px;
+        height: 420px;
+        margin: 0 auto;
+        background-color: chartreuse;
+        
+          tr{
+            th{
+              width: 39%;
+              //display: inline-block;
+              background-color: #ffffff;
+              font-weight: 400;
+              text-align: left;
+              padding: 8px;
+              border: 1px;
+            }
+            td{
+              width: 61%;
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+      .price {
+        margin: 24px 0 0;
+        &__item{
+          margin: 0 16px 0 0;
+          font-size: 50px;
+          margin-left: 140px;
+        }
+        &__tax{
+          font-size: 10px;
+        }
+        &__postage{
+          font-size: 16px;
+          // 強調するため
+          //display: inline-block;
+        }
+      }
+      .pricebtn {
+        display: inline-block;
+        //min-width: 768px;
+        font-size: 24px;
+        line-height: 60px;
+        margin-top: 16px;
+        background-color: #e21d23;
+        color: #ffffff;
+        text-align: center;
+        font-weight: 600px;
+        transition: all ease-out .3s;
+        width: 620px;
+        height: 60px;
+        text-decoration: none;
+        line-height: 48px;
+        cursor: pointer;
+      }
+      .apptext {
+        color: #2086ea;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .itemtext {
+        background-color: rgb(90, 26, 81);
+        padding: 32px 0 0;
+        line-height: 1.5;
+
+          &__bb{
+            // 自動折り返し
+            //white-space: nowrap;
+          }
+      }
+      .itemunder {
+        background-color: chartreuse;
+        //color: #ffffff;
+        margin: 16px 0 0;
+        height: 30px;
+        &__left{
+          float: left;
+          display: flex;
+          &__heart {
+            color: #333;
+            background: #f2f2f2;
+            border-radius: 40%;
+            border: 1px solid #f5f5f5;
+            .fa-heart{
             font-size: 14px;
             vertical-align: middle;
           }
         }
-      }
-      &__right{
-        float: right;
-        .fa-lock{
-          color: #0099e8;
-          font-size: 14px;
-          vertical-align: middle;
-          
+          &__flag{
+            color: #333;
+            background: #f2f2f2;
+            border-radius: 40%;
+            border: 1px solid #f5f5f5;
+            .fa-flag{
+              font-size: 14px;
+              vertical-align: middle;
+            }
+          }
+        }
+        &__right{
+          float: right;
+          .fa-lock{
+            color: #0099e8;
+            font-size: 14px;
+            vertical-align: middle;
+            
+          }
         }
       }
-    }
-    .item-message {
-      background-color: rgb(161, 48, 82);
-      //width: 700px;
-      margin-top: 10px;
-      &__box {
-        padding: 24px;
-        &__main{
-          p {
-            padding: 8px;
-            font-size: 14px;
-            background-color: #fff6de;
-          }
-          .textcoment {
-            background-color: aquamarine;
-            margin: 8px 0 0;
-            width: 96%;
-            max-width: 100%;
-            min-height: 104px;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid#ccc;
-            line-height: 1.5;
-          }
+      .item-message {
+        background-color: rgb(161, 48, 82);
+        //width: 700px;
+        margin-top: 10px;
+        &__box {
+          padding: 24px;
+          &__main{
+            p {
+              padding: 8px;
+              font-size: 14px;
+              background-color: #fff6de;
+            }
+            .textcoment {
+              background-color: aquamarine;
+              margin: 8px 0 0;
+              width: 96%;
+              max-width: 100%;
+              min-height: 104px;
+              padding: 10px;
+              font-size: 14px;
+              border: 1px solid#ccc;
+              line-height: 1.5;
+            }
 
+          }
+          .comentsubmit {
+            //color: #fff;
+            width: 100%;
+            margin: 8px 0 0;
+            background-color: #f2f2f2;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+          }
         }
-        .comentsubmit {
-          //color: #fff;
-          width: 100%;
-          margin: 8px 0 0;
-          background-color: #f2f2f2;
-          line-height: 48px;
-          font-size: 14px;
-          cursor: pointer;
-        }
+      }
+  }
+  .itemelinknext {
+    margin: 24px auto 0;
+    width: 700px;
+    background-color: rgb(168, 23, 47);
+    display: flex;
+    color: #2086ea;
+    .linkleft {
+      width: 45%;
+      .fa-arrow-left {
+        text-decoration: none;
       }
     }
-    .itemelinknext {
-      margin: 24px auto 0;
-      //width: 700px;
-      background-color: rgb(168, 23, 47);
-      display: flex;
-      color: #2086ea;
-      .linkleft {
-        width: 45%;
-        .fa-arrow-left {
-          text-decoration: none;
-        }
-      }
-      .linkright {
-        width: 45%;
-        float: right;
-        margin-left: 45%;
-        .fa-arrow-right {
-          text-decoration: none;
-        }
-      }
-    }
-    .external-link{
-      background-color: green;
-      //width: 700px;
-      margin: 24px auto;
-      padding: 32px 0 24px;
-      &__box {
-        background-color: grey;
-        //margin: 16px 0 0;
-        text-align: center;
-        li {
-          display: inline-block;
-          vertical-align: middle;
-          margin: 0 8px 8px 0;
-          text-align: center;
-          .fa-facebook-square {
-            color: #154964;
-            text-decoration: none;
-          }
-          .fa-twitter-square {
-            color: #0098e8;
-            text-decoration: none;
-          }
-          .fab.fa-line {
-            color: green;
-            text-decoration: none;
-          }
-          .fa-instagram {
-            color: red;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-    .item-list-profile {
-      margin: 0 auto;
-      background-color: greenyellow;
-      &__box1 {
-        font-size: 22px;
-        margin: 24px 0 8px;
-        &__head {
-          cursor: pointer;
-        }
-      }
-      &__list {
-        width: auto;
+    .linkright {
+      width: 45%;
+      float: right;
+      margin-left: 45%;
+      .fa-arrow-right {
+        text-decoration: none;
       }
     }
   }
+  .external-link{
+    background-color: green;
+    width: 700px;
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    &__box {
+      background-color: grey;
+      //margin: 16px 0 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 8px 8px 0;
+        text-align: center;
+        .fa-facebook-square {
+          color: #154964;
+          text-decoration: none;
+        }
+        .fa-twitter-square {
+          color: #0098e8;
+          text-decoration: none;
+        }
+        .fab.fa-line {
+          color: green;
+          text-decoration: none;
+        }
+        .fa-instagram {
+          color: red;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .item-list-profile {
+    width: 700px;
+    margin: 0 auto;
+    background-color: greenyellow;
+    &__box1 {
+      width: 700px;
+      margin: 0 auto;
+      &__head {
+        font-size: 22px;
+        margin: 24px 0 8px;
+        cursor: pointer;
+      }
+    }
+    &__list {
+      width: auto;
+      height: 900px;
+      .item-list-box {
+        background-color: hotpink;
+        width: 220px;
+        margin: 0 20px 20px 0;
+        float: left;
+        &__image {
+          color: #333;
+          height: 220px;
+          width: 220px;
+        }
+        &__textbox {
+          padding: 16px;
+          height: 110px;
+          &__name {
+            overflow: hidden;
+            position: relative;
+            font-weight: 400;
+            //height: 3px;
+            line-height: 1.5;
+            word-break: break-word;
+            white-space: normal;
+          }
+          &__num {
+            display: flex;
+            align-items: center;
+            margin: 8px 0 0;
+            background-color: red;
+            justify-content: space-around;
+            &__price {
+              font-size: 16px;
+              color: #333;
+              font-weight: 600;
+            }
+            &__heart {
+              font-size: 16px;
+              font-weight: 400;
+              color: #333;
+              .fa-heart {
+                color: #ffffff;
+                float: right;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
