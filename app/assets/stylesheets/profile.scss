@@ -1,6 +1,6 @@
 .side-profile{
   width: 1020px;
-  margin: 40px auto 0 auto;
+  margin: 40px auto 0;
   padding: 40px 0;
   box-sizing: border-box;
   display: block;
@@ -23,7 +23,7 @@
 
     &__back-image{
       width: calc(100%-32px);
-      padding: 72px 16px 24px 16px;
+      padding: 72px 16px 24px;
       background-image: url(profile-gazo.jpeg);
       background-size: cover;
       
@@ -50,7 +50,7 @@
           .profile-text{
             width: 186px;
             height: 28px;
-            padding: 10px 16px 8px 16px;
+            padding: 10px 16px 8px;
             margin-left: 8px;
             float: left;
             margin-top: 5px;
