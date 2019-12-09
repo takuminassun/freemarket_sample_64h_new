@@ -1,6 +1,5 @@
 .side-profile{
   width: 1020px;
-  height: 1252px;
   margin: 40px auto 0 auto;
   padding: 40px 0;
   box-sizing: border-box;
@@ -44,8 +43,8 @@
           .profile-icon{
             height: 60px;
             width: 60px;
-            background-color: #fff;
             float: left;
+            border-radius: 50%;
           }
 
           .profile-text{
@@ -57,6 +56,27 @@
             margin-top: 5px;
             border-radius: 5px;
           }
+      }
+    }
+    &__under{
+      width: 668px;
+      height: 282px;
+      padding: 40px 16px;
+      background-color: white;
+
+      .profile-comment{
+        width: 646px;
+        height: 194px;
+        padding: 10px;
+      }
+
+      .change-btn{
+        width: 666px;
+        height: 48px;
+        margin-top: 16px;
+        background-color: #e21d23;
+        color: white;
+        font-size: 14px;
       }
     }
   }
