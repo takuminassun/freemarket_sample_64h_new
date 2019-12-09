@@ -54,14 +54,12 @@
     %span.price__postage
       送料込み
   
-  //%a.pricebtn{href: '#'}購入ボタンに進む
-  .pricebtn
-    =link_to "" "購入ボタンに進む"
-
-  %a.apptext{href: '#'},'アプリで購入'
-
+  %button.pricebtn{name: "price", type: "submit", value: ""}
+    %span 購入ボタンに進む
+  %button.apptext{name: "購入アプリ", type: "submit", value: ""}
+    %span アプリで購入
   .itemtext
-    .itemtext-bb
+    .itemtext__bb
       美品
       コーチショルダーバッグ(2way)
 
@@ -92,12 +90,18 @@
         %a{ href:'#'} 前の商品
     .linkright
       %i.fas.fa-arrow-right
-        %a{ href:'#'}プロフ見てね！
+        %a{ href:'#'}次の商品
   .external-link
-    .external-link__box
-      %ul
-        %li
-
-
-
-
+    %ul.external-link__box
+      %li
+        %i.fab.fa-facebook-square.fa-3x
+      %li
+        %i.fab.fa-twitter-square.fa-3x
+      %li
+        %i.fab.fa-line.fa-3x
+      %li
+        %i.fab.fa-instagram.fa-3x
+  .item-list-profile
+    %section.item-list-profile__box1
+      %h2.item-list-profile__box1__head
+        = link_to "" "○○さんのその他の出品"
