@@ -58,6 +58,8 @@ a {
             background-color: #ffffff;
             font-weight: 400;
             text-align: left;
+            padding: 8px;
+            border: 1px;
           }
           td{
             width: 61%;
@@ -252,6 +254,9 @@ a {
         &__head {
           cursor: pointer;
         }
+      }
+      &__list {
+        width: auto;
       }
     }
   }
