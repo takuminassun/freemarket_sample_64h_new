@@ -14,15 +14,30 @@
   &-bar {
     ul {
       display: flex;
-      li {
-        margin-right: 25px;
-        text-align: center;
+      .active {
         font-size: 12px;
         width: 96px;
-        height: 48px;
-        background-color: #fff;
-        display: inline-block;
-        position: relative;
+        text-align: center;
+        &-status {
+          font-size: 30px;
+          color: $fma-gray;
+          position: relative;
+          z-index: 0;
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 96px;
+            height: 2px;
+            background-color: $fma-g;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          }
+          &-last {
+            font-size: 30px;
+            color: $fma-gray;
+          }
+        }
       }
     }
   }
