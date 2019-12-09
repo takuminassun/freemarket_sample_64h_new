@@ -1,6 +1,10 @@
 .warpper { 
   display: block;
 }
+a {
+  color: #0098e8;
+  text-decoration: none;
+}
 .itemcontent {
   background-color: blue;
   padding: 24px 40px 40px;
@@ -22,9 +26,7 @@
     margin: 16px 0 0;
     background-color: coral;
 
-
     .itemimage {
-      // 画像と横並びにするフロート
       float: left;
       min-width: 300px;
       max-width: 300px;
@@ -94,11 +96,13 @@
       width: 620px;
       height: 60px;
       text-decoration: none;
+      line-height: 48px;
+      cursor: pointer;
     }
     .apptext {
       color: #2086ea;
-      // 下線消す
       text-decoration: none;
+      font-size: 17px;
     }
     .itemtext {
       background-color: rgb(90, 26, 81);
@@ -107,7 +111,7 @@
 
         &__bb{
           // 自動折り返し
-          white-space: nowrap;
+          //white-space: nowrap;
         }
     }
     .itemunder {
@@ -213,7 +217,41 @@
       padding: 32px 0 24px;
       &__box {
         background-color: grey;
-        margin: 16px 0 0;
+        //margin: 16px 0 0;
+        text-align: center;
+        li {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 8px 8px 0;
+          text-align: center;
+          .fa-facebook-square {
+            color: #154964;
+            text-decoration: none;
+          }
+          .fa-twitter-square {
+            color: #0098e8;
+            text-decoration: none;
+          }
+          .fab.fa-line {
+            color: green;
+            text-decoration: none;
+          }
+          .fa-instagram {
+            color: red;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .item-list-profile {
+      margin: 0 auto;
+      background-color: greenyellow;
+      &__box1 {
+        font-size: 22px;
+        margin: 24px 0 8px;
+        &__head {
+          cursor: pointer;
+        }
       }
     }
   }
