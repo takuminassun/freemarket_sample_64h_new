@@ -2,6 +2,14 @@
 @import "font-awesome";
 @import "./reset";
 @import "./colors";
+@import "posts";
+@import "./contents";
+@import "./top-header";
+@import "./footer";
+@import "./devise-layouts";
+@import "./new-second.scss";
+@import "./new-third.scss";
+@import "./new-forth.scss";
 @import "devise/layouts";
 @import "devise/new-first";
 @import "devise/new-fifth";
@@ -9,6 +17,4 @@
 @import "slick/slick";
 @import "slick/slick-theme";
 @import "top/contents";
-@import "top/header";
-@import "top/footer";
 @import "top/carousel";
