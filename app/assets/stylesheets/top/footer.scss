@@ -1,0 +1,125 @@
+
+.footer-fast {
+  height: 260px;
+  width: 100vw;
+  background-image: url("footer_background-image.jpeg");
+  background-size: cover;
+
+  &__box{
+    height: 260px;
+    width: 750px;
+    margin: 0 auto;
+
+    &__left{
+      width: 417px;
+      height: 260px;
+      float: left;
+
+      &__content-1{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: white;
+        display: inline-block;
+        margin-top: 40px;
+      }
+      &__content-2{
+        font-size: 34px;
+        margin-bottom: 20px;
+        color: white;
+        display: inline-block;
+      }
+      &__aikon-box{
+        width: 417px;
+        height: 68px;
+        display: flex;
+
+        .merukali{
+          margin-right: 20px;
+        }
+      }
+    }
+
+    &__right{
+      height: 260px;
+      width: 300px;
+      float: right;
+    }
+  }
+}
+
+
+.footer-second{
+  height: 379px;
+  width: 100vw;
+  padding: 0 20px 10px 20px;
+  background-color: black;
+  box-sizing: border-box;
+
+  &__topbox{
+    height: 315px;
+    width: 1020px;
+    margin: 0 auto;
+    display: flex;
+
+    &__list{
+      width: auto;
+      padding-right: 40px;
+      margin-top: 18px;
+      color: white;
+      display: inline-block;
+      list-style: none;
+
+      h2{
+        font-size: 16px;
+      }
+      li{
+        font-size: 12px;
+        margin-top: 16px;
+      }
+      &__aikon-box{
+        width: 200px;
+        height: 60px;
+        margin-top: 18px;
+
+        .twitter{
+          font-size: 40px;
+          margin-right: 10px;
+        }
+        .facebook{
+          font-size: 40px;
+        }
+      }
+
+      &__box{
+        width: 385px;
+        height: 140px;
+        display: flex;
+      
+        &__1{
+          width: 189px;
+          margin-right: 10px;
+
+        }
+        &__2{
+          width: 189px;
+        }
+      }
+    }
+  }
+
+  &__bottombox{
+    width: 1020px;
+    height: 33px;
+    margin: 30px auto 20px;
+
+    p{
+      float: right;
+      line-height: 33px;
+      text-align: center;
+      font-size: 10px;
+      margin-right: 500px;
+      color: white;
+    }
+  }
+}
