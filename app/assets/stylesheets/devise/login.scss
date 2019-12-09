@@ -1,0 +1,96 @@
+.container {
+  background-color: $fma-bg-gray;
+  .contents__login-box {
+    background-color: $fma-white;
+    width: 456px;
+    margin: 0 auto;
+    .content__header {
+      text-align: center;
+      height: 70px;
+      padding: 40px 64px;
+      border-bottom: 1px solid $fma-bg-gray;
+      p {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .signup{
+        display: block;
+        width: 326px;
+        height: 40px;
+        margin-top: 8px;
+        background-color: #0099e8;
+        border: solid 1px #0099e8;
+        text-decoration: none;
+        color: white;
+        line-height: 40px;
+      }
+    }
+  }
+  .content-form-box {
+    width: 328px;
+    margin: 0 auto;
+    padding: 34px 64px;
+    background-color: $fma-white;
+
+    .facebook-login{
+      width: 100%;
+      height: 48px;
+      background-color: #385185;
+
+      .facebook-icon{
+        color: #fff;
+        display: inline-block;
+        font-size: 30px;
+        float: left;
+        line-height: 48px;
+        margin-left: 10px;
+      }
+      p{
+        color: white;
+        font-size: 15px;
+        line-height: 48px;
+        display: inline-block;
+      }
+    }
+    .google-login{
+      width: 100%;
+      height: 48px;
+      background-color: #fff;
+      border: solid 1px $fma-gray;
+      margin: 15px 0 60px 0;
+
+      .google-icon{
+        color: green;
+        display: inline-block;
+        font-size: 30px;
+        float: left;
+        line-height: 48px;
+        margin-left: 10px;
+      }
+      p{
+        color: black;
+        font-size: 15px;
+        line-height: 48px;
+        display: inline-block;
+      }
+    }
+    .login-information{
+      width: 300px;
+      height: 30px;
+      border-radius: 4px;
+      border: solid 1px #ccc;
+      line-height: 30px;
+      font-size: 16px;
+      padding: 10px 16px 8px;
+      margin-bottom: 20px;
+    }
+    .submit-login{
+      width: 342px;
+      height: 48px;
+      margin-top: 32px;
+      background-color: red;
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
