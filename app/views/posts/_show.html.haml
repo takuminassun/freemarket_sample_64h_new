@@ -111,7 +111,7 @@
       %section.item-list-box
         =link_to ""
         %figure.item-list-box__image
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "50"
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc"
         .item-list-box__textbox
           %h3.item-list-box__textbox__name
             商品の名前
@@ -125,7 +125,7 @@
       %section.item-list-box
         =link_to ""
         %figure.item-list-box__image
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "50"
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc"
         .item-list-box__textbox
           %h3.item-list-box__textbox__name
             商品の名前
@@ -139,14 +139,59 @@
       %section.item-list-box
         =link_to ""
         %figure.item-list-box__image
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "50"
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc"
         .item-list-box__textbox
-          %h3.item-list-box__textbox__name
+          %h4.item-list-box__textbox__name
             商品の名前
           .item-list-box__textbox__num
             .item-list-box__textbox__num__price
               ¥1,400
             .item-list-box__textbox__num__heart
+              %i.far.fa-heart
+                %span 2
+  .otheritem
+    %h4.otheritem__head
+      =link_to "" "レディース その他の商品"
+    .other-content
+      %section.other-content__box
+        = link_to ""
+        %figure.other-box
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+        .othertext
+          %h5.othertext__name
+            商品の名前
+          .othertext__num
+            .othertext__num__price
+              ¥1,500
+            .othertext__num__heart
+              %i.far.fa-heart
+                %span 2
+    
+      %section.other-content__box
+        = link_to ""
+        %figure.other-box
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+        .othertext
+          %h5.othertext__name
+            商品の名前
+          .othertext__num
+            .othertext__num__price
+              ¥1,500
+            .othertext__num__heart
+              %i.far.fa-heart
+                %span 2
+    
+      %section.other-content__box
+        = link_to ""
+        %figure.other-box
+          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+        .othertext
+          %h5.othertext__name
+            商品の名前
+          .othertext__num
+            .othertext__num__price
+              ¥1,500
+            .othertext__num__heart
               %i.far.fa-heart
                 %span 2
 
