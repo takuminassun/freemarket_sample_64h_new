@@ -1,6 +1,7 @@
 .listing__wrapper
   .listing__header
-    merucari
+    .listing__header-logo
+      = image_tag src="/images/fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
   .listing__contents
     %form{:action => "#", :method => "post"}
     .listing__contents__info
@@ -10,8 +11,9 @@
         %h3 出品画像
       %p 最大10枚までアップロードできます
       .listing__contents__image__img
-        ドラッグアンドドロップ
-        またはクリックしてファイルをアップロード
+        .listing__contents__image__img__text
+          %h1 ドラッグアンドドロップ
+          %h1 またはクリックしてファイルをアップロード
     .listing__contents__name
       .group
         %label 商品名 
@@ -28,13 +30,32 @@
           %label カテゴリー
           .select
             %select{:class => "status", :name => "prefecture"}
-              %option{:hidden => "", :value => ""} ---
+              %option{:value => "category-1"} ---
+              %option{:value => "category-2"} レディース
+              %option{:value => "category-3"} メンズ
+              %option{:value => "category-4"} ベビー・キッズ
+              %option{:value => "category-5"} インテリア・住まい・小物
+              %option{:value => "category-6"} 本・音楽・ゲーム
+              %option{:value => "category-7"} おもちゃ・ホビー・グッズ
+              %option{:value => "category-8"} コスメ・香水・美容
+              %option{:value => "category-9"} 家電・スマホ・カメラ
+              %option{:value => "category-10"} スポーツ・レジャー
+              %option{:value => "category-11"} ハンドメイド
+              %option{:value => "category-12"} チケット
+              %option{:value => "category-13"} 自転車・オートバイ
+              %option{:value => "category-14"} その他
             %br/
         .group
           %label 商品の状態
           .select
             %select{:class => "status", :name => "prefecture"}
-              %option{:hidden => "", :value => ""} ---
+              %option{:value => "status-1"} ---
+              %option{:value => "status-2"} 新品、未使用
+              %option{:value => "status-3"} 未使用に近い
+              %option{:value => "status-4"} 目立った傷や汚れなし
+              %option{:value => "status-5"} やや傷や汚れあり
+              %option{:value => "status-6"} 傷や汚れあり
+              %option{:value => "status-7"} 全体的に状態が悪い
     .listing__contents__deliver
       %h3 配送について
       .form-box
@@ -42,19 +63,24 @@
           %label 配送料の負担
           .select
             %select{:class => "status", :name => "prefecture"}
-              %option{:hidden => "", :value => ""} ---
+              %option{:value => "fee-"} ---
+              %option{:value => "fee-"} 送料込み（出品者負担）
+              %option{:value => "fee-"} 着払い（購入者負担）
             %br/
         .group
           %label 発送元の地域
           .select
             %select{:class => "status", :name => "prefecture"}
-              %option{:hidden => "", :value => ""} ---
+              %option{:value => ""} ---
             %br/
         .group
           %label 発送までの日数
           .select
             %select{:class => "status", :name => "prefecture"}
-              %option{:hidden => "", :value => ""} ---
+              %option{:value => "day-1"} ---
+              %option{:value => "day-2"} 1~2日で発送
+              %option{:value => "day-3"} 2~3日で発送
+              %option{:value => "day-4"} 4~7日で発送
     .listing__contents__price
       %h3 販売価格(300~9,999,999)
       %ul.price-box
@@ -96,7 +122,11 @@
         =link_to 'もどる', "#"
       
   .listing__footer
-    プライバシーポリシー
-    メルカリ利用規約
-    特定商取引に関する表記
-    merucari
+    .nav
+      %ul
+        %li プライバシーポリシー
+        %li メルカリ利用規約
+        %li 特定商取引に関する表記
+    .listing__footer__logo
+      = image_tag src="/images/logo_gray.svg", alt:"merukari"
+    %p © Mercari, Inc.
