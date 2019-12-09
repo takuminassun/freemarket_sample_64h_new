@@ -1,5 +1,7 @@
 .warpper { 
   display: block;
+  background-color: hotpink;
+  height: 100%;
 }
 a {
   color: #0098e8;
@@ -7,19 +9,19 @@ a {
 }
 .item-main{
   background-color: rgb(248, 245, 245);
+  padding-top: 40px;
+  height: calc(100%);
+  box-sizing: border-box;
   .itemcontent {
-    //background-color: blue;
     padding: 24px 40px 40px;
     width: 620px;
-    margin: 40px auto 40px;
+    margin: 0 auto 40px;
     background-color: #ffffff;
-    //margin: 40px 39.5px 0 39.5px;
 
     .itemname {
       font-size: 24px;
       text-align: center;
       line-height: 1.4;
-      // 文の折り返し
       word-wrap: break-word;
     }
 
@@ -28,7 +30,6 @@ a {
       height: 420px;
       margin: 16px 0 0;
       background-color: #ffffff;
-      //background-color: coral;
 
       .itemimage {
         float: left;
@@ -40,7 +41,6 @@ a {
           position: relative;
           &__main {
             position: relative;
-          // 指定の大きさ以上なら非表示
             overflow: hidden;
           }
           &__sub {
@@ -53,12 +53,10 @@ a {
         max-width: 300px;
         height: 420px;
         margin: 0 auto;
-        //background-color: chartreuse;
         
           tr{
             th{
               width: 39%;
-              //display: inline-block;
               background-color: #ffffff;
               font-weight: 400;
               text-align: left;
@@ -84,13 +82,10 @@ a {
         }
         &__postage{
           font-size: 16px;
-          // 強調するため
-          //display: inline-block;
         }
       }
       .pricebtn {
         display: inline-block;
-        //min-width: 768px;
         font-size: 24px;
         line-height: 60px;
         margin-top: 16px;
@@ -111,12 +106,9 @@ a {
         font-size: 14px;
       }
       .itemtext {
-        //background-color: rgb(90, 26, 81);
         padding: 32px 0 0;
         line-height: 1.5;
-
           &__bb{
-            // 自動折り返し
             //white-space: nowrap;
           }
       }
