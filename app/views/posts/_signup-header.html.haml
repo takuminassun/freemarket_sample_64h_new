@@ -22,18 +22,9 @@
             ブランドから探す
           -# この中にブランド一覧
       .menu__right
-        .noticebox
-          .noticebox__image
-            %i.far.fa-bell
-            お知らせ
-        .todolistbox
-          .todolistbox__image
-            %i.fas.fa-check
-            = link_to  new_user_session_path do
-              やることリスト
-        .mypage
-          .mypage__box
-            = image_tag src="/images/mypage.jpg/",alt:"",class:"face",width: "32"
-            マイページ
+        .menu__right__signup
+          新規会員登録
+        .menu__right__login
+          ログイン
 
 
