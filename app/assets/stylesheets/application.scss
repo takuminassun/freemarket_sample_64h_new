@@ -1,8 +1,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
-@import "./posts";
-@import "./contents";
-@import "./signup-header";
-@import "./top-header";
-@import "./footer";
+//@import "posts";
+@import "./mypage";
+@import "./side-list";
+@import "slick/slick";
+@import "slick/slick-theme";
+@import "top/contents";
+@import "top/header";
+@import "top/footer";
+@import "top/carousel";

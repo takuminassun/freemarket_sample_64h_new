@@ -1,75 +1,52 @@
 .header {
-  // ブロック要素に
   display:  block;
   background-color: rgb(255, 255, 255);
-  // 影
   box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
-  // 相対位置
   position: relative;
-  
-
   &__all {
-    //background-color: rgb(124, 71, 71);
     width: 765px;
-    // 中央よせ
     margin: 0 auto;
     padding: 8px 0px 0px;
-
     .headerform {
       display: flex;
-      //justify-content: space-between;
       .mercarilogo{
-        // 縦揃えてくれる
         -webkit-box-align: center;
         display: flex;
         height: 40px;
         margin-right: 45px;
         align-items: center;
         padding: 0 0 0 10px;
-        .mercaribox{
-          // hamlの方で調整してます
-        }
       }
       .form {
-        // フォームの横幅
         width: 100%;
         position: relative;
         margin-right: 50px;
-
         .input-default {
           background-color: #f5f5f5;
           font-size: 16px;
           height: 40px;
           position: relative;
-          // 行の高さ
           line-height: 1.4em;
           width: 100%;
-          // 角丸める
           border-radius: 4px;
           border-width: 1px;
           border-style: solid;
           border-color: rgb(204,204,204);
           border-image: initial;
           padding: 0px 50px 0px 10px;
-          // プラットフォームにおける標準的なUIの外観にするをなしに
           -webkit-appearance: none;
-          // 枠青くなるアニメーション
           transition: all 0.3s ease-out 0s;
-
         }
         &__btn {
-          // 透明
           background-color: transparent;
           position: absolute;
-          // マウスタッチ
           cursor: pointer;
           height: 40px;
           width: 40px;
           top: 0;
           right: 0;
           text-align: center;
-          line-height: 40px;
-            
+          line-height: 40px;           
           .fa-search {
             max-width: 100%;
             max-height: 100%;
@@ -81,7 +58,6 @@
         }
       }
     }
-
   .menu {
     display: flex;
     margin-top: 8px;
@@ -99,22 +75,14 @@
           font-size: 14px;
           font-weight: 600;
           line-height: 36px;
-          // 半角スペース表示方法　改行を半角スペースとして
-          // ソース中のホワイトスペースを無視
-          // ソース中の改行を1つの半角スペースとして表示
-          // ボックスサイズが指定されている場合にも自動改行しない
           white-space: nowrap;
-          
-
           .fa-list {
-            // 最大決める
             max-width: 100%;
             max-height: 100%;
             color: rgb(234, 53, 45);
             height: 12px;
             margin-right: 4px;
           }
-
         }
       }
       .brandbox {
@@ -148,28 +116,20 @@
         padding: 0px 7px;;
         &__image {
           display: flex;
-          // -webkit- クローム太陽の何か
-          // 前後に揃える
           -webkit-box-align: center;
           align-items: center;
           font-size: 14px;
           height: 32px;
           cursor: pointer;
-          // 青のやつ
           transition: all 0.3s ease-out 0s;
-          // 要素を〜秒間拡大縮小
           transform: scale(1);
-          
-
           .fa-bell {
             max-width: 100%;
             max-height: 100%;
             height: auto;
             color: rgb(204,204,204);
             margin-right: 10px;
-            //width: 17px;
           }
-
         }
       }
       .todolistbox {
@@ -191,30 +151,26 @@
             height: auto;
             color: rgb(204,204,204);
             margin-right: 10px;
-            //width: 17px;
           }
-
         }
       }
       .mypage {
         height: 44px;
         position: relative;
         padding: 0px 7px;;
-          &__box {
-            display: flex;
-            -webkit-box-align: center;
-            align-items: center;
-            font-size: 14px;
-            height: 32px;
-            cursor: pointer;
-            transition: all 0.3s ease-out 0s;
-            transform: scale(1);
-            .face {
-              margin-right: 10px;
-              // 角丸
-              border-radius: 50%;
-              // ボックスに収まらない部分非表示
-              overflow: hidden;
+        &__box {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          font-size: 14px;
+          height: 32px;
+          cursor: pointer;
+          transition: all 0.3s ease-out 0s;
+          transform: scale(1);
+          .face {
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
             }
           }
         }
