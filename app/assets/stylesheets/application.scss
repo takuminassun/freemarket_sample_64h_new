@@ -1,6 +1,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "reset";
+@import "./reset";
 @import "./colors";
 @import "posts";
 @import "./contents";
@@ -10,3 +10,10 @@
 @import "./new-second.scss";
 @import "./new-third.scss";
 @import "./new-forth.scss";
+@import "devise/layouts";
+@import "devise/new-first";
+@import "./new-second.scss";
+@import "slick/slick";
+@import "slick/slick-theme";
+@import "top/contents";
+@import "top/carousel";
