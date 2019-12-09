@@ -54,7 +54,6 @@
   margin-top:0;
   padding-top:0;
   top:0;
-  z-index:-1;
  }
  .title{
   z-index:10;
@@ -66,12 +65,12 @@
   left:100px;
   } 
   .subtitle{
-    z-index:10;
-    font-size:16px;
-    font-family: Arial;
-    position: absolute;
-    top:180px;
-    left:100px; 
+  z-index:10;
+  font-size:16px;
+  font-family: Arial;
+  position: absolute;
+  top:180px;
+  left:100px; 
   } 
  a { outline: none; 
     overflow : hidden;
