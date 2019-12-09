@@ -1,0 +1,180 @@
+.header {
+  display:  block;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
+  position: relative;
+  &__all {
+    width: 765px;
+    margin: 0 auto;
+    padding: 8px 0px 0px;
+    .headerform {
+      display: flex;
+      .mercarilogo{
+        -webkit-box-align: center;
+        display: flex;
+        height: 40px;
+        margin-right: 45px;
+        align-items: center;
+        padding: 0 0 0 10px;
+      }
+      .form {
+        width: 100%;
+        position: relative;
+        margin-right: 50px;
+        .input-default {
+          background-color: #f5f5f5;
+          font-size: 16px;
+          height: 40px;
+          position: relative;
+          line-height: 1.4em;
+          width: 100%;
+          border-radius: 4px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(204,204,204);
+          border-image: initial;
+          padding: 0px 50px 0px 10px;
+          -webkit-appearance: none;
+          transition: all 0.3s ease-out 0s;
+        }
+        &__btn {
+          background-color: transparent;
+          position: absolute;
+          cursor: pointer;
+          height: 40px;
+          width: 40px;
+          top: 0;
+          right: 0;
+          text-align: center;
+          line-height: 40px;           
+          .fa-search {
+            max-width: 100%;
+            max-height: 100%;
+            color: rgb(34,34,34);
+            height: 14px;
+            width: 14px;
+            margin-top:2px;
+          }
+        }
+      }
+    }
+  .menu {
+    display: flex;
+    margin-top: 8px;
+    justify-content: space-between;
+    &__left {
+      display: flex;
+      margin-left: 30px;
+      .categorybox{
+        cursor: pointer;
+        height: 44px;
+        position: relative;
+        padding: 0px 10px;
+        &__image {
+          display: block;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 36px;
+          white-space: nowrap;
+          .fa-list {
+            max-width: 100%;
+            max-height: 100%;
+            color: rgb(234, 53, 45);
+            height: 12px;
+            margin-right: 4px;
+          }
+        }
+      }
+      .brandbox {
+        cursor: pointer;
+        height: 44px;
+        position: relative;
+        padding: 0px 10px;
+        &__image {
+          display: block;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 36px;
+          white-space: nowrap;
+          .fa-tags {
+            max-width: 100%;
+            max-height: 100%;
+            color: rgb(234, 53, 45);
+            height: 12px;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+    &__right {
+      display: flex;
+      position: relative;
+      margin-right: 30px;
+      .noticebox {
+        height: 44px;
+        position: relative;
+        padding: 0px 7px;;
+        &__image {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          font-size: 14px;
+          height: 32px;
+          cursor: pointer;
+          transition: all 0.3s ease-out 0s;
+          transform: scale(1);
+          .fa-bell {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            color: rgb(204,204,204);
+            margin-right: 10px;
+          }
+        }
+      }
+      .todolistbox {
+        height: 44px;
+        position: relative;
+        padding: 0px 7px;;
+        &__image {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          font-size: 14px;
+          height: 32px;
+          cursor: pointer;
+          transition: all 0.3s ease-out 0s;
+          transform: scale(1);
+          .fa-check{
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            color: rgb(204,204,204);
+            margin-right: 10px;
+          }
+        }
+      }
+      .mypage {
+        height: 44px;
+        position: relative;
+        padding: 0px 7px;;
+        &__box {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          font-size: 14px;
+          height: 32px;
+          cursor: pointer;
+          transition: all 0.3s ease-out 0s;
+          transform: scale(1);
+          .face {
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
