@@ -1,0 +1,38 @@
+.side-logout{
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: block;
+
+  &__contents{
+    width: 700px;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    font-family: Arial, 游ゴシック体;
+
+    &__logout{
+      width: 572px;
+      height: 50px;
+      padding: 64px;
+      background-color: white;
+
+      &__box{
+        width: 320px;
+        height: 50px;
+        margin: 0 auto;
+      
+        .logout-btn{
+          width: 320px;
+          height: 50px;
+          margin: 0 auto;
+          background-color: #e21d23;
+          color: white;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
