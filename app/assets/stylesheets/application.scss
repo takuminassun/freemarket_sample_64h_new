@@ -1,7 +1,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
-//@import "posts";
+// @import "posts";
 @import "./mypage";
 @import "./side-list";
 @import "slick/slick";
@@ -11,4 +11,5 @@
 @import "top/footer";
 @import "top/carousel";
 @import "purchase.scss"
-
+@import "./profile";
+@import "./product-listing";
