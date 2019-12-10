@@ -1,12 +1,14 @@
-
-= render "devise/layouts/header"
+.single
+  .single__header
+    .single__header-logo
+      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
 .container
   .contents
-    .content__header
+    .content-header
       %h1 新規会員登録
-    .content-form
-      %button.mail-signup
-        %i.fas.fa-envelope.mail-icon
+    .content__form-box1
+      %button.mail__signup
+        %i.fas.fa-envelope.mail__icon
         %p メールアドレスで登録する
       %button.facebook-signup
         = icon('fab', 'facebook-square',class: "facebook-icon")
