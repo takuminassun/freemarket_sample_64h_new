@@ -1,3 +1,11 @@
+.required{
+  background: #ea352d;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
 .listing__wrapper{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   color: rgb(51, 51,51);
@@ -34,9 +42,18 @@
       border-top: 1px solid #eee;
       
       &__head{
+        display: flex;
         h3{
           font-size: 16px;
           font-weight: bold;
+        }
+        .required-1{
+          background: #ea352d;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          padding: 2px 4px;
+          margin-left: 8px;
         }
       }
       p{
@@ -112,6 +129,9 @@
           .select{
             margin-top: 8px;
             width: 400px;
+            #prefecture_id{
+              width: 100%;
+            }
             .status{
               width: 100%;
               height: 48px;
@@ -177,7 +197,16 @@
               font-size: 15px;
               font-weight: 600;
               line-height: 50px;
+              .required-2{
+                background: #ea352d;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                padding: 2px 4px;
+                margin-left: 8px;
+              }
             }
+
             &__right{
               width: 50%;
               display: flex;
