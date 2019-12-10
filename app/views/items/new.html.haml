@@ -23,15 +23,21 @@
       .listing__contents__image
         .listing__contents__image__head
           %h3 出品画像
-          %span.required-1 必須
-        %p 最大10枚までアップロードできます
-        .listing__contents__image__img
-          .listing__contents__image__img__text
-            =f.fields_for :image do |i|
-              =i.file_field :name, multiple: :true
-              -# =i.file_field :name, multiple: :true
-                %h1 ドラッグアンドドロップ
-                %h1 またはクリックしてファイルをアップロード
+          %span.required-1 
+            必須
+          =f.fields_for :image do |i|
+            .dropzone-container
+              #preview
+              .dropzone-area
+                =i.label :name, class: "dropzone-box", for: "uploader-image" do
+                  .input_area
+                    =i.file_field :name, multiple: true, name: 'product_images[image][]', class: "upload-image", 'data-image': 0
+                  %p ここをクリックしてください
+              #preview
+              .dropzone-area2
+                =i.label :name, class: "dropzone-box", for: "uploader-image" do
+                  %p ここをクリックしてください
+              
 
       .listing__contents__name
         .group
