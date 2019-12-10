@@ -1,19 +1,62 @@
-.single
-  .single__header
-    .single__header-logo
-      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
-.container
-  .contents
-    .content-header
-      %h1 新規会員登録
-    .content__form-box1
-      %button.mail__signup
-        %i.fas.fa-envelope.mail__icon
-        %p メールアドレスで登録する
-      %button.facebook-signup
-        = icon('fab', 'facebook-square',class: "facebook-icon")
-        %p Facebookで登録する
-      %button.google-signup
-        %i.fab.fa-google.google-icon
-        %p Googleで登録する
-= render "devise/layouts/footer"
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, autocomplete: "first_name"
+
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name, autocomplete: "last_name"
+
+  .field
+    = f.label :first_name_kana
+    %br/
+    = f.text_field :first_name_kana, autocomplete: "first_name_kana"
+
+  .field
+    = f.label :last_name_kana
+    %br/
+    = f.text_field :last_name_kana, autocomplete: "last_name_kana"
+  
+  .field
+    = f.label :born_year
+    %br
+    = f.text_field :born_year, autocomplete: "born_year"
+
+  .field
+    = f.label :born_month
+    %br
+    = f.text_field :born_month, autocomplete: "born_month"
+
+  .field
+    = f.label :born_day
+    %br
+    = f.text_field :born_day, autocomplete: "born_day"
+
+  .field
+    = f.label :phone_number
+    %br
+    = f.text_field :phone_number, autocomplete: "phone_number"
+  .actions
+    = f.submit "Sign up"
