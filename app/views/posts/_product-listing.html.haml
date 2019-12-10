@@ -17,10 +17,10 @@
             %h1 またはクリックしてファイルをアップロード
       .listing__contents__name
         .group
-          = f.label 商品名 
+          %label 商品名 
           %span.required 必須
           %br/
-          %input{class: "item", name: "name", placeholder: "商品名（必須40文字まで）" }
+          = f.text_field :name, class: "name" ,placeholder: "商品名（必須40文字まで)" 
         .group
           %label 商品の説明
           %span.required 必須

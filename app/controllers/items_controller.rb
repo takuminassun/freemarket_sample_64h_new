@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  def index
+  end
+
   def new 
     @item = Item.new
   end
@@ -9,5 +12,6 @@ class ItemsController < ApplicationController
       redirect_to "/"
     else
       render "new"
+    end
   end
 end
