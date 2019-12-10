@@ -100,9 +100,6 @@
           position: relative;
           padding: 0px 10px;
 
-          &:hover{
-            color: #2086ea;
-          }
 
           &__image {
             display: block;
@@ -119,6 +116,10 @@
             }
             a{
               color: black;
+
+              &:hover{
+                color: #2086ea;
+              }
             }
           }
         }
