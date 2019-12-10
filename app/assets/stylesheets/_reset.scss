@@ -1,4 +1,5 @@
 /*
+
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
@@ -38,6 +39,7 @@ p,
 blockquote,
 th,
 td {
+
   margin:0;
   padding:0;
 }
