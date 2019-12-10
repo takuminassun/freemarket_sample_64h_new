@@ -1,7 +1,7 @@
 .item-main
   .itemcontent
     .itemname
-      %h1 伝説のバッグ
+      %h1 @item.name
 
     .maincontent
       .itemimage
@@ -48,7 +48,7 @@
             %td 2~3日で発送
     .price
       %span.price__item
-        仮¥2,000,000
+        @item.price
       %span.price__tax
         (税込)
       %span.price__postage
@@ -60,7 +60,7 @@
       %span アプリで購入
     .itemtext
       .itemtext__bb
-        美品
+        @item.美品
         コーチショルダーバッグ(2way)
 
         未使用に近く綺麗な状態です。
