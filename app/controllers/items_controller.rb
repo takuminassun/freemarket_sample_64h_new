@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
+    @item.images.build
   end
 
   def create
@@ -13,5 +14,11 @@ class ItemsController < ApplicationController
     else
       render "new"
     end
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :category_id, :brand_id, :price, :status, :description, :shipping_burden, :shipping_method, :shipping_date, :prefecture_id)
   end
 end
