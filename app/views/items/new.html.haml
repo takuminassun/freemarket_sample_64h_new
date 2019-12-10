@@ -23,8 +23,11 @@
       .listing__contents__image
         .listing__contents__image__head
           %h3 出品画像
-          %span.required-1 
+          %span.required-1
             必須
+        .listing__contents__image__text
+          最大10枚までアップロードできます
+        .image__box
           =f.fields_for :image do |i|
             .dropzone-container
               #preview
