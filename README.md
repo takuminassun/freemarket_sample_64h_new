@@ -10,9 +10,10 @@
   |user_id|integer|null: false, foreign_key: true|
   |category_id|integer|null: false, foreign_key: true|
   |brand_id|integer|null:false, foreign_key: true|
+  |prefecture_id|integer|null: false, foreign_key: true|
+  |image_id|integer|null: false, foreign_key: true|
   |price|integer|null: false|
   |status|integer|null: false|
-  |prefecture_id|integer|null: false|
   |description|text|null: false|
   |shipping_burden|integer|null: false|
   |shipping_method|integer|null: false|
@@ -70,7 +71,7 @@
 - belongs_to :item
 
 
-##userテーブル
+### userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, uniqueness: true|
