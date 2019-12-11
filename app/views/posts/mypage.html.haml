@@ -1,3 +1,4 @@
+=render "posts/header"
 //マイページ
 .side-mypage
   =render "side-list"
@@ -75,4 +76,4 @@
           = image_tag src="/images/logo_gray.svg/",alt:"mercari",width: "100",height:"100",class: "mercari-gray"
         .mypage-log__transaction__not-found
           取引中の商品がありません
-      
+=render 'posts/footer'
