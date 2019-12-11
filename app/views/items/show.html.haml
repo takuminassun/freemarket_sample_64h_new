@@ -9,7 +9,7 @@
         .itemimage__box
         - @item.images.each do|image|
           .itemimage__box__main
-          = image_tag image.name.to_s, alt:"",width: "300"
+          = image_tag image.name
           .itemimage__box__sub
           = image_tag src="/images/mypage.jpg/",alt:"",width: "60"
       .itemdate
