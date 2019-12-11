@@ -3,9 +3,9 @@
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
   position: relative;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   &__all {
-    width: 765px;
-    margin: 0 auto;
+    margin: 0 150px;
     padding: 8px 0px 0px;
     .headerform {
       display: flex;
@@ -13,7 +13,7 @@
         -webkit-box-align: center;
         display: flex;
         height: 40px;
-        margin-right: 45px;
+        margin: 0 30px 0 20px;
         align-items: center;
         padding: 0 0 0 10px;
       }
@@ -58,120 +58,247 @@
         }
       }
     }
-  .menu {
-    display: flex;
-    margin-top: 8px;
-    justify-content: space-between;
-    &__left {
+    .menu {
       display: flex;
-      margin-left: 30px;
-      .categorybox{
-        cursor: pointer;
-        height: 44px;
-        position: relative;
-        padding: 0px 10px;
-        &__image {
-          display: block;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 36px;
-          white-space: nowrap;
-          .fa-list {
-            max-width: 100%;
-            max-height: 100%;
-            color: rgb(234, 53, 45);
-            height: 12px;
-            margin-right: 4px;
-          }
-        }
-      }
-      .brandbox {
-        cursor: pointer;
-        height: 44px;
-        position: relative;
-        padding: 0px 10px;
-        &__image {
-          display: block;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 36px;
-          white-space: nowrap;
-          .fa-tags {
-            max-width: 100%;
-            max-height: 100%;
-            color: rgb(234, 53, 45);
-            height: 12px;
-            margin-right: 4px;
-          }
-        }
-      }
-    }
-    &__right {
-      display: flex;
-      position: relative;
-      margin-right: 30px;
-      .noticebox {
-        height: 44px;
-        position: relative;
-        padding: 0px 7px;;
-        &__image {
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          font-size: 14px;
-          height: 32px;
+      margin-top: 8px;
+      justify-content: space-between;
+      &__left {
+        display: flex;
+        margin-left: 30px;
+        .categorybox{
           cursor: pointer;
-          transition: all 0.3s ease-out 0s;
-          transform: scale(1);
-          .fa-bell {
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            color: rgb(204,204,204);
-            margin-right: 10px;
+          height: 44px;
+          position: relative;
+          padding: 0px 10px;
+
+          &:hover{
+            color: #2086ea;
           }
-        }
-      }
-      .todolistbox {
-        height: 44px;
-        position: relative;
-        padding: 0px 7px;;
-        &__image {
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          font-size: 14px;
-          height: 32px;
-          cursor: pointer;
-          transition: all 0.3s ease-out 0s;
-          transform: scale(1);
-          .fa-check{
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            color: rgb(204,204,204);
-            margin-right: 10px;
-          }
-        }
-      }
-      .mypage {
-        height: 44px;
-        position: relative;
-        padding: 0px 7px;;
-        &__box {
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          font-size: 14px;
-          height: 32px;
-          cursor: pointer;
-          transition: all 0.3s ease-out 0s;
-          transform: scale(1);
-          .face {
-            margin-right: 10px;
-            border-radius: 50%;
-            overflow: hidden;
+
+          &__image {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+            .fa-list {
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
             }
+            a{
+              color: black;
+            }
+          }
+        }
+        .brandbox {
+          cursor: pointer;
+          height: 44px;
+          position: relative;
+          padding: 0px 10px;
+
+          &:hover{
+            color: #2086ea;
+          }
+
+          &__image {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+            .fa-tags {
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+            }
+            a{
+              color: black;
+            }
+          }
+        }
+      }
+      &__right {
+        display: flex;
+        position: relative;
+        margin-right: 30px;
+        .good-box{
+          height: 44px;
+          position: relative;
+          margin-right: 20px;
+
+          &__image{
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 14px;
+            height: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease-out 0s;
+            transform: scale(1);
+
+            a{
+              text-decoration: none;
+              color: #262626;
+
+              &:hover{
+                color: #2086ea;
+              }
+            }
+
+            .fa-heart{
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+              color: rgb(204,204,204);
+              margin-right: 10px;
+            }
+          }
+        }
+        .noticebox {
+          height: 44px;
+          position: relative;
+          margin-right: 20px;
+
+          &__image {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 14px;
+            height: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease-out 0s;
+            transform: scale(1);
+
+            a{
+              text-decoration: none;
+              color: #262626;
+
+              &:hover{
+                color: #2086ea;
+              }
+            }
+            .fa-bell {
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+              color: rgb(204,204,204);
+              margin-right: 10px;
+            }
+          }
+        }
+        .todolistbox {
+          height: 44px;
+          position: relative;
+          margin-right: 20px;
+
+          &__image {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 14px;
+            height: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease-out 0s;
+            transform: scale(1);
+
+            a{
+
+              &:hover{
+                color: #2086ea;
+              }
+            }
+
+            .fa-check{
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+              color: rgb(204,204,204);
+              margin-right: 10px;
+            }
+            a{
+              text-decoration: none;
+              color: #262626;
+            }
+          }
+        }
+        .mypage {
+          height: 44px;
+          position: relative;
+          margin-right: 20px;
+
+          &__box {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 14px;
+            height: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease-out 0s;
+            transform: scale(1);
+
+            
+
+            a{
+              text-decoration: none;
+              color: #262626;
+
+              &:hover{
+                color: #2086ea;
+              }
+            }
+
+            .face {
+              margin-right: 10px;
+              border-radius: 50%;
+              overflow: hidden;
+              float: left;
+              }
+            h2{
+              line-height: 16px;
+              float: left;
+              margin-top: 7px;
+            }
+            }
+          }
+        .signup-box{
+          width: 120px;
+          height: 37px;
+          color: white;
+          background-color: red;
+          border-radius: 10px;
+          text-align: center;
+          line-height: 37px;
+          margin-right: 15px;
+          cursor: pointer;
+
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
+        .login-box{
+          width: 85px;
+          height: 37px;
+          color: rgb(13, 174, 238);
+          background-color: white;
+          border-radius: 10px;
+          text-align: center;
+          line-height: 37px;
+          border: solid 1px #38aef0;
+          cursor: pointer;
+
+          a{
+            text-decoration: none;
+            color: #38aef0;
+          }
+          &:hover{
+            background-color: rgb(34, 181, 218);
+            color: white;
           }
         }
       }
