@@ -96,7 +96,7 @@
 |city|string|null: false|
 |town|string|null: false|
 |building|string||
-|user_id|integer| foreign_key: true|
+|user_id|integer|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
