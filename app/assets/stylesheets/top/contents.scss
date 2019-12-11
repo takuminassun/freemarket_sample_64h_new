@@ -1,6 +1,9 @@
 .wrapper{
   background-color: rgb(240, 240, 240);
   display: block;
+  overflow: hidden;
+  width: 100%;
+  
 
   .exhibit{
     width: 160px;
@@ -84,7 +87,7 @@
         color: rgb(0, 149, 238);
         position: absolute;
         bottom: 0;
-        right: 50px;
+        right: 0;
         cursor: pointer;
       }
     }

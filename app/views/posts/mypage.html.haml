@@ -1,0 +1,80 @@
+.Outline
+  =render "posts/header"
+  //マイページ
+  .side-mypage
+    =render "side-list"
+    .contents
+      .back-image
+        .user
+          = image_tag "mypage.jpg",size:"60x60",class: "user__icon"
+          %h2 バナナ星人
+          .user__number
+            .user__number__box
+              .user__number__box__text
+                評価
+              .user__number__box__count
+                143
+            .user__number__box
+              .user__number__box__text
+                出品数
+              .user__number__box__count
+                63
+                
+      .mypaga-log
+        .mypaga-log__tab
+          .mypaga-log__tab__active
+            お知らせ
+          .mypaga-log__tab__do
+            やることリスト
+        .mypaga-log__content
+          %ul 
+            %li.list
+              .box 
+                .box__image
+                  = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
+                .box__body
+                  .box__body__text
+                    事務局から個別にメッセージ
+                  .box__body__time
+                    %i.fa.fa-clock
+                    %a 3日前
+            %li.list
+              .box 
+                .box__image
+                  = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
+                .box__body
+                  .box__body__text
+                    事務局から個別にメッセージ
+                  .box__body__time
+                    %i.fa.fa-clock
+                    %a 3日前
+            %li.list
+              .box 
+                .box__image
+                  = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
+                .box__body
+                  .box__body__text
+                    事務局から個別にメッセージ
+                  .box__body__time
+                    %i.fa.fa-clock
+                    %a 3日前
+
+
+            %li.show
+              .show__box
+                一覧を見る
+
+      .mypaga-head
+        購入した商品
+      .mypaga-log
+        .mypaga-log__tab
+          .mypaga-log__tab__active
+            取引中
+          .mypaga-log__tab__do
+            過去の取引
+        .mypage-log__transaction
+          .mypage-log__transaction__icon
+            = image_tag src="logo_gray.svg",alt:"mercari",width: "100",height:"100",class: "mercari-gray"
+          .mypage-log__transaction__not-found
+            取引中の商品がありません
+  =render 'posts/footer'
