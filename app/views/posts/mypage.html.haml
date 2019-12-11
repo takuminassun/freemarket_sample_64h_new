@@ -1,10 +1,11 @@
+=render "posts/header"
 //マイページ
 .side-mypage
   =render "side-list"
   .contents
     .back-image
       .user
-        = image_tag "/images/mypage.jpg",size:"60x60",class: "user__icon"
+        = image_tag "mypage.jpg",size:"60x60",class: "user__icon"
         %h2 バナナ星人
         .user__number
           .user__number__box
@@ -29,7 +30,7 @@
           %li.list
             .box 
               .box__image
-                = image_tag src="/images/logo_red.svg/",alt:"mercari",width: "36",height:"36",class: "mercari"
+                = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
               .box__body
                 .box__body__text
                   事務局から個別にメッセージ
@@ -39,7 +40,7 @@
           %li.list
             .box 
               .box__image
-                = image_tag src="/images/logo_red.svg/",alt:"mercari",width: "36",height:"36",class: "mercari"
+                = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
               .box__body
                 .box__body__text
                   事務局から個別にメッセージ
@@ -49,7 +50,7 @@
           %li.list
             .box 
               .box__image
-                = image_tag src="/images/logo_red.svg/",alt:"mercari",width: "36",height:"36",class: "mercari"
+                = image_tag src="logo_red.svg",alt:"mercari",width: "36",height:"36",class: "mercari"
               .box__body
                 .box__body__text
                   事務局から個別にメッセージ
@@ -75,4 +76,4 @@
           = image_tag src="/images/logo_gray.svg/",alt:"mercari",width: "100",height:"100",class: "mercari-gray"
         .mypage-log__transaction__not-found
           取引中の商品がありません
-      
+=render 'posts/footer'
