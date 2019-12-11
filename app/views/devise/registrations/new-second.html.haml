@@ -4,12 +4,13 @@
     .content-header
       %h1 電話番号の確認
     .content-form
-      .content-form__phone-box
-        %p 携帯電話の番号
-        %input{placeholder: "携帯電話の番号の入力"}
-      %p.authenticate 本人の確認のため、携帯電話のSNS（ショートメッセージサービス）を利用して認証を行います
-      %input.submit{type:"submit", value:"SMSを送信"}
-      %p.authenticate　※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-      .content-form__confirmation
-        %a 電話番号の確認が必要な理由＞
+      = form_with(model: @user, url: registration_path(resource_name)) do |f|
+        .content-form__phone-box
+          %p 携帯電話の番号
+          = f.phone_field :phone_number, class: "input", autocomplete: "phone_number"
+        %p.authenticate 本人の確認のため、携帯電話のSNS（ショートメッセージサービス）を利用して認証を行います
+        = f.submit "SMSを送信", class: "submit"
+        %p.authenticate　※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        .content-form__confirmation
+          %a 電話番号の確認が必要な理由＞
 = render "devise/layouts/footer"
