@@ -24,7 +24,7 @@
 - belongs_to  :user
 - belongs_to  :brand
 - belongs_to :category
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - has_many: comments
 - has_many: images
 
@@ -98,10 +98,12 @@
 |town|string|null: false|
 |building|string||
 |user_id|integer| foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 
 
 
