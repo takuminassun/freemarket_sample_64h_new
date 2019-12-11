@@ -11,7 +11,6 @@
   |category_id|integer|null: false, foreign_key: true|
   |brand_id|integer|null:false, foreign_key: true|
   |prefecture_id|integer|null: false, foreign_key: true|
-  |image_id|integer|null: false, foreign_key: true|
   |price|integer|null: false|
   |status|integer|null: false|
   |description|text|null: false|
