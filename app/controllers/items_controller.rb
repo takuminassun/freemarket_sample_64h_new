@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     if @item.save
       redirect_to "/"
     else
@@ -19,6 +20,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category_id, :brand_id, :price, :status, :description, :shipping_burden, :shipping_method, :shipping_date, :prefecture_id)
+    params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 end
