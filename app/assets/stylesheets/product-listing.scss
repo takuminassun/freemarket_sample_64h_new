@@ -67,11 +67,25 @@
         height: 162px;
         background-color: rgb(245, 245, 245);
         margin-top: 16px;
+        border: dashed 1px #ccc;
         .dropzone-container{
           width: 538px;
           height: 80px;
-          padding: 40px;
-          border: dashed 1px #ccc;
+          #preview{
+            width: 100%;
+            height: 50px;
+            .img_view{
+              width: 114px;
+              height: 116px;
+              display: inline;
+              img{
+                padding: 20px 0;
+                height: 72.33px;
+                width: 114px;
+                display: flex;
+              }
+            }
+          }
         }
       }
       
