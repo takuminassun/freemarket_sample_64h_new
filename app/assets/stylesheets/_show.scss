@@ -50,17 +50,25 @@ a {
         height: 420px;
         margin: 0 auto;
           tr{
+            border-style: solid;
+            border-width: 1px;
+            border-collapse: collapse;
+            border-spacing: 2px;
+            border-color: #e7dcbd;
             th{
               width: 39%;
-              background-color: #ffffff;
+              background-color: #fafafa;
               font-weight: 400;
               text-align: left;
               padding: 8px;
               border: 1px;
+              border-style: solid;
+              border-color: #e7dcbd;
             }
             td{
               width: 61%;
               background-color: #ffffff;
+              padding: 8px;
             }
           }
         }
