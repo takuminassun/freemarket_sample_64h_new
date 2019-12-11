@@ -1,14 +1,15 @@
 .item-main
   .itemcontent
     .itemname
-      %h1 伝説のバッグ
+      %h2
 
     .maincontent
       .itemimage
         -# 画像は仮置き
         .itemimage__box
+        - @item.images.each do|image|
           .itemimage__box__main
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "300"
+          = image_tag image.name.to_s, alt:"",width: "300"
           .itemimage__box__sub
           = image_tag src="/images/mypage.jpg/",alt:"",width: "60"
       .itemdate
@@ -48,7 +49,7 @@
             %td 2~3日で発送
     .price
       %span.price__item
-        仮¥2,000,000
+        仮¥2,000,000to_s(:delimited)
       %span.price__tax
         (税込)
       %span.price__postage
