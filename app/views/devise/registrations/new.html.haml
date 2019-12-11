@@ -3,7 +3,7 @@
   .contents
     .content-header
       %h1 発送元・お届け先住所入力
-    = form_with(model: @user, url: registration_path(resource_name)) do |f|
+    = form_with(model: @adress, url: registration_path(resource_name)) do |f|
       .content-form
         %label.text お名前
         %span.required 必須
