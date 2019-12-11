@@ -70,7 +70,7 @@
 - belongs_to :item
 
 
-##userテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, uniqueness: true|

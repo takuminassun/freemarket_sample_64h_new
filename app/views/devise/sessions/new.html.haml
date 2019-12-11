@@ -1,23 +1,28 @@
 
-= render "devise/layouts/header"
-.container
-  .content
-    %h2 Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "current-password"
-      - if devise_mapping.rememberable?
-        .field
-          = f.check_box :remember_me
-          = f.label :remember_me
-      .actions
-        = f.submit "Log in"
-    = render "devise/shared/links"
+//= render "devise/layouts/header"
+.single
+  .single__header
+    .single__header-logo
+      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
+  .container
+    .contents__login-box
+      .content__header
+        %p アカウントをお持ちでない方はこちら
+        = link_to new_user_registration_path do
+          .signup
+            新規会員登録
+    .content-form-box
+      %button.facebook-login
+        = icon('fab', 'facebook-square',class: "facebook-icon")
+        %p Facebookでログイン
+      %button.google-login
+        %i.fab.fa-google.google-icon
+        %p Googleでログイン
+      = form_with model: @user, url: user_session_path, local: true do |f|
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class: "login-information"
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード",class: "login-information"
+        = f.submit "ログイン",class:"submit-login"
+        
+  //= render "devise/shared/links"
 = render "devise/layouts/footer"
 

@@ -3,57 +3,58 @@
   .contents
     .content-header
       %h1 会員情報入力
-    .content__form
-      .content__form__nickname.content-box
-        %p ニックネーム
-        %p2.requiredtext 必須
-        %input{placeholder: "例)フリマ太郎"}
-      .content__form__mail.content-box
-        %p メールアドレス
-        %p2.requiredtext 必須
-        %input{placeholder: "PC・携帯どちらでも可"}
-      .content__form__password.content-box
-        %p パスワード
-        %p2.requiredtext 必須
-        %input{placeholder: "7文字以上の半角英数字"}
-        %p3 ※ 英字と数字の両方を含めて設定してください
-      .content__form__password-checkbtn.content-box
-        %input{type: "checkbox"}
-        %p2 パスワードを表示する
-      .content-box
-        %h2 本人確認
-        %p2 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+    = form_with(model: @user, url: registration_path(resource_name)) do |f|
+      .content__form
+        .content__form__nickname.content-box
+          %p ニックネーム
+          %p2.requiredtext 必須
+          %input{placeholder: "例)フリマ太郎"}
+        .content__form__mail.content-box
+          %p メールアドレス
+          %p2.requiredtext 必須
+          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
+        .content__form__password.content-box
+          %p パスワード
+          %p2.requiredtext 必須
+          = f.password_field :password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字"
+          %p3 ※ 英字と数字の両方を含めて設定してください
+        .content__form__password-checkbtn.content-box
+          %input{type: "checkbox"}
+          %p2 パスワードを表示する
+        .content-box
+          %h2 本人確認
+          %p2 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-      .content__form__fullname-kanji.content-box
-        %p お名前(全角)
-        %p2.requiredtext 必須
-        .input-box
-          %input.family-name{placeholder: "例) 山田"}
-          %input{placeholder: "例) 彩"}
-      .content__form__fullname-kana.content-box
-        %p お名前カナ(全角)
-        %p2.requiredtext 必須
-        .input-box
-          %input.family-name{placeholder: "例) ヤマダ"}
-          %input{placeholder: "例) アヤ"}
-      .content__form__birthday.content-box
-        %p 生年月日
-        %p2.requiredtext 必須
-        .input-box
-          %input 
-          %span 年
-          %input 
-          %span 月
-          %input 
-          %span 日
-      %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-      %br
-      %br
-      %p2 「次へ進む」のボタンを押すことにより、
-      %a{href: "#"} yahoo表示
-      %p2に同意したものとみなします
-      .next-btn.content-box
-        %a{href: "#"} 次へ進む
-      .privacy.content-box
-        %a{href: "#"} 本人情報の登録について＞
+        .content__form__fullname-kanji.content-box
+          %p お名前(全角)
+          %p2.requiredtext 必須
+          .input-box
+            = f.text_field :first_name, autocomplete: "first_name", placeholder: "例) 山田"
+            = f.text_field :last_name, autocomplete: "last_name", placeholder: "例) 彩"
+        .content__form__fullname-kana.content-box
+          %p お名前カナ(全角)
+          %p2.requiredtext 必須
+          .input-box
+            = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例) ヤマダ"
+            = f.text_field :last_name_kana, autocomplete: "last_name_kana",placeholder: "例) アヤ"
+        .content__form__birthday.content-box
+          %p 生年月日
+          %p2.requiredtext 必須
+          .input-box
+            = f.text_field :born_year, autocomplete: "born_year"
+            %span 年
+            = f.text_field :born_month, autocomplete: "born_month"
+            %span 月
+            = f.text_field :born_day, autocomplete: "born_day"
+            %span 日
+        %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        %br
+        %br
+        %p2 「次へ進む」のボタンを押すことにより、
+        %a{href: "#"} yahoo表示
+        %p2に同意したものとみなします
+        .next-btn.content-box
+          = f.submit "次へ進む", class:"next-btn2"
+        .privacy.content-box
+          %a{href: "#"} 本人情報の登録について＞
 = render "devise/layouts/footer"
