@@ -1,2 +1,2 @@
-class Users::SignupController < Devise::PasswordsController
+class SignupController < ApplicationController
 end
