@@ -4,16 +4,13 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    @image = @item.images.build
+    3.times { @item.images.build}
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      # params[:images][:image].each do |image|
-      #   @image = @item.images.create(image: image, item_id: @item.id)
-      # end
-      redirect_to root_path, notice: '出品しました。'
+      redirect_to root_path
     else
       render "new"
     end
@@ -23,9 +20,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:id, :item_id, :image]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:image] ).merge(user_id: current_user.id)
   end
-
-
 
 end
