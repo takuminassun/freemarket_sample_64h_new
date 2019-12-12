@@ -1,7 +1,6 @@
 =form_for @item do |f|
-  =f.fields_for :image do |i|
+  =f.fields_for :images do |i|
     =i.file_field :image
-    
   =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
   =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
   =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
