@@ -28,17 +28,17 @@
     .item__name__details
       = link_to "もっと見る", "/mypage"
 
-  .item__main
+  .item__main 
     .item__main__content
       .item__main__content__image
         .item__main__content__image__picture
           = image_tag 'bag.jpeg', height: '188px', width: '188px'
         .item__main__content__image__price
           .item__main__content__image__price__money
-            ¥2,100
+            -# = @items.price
       .item__main__content__text
         .item__main__content__text__sale
-          エルメス バッグ
+          -# = @items.name
 
 
 .item
