@@ -8,7 +8,9 @@
         .content__form__nickname.content-box
           %p ニックネーム
           %p2.requiredtext 必須
-          %input{placeholder: "例)フリマ太郎"}
+          = form.fields_for :@profile do |p| 
+            =p.text_field :nickname,placeholder: "例)フリマ太郎"
+            //%input{placeholder: "例)フリマ太郎"}
         .content__form__mail.content-box
           %p メールアドレス
           %p2.requiredtext 必須
