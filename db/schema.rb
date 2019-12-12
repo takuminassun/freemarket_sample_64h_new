@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_082135) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
+    t.string "name", null: false
     t.integer "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 2019_12_11_082135) do
     t.string "name", null: false
     t.integer "user_id", null: false
     t.integer "category_id", null: false
-    t.integer "brand_id"
+    t.integer "brand_id", null: false
     t.integer "price", null: false
     t.integer "status", null: false
     t.text "description", null: false
-    t.string "shipping_burden", null: false
-    t.string "shipping_method"
-    t.string "shipping_date", null: false
+    t.integer "shipping_burden", null: false
+    t.integer "shipping_method", null: false
+    t.integer "shipping_date", null: false
     t.integer "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_082135) do
     t.integer "born_year", null: false
     t.integer "born_month", null: false
     t.integer "born_day", null: false
-    t.string "phone_number", null: false
+    t.integer "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
