@@ -8,8 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    binding.pry
+    @item = Item.new(item_params)exi
     if @item.save
       redirect_to "/"
     else
