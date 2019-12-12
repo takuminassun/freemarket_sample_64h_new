@@ -18,16 +18,8 @@
             .dropzone-container
               #preview
               .dropzone-area
-                =i.label :image, class: "dropzone-box", for: "uploader-image" do
-                  .input_area
-                    =i.file_field :image 
-                    -# multiple: true, name: "images[", class: "upload-image", 'data-image': 0
-                  %p ここをクリックしてください
-              -# #preview
-              -# .dropzone-area2
-              -#   =i.label :name, class: "dropzone-box", for: "uploader-image" do
-              -#     %p ここをクリックしてください
-              
+                .input_area
+                  =i.file_field :image
 
       .listing__contents__name
         .group
@@ -86,16 +78,16 @@
                 .input
                   ￥
                 =f.text_field :price, class: "price", placeholder: "例）300"
-          %li.sale 
-            .sale-left
-              販売手数料(10%)
-            .sale-right
-              -
-          %li.benefit 
-            .benefit-left
-              販売利益
-            .benefit-right
-              -
+          -# %li.sale 
+          -#   .sale-left
+          -#     販売手数料(10%)
+          -#   .sale-right.right_bar
+          -#     -
+          -# %li.benefit 
+          -#   .benefit-left
+          -#     販売利益
+          -#   .benefit-right
+          -#     -
       .listing__contents__confirms
         .listing__contents__confirms-confirm
           %p 
@@ -113,7 +105,7 @@
             に同意したことになります。
         =f.submit '出品する', class: "submit"
         .back-btn
-          =link_to 'もどる', "#"
+          =link_to 'もどる', "/"
         
     .listing__footer
       .nav
@@ -125,15 +117,3 @@
         = image_tag src="/images/logo_gray.svg", alt:"merukari"
       %p © Mercari, Inc.
 
-  -# = form_for @item do |f|
-  -# =f.fields_for :images do |i|
-  -#   =i.file_field 'image[]', multiple: true, name: "images[image][]"
-  -# =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
-  -# =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-  -# =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
-  -# -# =f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]
-  -# -# =f.select :shipping_burden, ["---", "送料込み（出品者負担)", "着払い（購入者負担)"]
-  -# =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
-  -# =f.select :shipping_date, ["---", "1~2日で発送", "2~3日で発送", "4~7日で発送"]
-  -# =f.text_field :price, class: "price", placeholder: "例）300"
-  -# =f.submit '出品する', class: "submit"
