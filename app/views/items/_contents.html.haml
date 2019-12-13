@@ -1,29 +1,11 @@
 .category
   .category__top
-    人気のカテゴリー
+    注目のカテゴリー
   .category__genre
     - @categorys.each do |c| 
       .category__genre__box       
         .category__genre__box__text    
           = c.name
-
--# .item
--#   .item__name
--#     .item__name__box
--#       メンズ新着アイテム
--#     .item__name__details
--#       = link_to "もっと見る", "/profile"
--#   .item__main
--#     .item__main__content
--#       .item__main__content__image
--#         .item__main__content__image__picture
--#           = image_tag 'bag.jpeg', height: '188px', width: '188px'
--#         .item__main__content__image__price
--#           .item__main__content__image__price__money
--#             ¥2,100
--#       .item__main__content__text
--#         .item__main__content__text__sale
--#           エルメス バッグ
 
 .item
   .item__name
@@ -37,18 +19,17 @@
     - @items.each do |i| 
       .item__main__content
         .item__main__content__image
-          =link_to "詳細", "/items/#{i.id}", method: :get
-          .item__main__content__image__picture
-            - i.images.each do |img|
-              = image_tag img.image.url
-              -# , width: "124", hight: "188" 
-          .item__main__content__image__price
-            .item__main__content__image__price__money
-              ¥
-              = i.price
-          .item__main__content__text
-            .item__main__content__text__sale
-              = i.name
+          =link_to "/items/#{i.id}" do
+            .item__main__content__image__picture
+              - i.images.each do |img|
+                = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+            .item__main__content__image__price
+              .item__main__content__image__price__money
+                ¥
+                = i.price.to_s(:delimited)
+            .item__main__content__text
+              .item__main__content__text__sale
+                = i.name
 
 .item
   .item__name
@@ -93,23 +74,4 @@
             ¥2,100
       .item__main__content__text
         .item__main__content__text__sale
-          エルメス バッグ
-
-.item
-  .item__name
-    .item__name__box
-      ルイヴィトン
-    .item__name__details
-      =link_to "もっと見る", "/purchase"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
+          シャネルっぽいバッグ
