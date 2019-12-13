@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     collection do
       get "step1"
       post "step2"
+      post "step3"
+      post "step4"
     end
   end
 end
