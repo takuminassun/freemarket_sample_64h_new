@@ -6,21 +6,21 @@ class SignupController < ApplicationController
   end
 
   def step2
-      session[:email] = user_params[:email]
-      session[:password] = user_params[:password]
-      session[:first_name] = user_params[:first_name]
-      session[:last_name] = user_params[:last_name]
-      session[:first_name_kana] = user_params[:first_name_kana]
-      session[:last_name_kana] = user_params[:last_name_kana]
-      session[:born_year] = user_params[:born_year]
-      session[:born_month] = user_params[:born_month]
-      session[:born_day] = user_params[:born_day]
-      session[:nickname] = user_profile_params[:nickname]
-      @user = User.new(user_phone_params)
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:first_name] = user_params[:first_name]
+    session[:last_name] = user_params[:last_name]
+    session[:first_name_kana] = user_params[:first_name_kana]
+    session[:last_name_kana] = user_params[:last_name_kana]
+    session[:born_year] = user_params[:born_year]
+    session[:born_month] = user_params[:born_month]
+    session[:born_day] = user_params[:born_day]
+    session[:nickname] = user_profile_params[:nickname]
+    @user = User.new(user_params)
   end
 
   def step3
-    session[:phone_number] = user_phone_params[:phone_number]
+    session[:phone_number] = user_params[:phone_number]
     @address = Address.new(address_params)
   end
 
@@ -57,10 +57,6 @@ class SignupController < ApplicationController
     params.require(:user).require(:profile).permit(
       :nickname
     )
-  end
-  
-  def user_phone_params
-    params.require(:user).permit(:user => [:phone_number])
   end
 
   def address_params
