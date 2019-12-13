@@ -2,7 +2,7 @@
   
 }
 .c-top {
-  background-color: darkorange;
+  background-color: #ffffff;
   padding: 56px 0px 30px;
   width: 100%;
   position: relative;
@@ -17,7 +17,7 @@
   }
   &__name {
     display: flex;
-    // text-align: center;
+    text-align: center;
     width: 100%;
     margin: 0 auto;
     &__1{
@@ -63,6 +63,7 @@
   background-color: darkslateblue;
   padding: 42px 0px 100px;
   &__women{
+    width: 100%;
     &__title {
       display: flex;
       margin-bottom: 16px;
@@ -83,21 +84,54 @@
       }
     }
     &__date {
-      width: 20%;
+      width: calc(100%-10px);
       padding: 10px;
-      &__image{
+      text-align: center;
+      //display: flex;
+      &__king {
+        display: flex;
+        background-color: brown;
         width: 100%;
-        cursor: pointer;
         
-      }
-      &__box {
-        &__price {
+        &__image{
+          width: 122px;
+          cursor: pointer;
+          padding: 10px;
+          position: relative;
+          text-decoration: none;
+          margin: 20px;
           
         }
-        &__name {
 
-        }
-      }
+          &__price {
+            align-items: center;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 0 14px 14px 0;
+            box-sizing: border-box;
+            top: 100px;
+            color: #fff;
+            font-size: 17px;
+            height: 28px;
+            position: absolute;
+            padding: 0 12px;
+            margin: 0;
+            display: flex;
+            z-index: 5;
+            //left: 100px;
+
+          }
+          &__name {
+            font-family: Arial, 游ゴシック体;
+            height: 2.8rem;
+            overflow: hidden;
+            align-items: center;
+            //width: 100%;
+            padding: 0 12px;
+            line-height: 1.4rem;
+            color: #222;
+            font-size: 14px;
+          }
+       }
     }
   }
 }

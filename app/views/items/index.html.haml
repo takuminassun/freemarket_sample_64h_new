@@ -16,12 +16,12 @@
         .item__women__title__see
           もっと見る
       .item__women__date
-        - @items.each do |item|
-          .item__women__date__image
-            - item.images.each do |image|
-              = image_tag image.image.url , width: "124", hight: "188"
-          .item__women__date__box
-            .item__women__date__box__price
-              = item.price
-            .item__women__date__box__name
-              = item.name
+        .item__women__date__king
+          - @items.each do |item|
+            .item__women__date__king__image
+              - item.images.each do |image|
+                = image_tag image.image.url , width: "124", hight: "188"
+              .item__women__date__king__price
+                = item.price
+              .item__women__date__king__name
+                = item.name
