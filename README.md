@@ -10,9 +10,9 @@
   |user_id|integer|null: false, foreign_key: true|
   |category_id|integer|null: false, foreign_key: true|
   |brand_id|integer|null:false, foreign_key: true|
+  |prefecture_id|integer|null: false, foreign_key: true|
   |price|integer|null: false|
   |status|integer|null: false|
-  |prefecture_id|integer|null: false|
   |description|text|null: false|
   |shipping_burden|integer|null: false|
   |shipping_method|integer|null: false|
@@ -23,7 +23,7 @@
 - belongs_to  :user
 - belongs_to  :brand
 - belongs_to :category
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - has_many: comments
 - has_many: images
 
@@ -100,6 +100,13 @@
 
 ### Association
 - belongs_to :user
+|user_id|integer| foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user
+- belongs_to_active_hash :prefecture
 
 
 

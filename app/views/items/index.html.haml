@@ -1,0 +1,11 @@
+.item
+  - @items.each do |item|
+    =link_to "詳細", "/items/#{item.id}", method: :get
+    .item__brock
+      - item.images.each do |image|
+        = image_tag image.image.url
+
+    =item.price
+    =item.name
+    
+      

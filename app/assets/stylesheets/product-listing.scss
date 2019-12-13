@@ -1,3 +1,11 @@
+.required{
+  background: #ea352d;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
 .listing__wrapper{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   color: rgb(51, 51,51);
@@ -32,35 +40,43 @@
       width: 620px;
       padding: 40px;
       border-top: 1px solid #eee;
+      height: 223px;
       
       &__head{
+        display: flex;
         h3{
           font-size: 16px;
           font-weight: bold;
         }
+        .required-1{
+          background: #ea352d;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          padding: 2px 4px;
+          margin-left: 8px;
+          height: 19px;
+        }
       }
-      p{
+      &__text{
         margin: 8px 0 0;
-        line-height: 1.5;
-        font-size: 14px;
+        font-size: 13px;
       }
-      &__img{
-        box-sizing: border-box;
-        background: #f5f5f5;
-        padding: 40px;
-        height: 160px;
-        margin: 16px auto;
-        border: 1px dashed #ccc;
-        text-align: center;
-        &__text{
-          font-size: 14px;
-          font-family: monospace,monospace;
-          line-height: 40px;
-          h1{
-            height: 42px;
+      .image__box{
+        width: 100%;
+        height: 162px;
+        background-color: rgb(245, 245, 245);
+        margin-top: 16px;
+        border: dashed 1px #ccc;
+        display:flex;
+        .dropzone-container{
+          width:200px;
+          display:flex;
+          .iput_area{
           }
         }
       }
+      
     }
     &__name{
       padding: 40px;
@@ -73,14 +89,14 @@
           display: inline-block;
           font-size: 14px;
         }
-        .item{
+        .name{
           box-sizing: border-box;
           width: 100%;
           margin: 8px 0 0;
           height: 48px;
           padding: 10px 16px 8px;          
         }
-        .explain{
+        .text{
           box-sizing: border-box;
           margin-top: 8px;
           width: 100%;
@@ -112,6 +128,9 @@
           .select{
             margin-top: 8px;
             width: 400px;
+            #prefecture_id{
+              width: 100%;
+            }
             .status{
               width: 100%;
               height: 48px;
@@ -177,7 +196,16 @@
               font-size: 15px;
               font-weight: 600;
               line-height: 50px;
+              .required-2{
+                background: #ea352d;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                padding: 2px 4px;
+                margin-left: 8px;
+              }
             }
+
             &__right{
               width: 50%;
               display: flex;
