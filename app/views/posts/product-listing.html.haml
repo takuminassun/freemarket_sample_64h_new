@@ -79,9 +79,7 @@
             .select-1
               = form_for '' do |f|
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "prefecture"
-              -# %cpllection_select{:prefecture_id, Prefecture.all, class: "status", name: "prefecture"}
-              -#   %option{value: ""} ---
-              -#   %option{valew: ""}
+
               %br/
           .group
             %label 発送までの日数
