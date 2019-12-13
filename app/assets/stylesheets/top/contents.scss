@@ -13,6 +13,7 @@
     position: fixed;
     z-index: 1;
     cursor: pointer;
+    
 
     &__text{
       width: 160px;
@@ -24,7 +25,9 @@
       color: white;
       background-color: rgb(234, 53, 45);
       border-radius: 50%;
-      
+      a{
+        color: white;
+        }
       .fa.fa-camera{
         font-size: 70px;
       }

@@ -13,7 +13,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :shipping_date,   null: false
       t.integer :size
       t.timestamps
-    end
-    add_index :items, :name,  
+    end  
   end
 end
