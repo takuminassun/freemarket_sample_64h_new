@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_082135) do
     t.datetime "updated_at", null: false
     t.integer "image_id"
     t.integer "prefecture_id"
-    t.index ["name"], name: "index_items_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

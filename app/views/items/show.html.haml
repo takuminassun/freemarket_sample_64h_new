@@ -61,52 +61,52 @@
           %i.far.fa-flag
             不適切な商品の警告
 
-      .itemunder__right
-        %i.fas.fa-lock
-          あんしん・安全への取り組み
-    .item-message
-      .item-message__box
-        .item-message__box__main
-          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %textarea.input.textcoment{name: "main", type: "text"}
-        %button.comentsubmit{name: "submit", type: "submit", value: ""}
-          %span コメントする
-        
-  .itemelinknext
-    .linkleft
-      %i.fas.fa-arrow-left
-        = link_to "前の商品"
-    .linkright
-      %i.fas.fa-arrow-right
-        = link_to "次の商品"
-  .external-link
-    %ul.external-link__box
-      %li
-        %i.fab.fa-facebook-square.fa-3x
-      %li
-        %i.fab.fa-twitter-square.fa-3x
-      %li
-        %i.fab.fa-line.fa-3x
-      %li
-        %i.fab.fa-instagram.fa-3x
-  .item-list-profile
-    %section.item-list-profile__box1
-      %h2.item-list-profile__box1__head
-        = link_to  "○○さんのその他の出品"
-    .item-list-profile__list
-      %section.item-list-box
-        =link_to ""
-        %figure.item-list-box__image
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc"
-        .item-list-box__textbox
-          %h3.item-list-box__textbox__name
-            商品の名前
-          .item-list-box__textbox__num
-            .item-list-box__textbox__num__price
-              ¥1,400
-            .item-list-box__textbox__num__heart
-              %i.far.fa-heart
-                %span 2
+        .itemunder__right
+          %i.fas.fa-lock
+            あんしん・安全への取り組み
+      .item-message
+        .item-message__box
+          .item-message__box__main
+            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %textarea.input.textcoment{name: "main", type: "text"}
+          %button.comentsubmit{name: "submit", type: "submit", value: ""}
+            %span コメントする
+          
+    .itemelinknext
+      .linkleft
+        %i.fas.fa-arrow-left
+          = link_to "前の商品"
+      .linkright
+        %i.fas.fa-arrow-right
+          = link_to "次の商品"
+    .external-link
+      %ul.external-link__box
+        %li
+          %i.fab.fa-facebook-square.fa-3x
+        %li
+          %i.fab.fa-twitter-square.fa-3x
+        %li
+          %i.fab.fa-line.fa-3x
+        %li
+          %i.fab.fa-instagram.fa-3x
+    .item-list-profile
+      %section.item-list-profile__box1
+        %h2.item-list-profile__box1__head
+          = link_to  "○○さんのその他の出品"
+      .item-list-profile__list
+        %section.item-list-box
+          =link_to ""
+          %figure.item-list-box__image
+            = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc"
+          .item-list-box__textbox
+            %h3.item-list-box__textbox__name
+              商品の名前
+            .item-list-box__textbox__num
+              .item-list-box__textbox__num__price
+                ¥1,400
+              .item-list-box__textbox__num__heart
+                %i.far.fa-heart
+                  %span 2
 
       %section.item-list-box
         =link_to ""
