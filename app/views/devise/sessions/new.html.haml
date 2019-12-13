@@ -2,8 +2,9 @@
 //= render "devise/layouts/header"
 .single
   .single__header
-    .single__header-logo
-      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
+    = link_to root_path do
+      .single__header-logo
+        = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
   .container
     .contents__login-box
       .content__header
