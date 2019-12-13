@@ -26,33 +26,25 @@
 -#           エルメス バッグ
 
 .item
-  - @items.each do |item|
-    =link_to "詳細", "/items/#{item.id}", method: :get
-    .item__brock
-      - item.images.each do |image|
-        = image_tag image.image.url
-
-    =item.price
-    =item.name
-    
-  .item
-    .item__name
-      .item__name__box
-        レディース
-        新着アイテム
-      .item__name__details
-        = link_to "もっと見る", "/mypage"
+  .item__name
+    .item__name__box      
+      新着アイテム
+    .item__name__details
+      = link_to "もっと見る", "/mypage"
 
 
-  .item__main 
-    .item__main__content
-      .item__main__content__image
-        - @items.each do |i|
+  .item__main
+    - @items.each do |i| 
+      .item__main__content
+        .item__main__content__image
+          =link_to "詳細", "/items/#{i.id}", method: :get
           .item__main__content__image__picture
             - i.images.each do |img|
-              = image_tag img.image.url, width: "124", hight: "188" 
+              = image_tag img.image.url
+              -# , width: "124", hight: "188" 
           .item__main__content__image__price
             .item__main__content__image__price__money
+              ¥
               = i.price
           .item__main__content__text
             .item__main__content__text__sale
