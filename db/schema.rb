@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_082135) do
     t.integer "category_id", null: false
     t.integer "brand_id"
     t.integer "price", null: false
-    t.integer "status", null: false
+    t.string "status", null: false
     t.text "description", null: false
     t.string "shipping_burden", null: false
     t.string "shipping_method"
