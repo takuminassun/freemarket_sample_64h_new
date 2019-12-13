@@ -1,8 +1,38 @@
-.exhibit
-  .exhibit__text
-    = link_to '出品', new_item_path
-    %br/
-    %i.fa.fa-camera
+-# .exhibit
+-#   .exhibit__text
+-#     = link_to '出品', new_item_path
+-#     %br/
+-#     %i.fa.fa-camera
+
+.save
+  .c-top
+    .c-top__title
+      人気のカテゴリ
+    .c-top__name
+      %h1.c-top__name__1 レディース
+      %h2.c-top__name__2 メンズ
+      %h3.c-top__name__3 家電
+      %h4.c-top__name__4 おもちゃ
+
+  .item
+    .item__women
+      .item__women__title
+        .item__women__title__name
+          レディース新着アイテム
+        .item__women__title__see
+          もっと見る
+      .item__women__date
+        .item__women__date__king
+          - @items.each do |item|
+            .item__women__date__king__image
+              - item.images.each do |image|
+                = image_tag image.image.url , width: "124", hight: "188"
+              .item__women__date__king__price
+                = item.price
+              .item__women__date__king__name
+                = item.name
+
+
 .category
   .category__top
     人気のカテゴリー
