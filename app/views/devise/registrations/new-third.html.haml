@@ -22,7 +22,7 @@
         %label.text 都道府県
         %span.required 必須
         .content-form__input-small-box
-          %input.input-text{type:"text",placeholder: "和歌山"}
+          = f.text_field :city, autocomplete: "city", class:"input-text", placeholder: "例）和歌山市"
         %label.text 市町村区
         %span.required 必須
         .content-form__input-small-box
@@ -32,11 +32,11 @@
         .content-form__input-small-box
           = f.text_field :town, autocomplete: "town", class:"input-text", placeholder: "例）北出島１５６−７"
         %label.text 建物名
-        %span.required-gray 必須
+        %span.required-gray 任意
         .content-form__input-small-box
           = f.text_field :building, autocomplete: "building", class:"input-text", placeholder: "例）北出島ブランデ"
         %label.text 電話
-        %span.required-gray 必須
+        %span.required-gray 任意
         .content-form__input-small-box
           = f.text_field :phone_number, autocomplete: "phone_number", class:"input-text", placeholder: "例）0900000000"
         %input.submit{type:"submit", value:"次へ進む"}

@@ -6,9 +6,6 @@ class SignupController < ApplicationController
   end
 
   def step2
-    @user = User.new(user_params)
-    @profile = Profile.new(user_profile_params)
-    if @user.save! && @profile.save!
       session[:email] = user_params[:email]
       session[:password] = user_params[:password]
       session[:first_name] = user_params[:first_name]
@@ -19,13 +16,24 @@ class SignupController < ApplicationController
       session[:born_month] = user_params[:born_month]
       session[:born_day] = user_params[:born_day]
       session[:nickname] = user_profile_params[:nickname]
-      
-    else
-      redirect_to action: "step1"
-    end
+      @user = User.new(user_phone_params)
+  end
 
+  def step3
+    session[:phone_number] = user_phone_params[:phone_number]
+    @address = Address.new(address_params)
+  end
 
-
+  def step4
+    session[:address_first_name] = address_params[:address_first_name]
+    session[:address_last_name] = address_params[:address_last_name]
+    session[:address_first_name_kana] = address_params[:address_first_name_kana]
+    session[:address_last_name_kana] = address_params[:address_last_name_kana]
+    session[:post_number] = address_params[:post_number]
+    session[:city] = address_params[:city]
+    session[:town] = address_params[:town]
+    session[:building] = address_params[:building]
+    session[:user_id] = address_params[:user_id]
   end
 
   private
@@ -40,7 +48,8 @@ class SignupController < ApplicationController
       :last_name_kana,
       :born_year,
       :born_month,
-      :born_day
+      :born_day,
+      :phone_number
     )
   end
 
@@ -50,4 +59,22 @@ class SignupController < ApplicationController
     )
   end
   
+  def user_phone_params
+    params.require(:user).permit(:user => [:phone_number])
+  end
+
+  def address_params
+    params.require(:address).permit(
+      :address_first_name,
+      :address_last_name,
+      :address_first_name_kana,
+      :address_last_name_kana,
+      :post_number,
+      :city,
+      :town,
+      :building,
+      :user_id
+    )
+  end
+
 end
