@@ -1,3 +1,4 @@
+=render 'posts/header'
 .item-main
   .itemcontent
     .itemname
@@ -5,50 +6,42 @@
 
     .maincontent
       .itemimage
-        -# 画像は仮置き
         .itemimage__box
           .itemimage__box__main
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "300"
-          .itemimage__box__sub
-          = image_tag src="/images/mypage.jpg/",alt:"",width: "60"
+          - @images.each do |image|
+            = image_tag image.image.url, width: "300"
       .itemdate
         %table
           %tr 
             %th 出品者
             %td
-              = link_to  "プロフ見てね！"
-              -# いいねボタンの仮置き 
+              = link_to  "#{@item.name}"
           %tr
             %th カテゴリー
-            -# パンクず仮置き
-            -# 並び肩はcssで調整予定
             %td
-              = link_to  "レディース"
-              = link_to  "バッグ"
-              = link_to  "超バッグ"
-          %tr
-            %th ブランド
-            %td 
-              = link_to  "シャネル"
+              = link_to  "#{@item.category.name}"
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td 
+              = @item.status
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td 
+              = @item.shipping_burden
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td 未定
           %tr
             %th 配送地域
             %td 
-              = link_to  "兵庫県"
+              =@item.prefecture.name
           %tr
             %th 発送日の目安
-            %td 2~3日で発送
+            %td 
+              =@item.shipping_date
     .price
       %span.price__item
-        仮¥2,000,000
+        =@item.price
       %span.price__tax
         (税込)
       %span.price__postage
@@ -56,15 +49,9 @@
     
     %button.pricebtn{name: "price", type: "submit", value: ""}
       %span 購入ボタンに進む
-    %button.apptext{name: "購入アプリ", type: "submit", value: ""}
-      %span アプリで購入
     .itemtext
       .itemtext__bb
-        美品
-        コーチショルダーバッグ(2way)
-
-        未使用に近く綺麗な状態です。
-        サイズ  縦22㎝   横下26㎝～上34㎝  マチ8㎝
+        =@item.description
     .itemunder 
       .itemunder__left
         .itemunder__left__heart
@@ -193,4 +180,4 @@
             .othertext__num__heart
               %i.far.fa-heart
                 %span 2
-
+=render 'posts/footer'
