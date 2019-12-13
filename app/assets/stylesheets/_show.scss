@@ -189,7 +189,7 @@ a {
   }
   .itemelinknext {
     margin: 24px auto 0;
-    width: 700px;
+    width: 100%;
     display: flex;
     color: #2086ea;
     .linkleft {
@@ -209,7 +209,7 @@ a {
   }
   .external-link{
     background-color: #ffffff;
-    width: 700px;
+    width: 100%;
     margin: 24px auto;
     padding: 32px 0 24px;
     &__box {
