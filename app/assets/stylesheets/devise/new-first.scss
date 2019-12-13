@@ -40,6 +40,21 @@
   .content-box {
     margin-top: 24px;
   }
+  .password-box{
+    height: 21px;
+    margin-top: 16px;
+    
+    .checkbox {
+      height: 20px;
+      width: 20px;
+      float: left;
+      margin-right: 5px;
+    }
+    .pass {
+      float: left;
+      margin-top: 2px;
+    }
+  }
   .input-box {
     display: flex;
     align-items: center;

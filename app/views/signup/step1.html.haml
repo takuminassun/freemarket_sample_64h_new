@@ -18,11 +18,20 @@
         .content__form__password.content-box
           %p パスワード
           %p2.requiredtext 必須
-          = f.password_field :password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字"
+          :javascript
+            function checkPassword(e) {
+                pass = document.getElementById("password");
+                if (e.checked) {
+                    pass.setAttribute("type", "text");
+                } else {
+                    pass.setAttribute("type", "password");
+                }
+            }
+          = f.password_field :password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字",id:"password"
           %p3 ※ 英字と数字の両方を含めて設定してください
-        .content__form__password-checkbtn.content-box
-          %input{type: "checkbox"}
-          %p2 パスワードを表示する
+          .password-box
+            %input{onclick: "checkPassword(this)", type: "checkbox", class: "checkbox"}
+            %p.pass パスワードを表示する
         .content-box
           %h2 本人確認
           %p2 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
