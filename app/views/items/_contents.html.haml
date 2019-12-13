@@ -2,52 +2,10 @@
   .category__top
     人気のカテゴリー
   .category__genre
-    - @category.each do |c| 
+    - @categorys.each do |c| 
       .category__genre__box       
         .category__genre__box__text    
           = c.name
-
-       
-  .item
-    .item__c
-      .item__c__title
-        .item__c__title__name
-          新着アイテム
-        .item__c__title__see
-          もっと見る
-      .item__c__date
-        .item__c__date__king
-          - @items.each do |item|
-            .item__c__date__king__image
-              - item.images.each do |image|
-                = image_tag image.image.url , width: "124", hight: "188"
-              .item__c__date__king__price
-                = item.price
-              .item__c__date__king__name
-                = item.name
-
-
-  .item
-    .item__name
-      .item__name__box
-        レディース
-        新着アイテム
-      .item__name__details
-        = link_to "もっと見る", "/mypage"
-
-- @category.each do |c|
-  .item__main 
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            -# = @items.price
-      .item__main__content__text
-        .item__main__content__text__sale
-          -# = @items.name
-
 
 .item
   .item__name
@@ -55,148 +13,6 @@
       メンズ新着アイテム
     .item__name__details
       = link_to "もっと見る", "/profile"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-
-.item
-  .item__name
-    .item__name__box
-      家電・スマホ・カメラ
-    .item__name__details
-      = link_to "もっと見る", "/user-confirmation"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-
-
-.item
-  .item__name
-    .item__name__box
-      おもちゃ・ホビー・グッズ
-    .item__name__details
-      =link_to "もっと見る", "/logout"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-
-
-.category
-  .category__top
-    人気のブランド
-  .category__genre
-
-
-    .category__genre__box
-      .category__genre__box__text
-        シャネル
-    .category__genre__box
-      .category__genre__box__text
-        ルイヴィトン
-    .category__genre__box
-      .category__genre__box__text
-        シュプリーム
-    .category__genre__box
-      .category__genre__box__text
-        ナイキ
-
-.item
-  .item__name
-    .item__name__box
-      シャネル
-    .item__name__details
-      =link_to "もっと見る", "/product-listing"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-  
-
-.item
-  .item__name
-    .item__name__box
-      ルイヴィトン
-    .item__name__details
-      =link_to "もっと見る", "/purchase"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-//シュプリーム
-.item
-  .item__name
-    .item__name__box
-      シュプリーム
-    .item__name__details
-      =link_to "もっと見る", "show"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-
-.item
-  .item__name
-    .item__name__box
-      ナイキ
-    .item__name__details
-      もっと見る
 
   .item__main
     .item__main__content
@@ -220,3 +36,122 @@
     =item.price
     =item.name
     
+
+
+  .item
+    .item__c
+      .item__c__title
+        .item__c__title__name
+          新着アイテム
+        .item__c__title__see
+          もっと見る
+      .item__c__date
+        .item__c__date__king
+          - @items.each do |item|
+            .item__c__date__king__image
+              - item.images.each do |image|
+                = image_tag image.image.url , width: "124", hight: "188"
+              .item__c__date__king__price
+                = item.price
+              .item__c__date__king__name
+                = item.name
+
+  .item
+    .item__name
+      .item__name__box
+        レディース
+        新着アイテム
+      .item__name__details
+        = link_to "もっと見る", "/mypage"
+
+
+  .item__main 
+    .item__main__content
+      .item__main__content__image
+        .item__main__content__image__picture
+          = image_tag 'bag.jpeg', height: '188px', width: '188px'
+        .item__main__content__image__price
+          .item__main__content__image__price__money
+            -# = @items.price
+      .item__main__content__text
+        .item__main__content__text__sale
+          -# = @items.name
+
+.item
+  .item__name
+    .item__name__box
+      レディース
+      新着アイテム
+    .item__name__details
+      = link_to "マイページ", "/mypage"
+.item
+  .item__name
+    .item__name__box
+      メンズ新着アイテム
+    .item__name__details
+      = link_to "プロフィール", "/profile"
+.item
+  .item__name
+    .item__name__box
+      家電・スマホ・カメラ
+    .item__name__details
+      = link_to "ログアウト", "/logout"
+.item
+  .item__name
+    .item__name__box
+      おもちゃ・ホビー・グッズ
+    .item__name__details
+      = link_to "ユーザー確認", "/user-confirmation"
+      
+
+
+
+.category
+  .category__top
+    人気のブランド
+  .category__genre
+
+    .category__genre__box
+      .category__genre__box__text
+        シャネル
+    .category__genre__box
+      .category__genre__box__text
+        ルイヴィトン
+
+.item
+  .item__name
+    .item__name__box
+      シャネル
+    .item__name__details
+      =link_to "もっと見る", "/product-listing"
+
+  .item__main
+    .item__main__content
+      .item__main__content__image
+        .item__main__content__image__picture
+          = image_tag 'bag.jpeg', height: '188px', width: '188px'
+        .item__main__content__image__price
+          .item__main__content__image__price__money
+            ¥2,100
+      .item__main__content__text
+        .item__main__content__text__sale
+          エルメス バッグ
+
+.item
+  .item__name
+    .item__name__box
+      ルイヴィトン
+    .item__name__details
+      =link_to "もっと見る", "/purchase"
+
+  .item__main
+    .item__main__content
+      .item__main__content__image
+        .item__main__content__image__picture
+          = image_tag 'bag.jpeg', height: '188px', width: '188px'
+        .item__main__content__image__price
+          .item__main__content__image__price__money
+            ¥2,100
+      .item__main__content__text
+        .item__main__content__text__sale
+          エルメス バッグ

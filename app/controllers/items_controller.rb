@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @images = Image.all
-    @category = Category.limit(4)
+    @categorys = Category.limit(4)
+    @category = Category.find(1)
   end
 
   def new 
