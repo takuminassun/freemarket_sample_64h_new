@@ -23,6 +23,16 @@ class ItemsController < ApplicationController
     @images = @item.images
   end
 
+  def edit 
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to("/mypage")
+  end
+
 
   private
 

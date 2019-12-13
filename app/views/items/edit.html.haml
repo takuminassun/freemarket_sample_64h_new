@@ -1,0 +1,7 @@
+.edit
+= form_tag("/items/#{@item.id}/update") do
+  %form
+    .form-group
+      %label{for: "exampleInputEmail1"} 編集する
+      %textarea.form-control{name: "title"}= @post.title
+    %button.btn.btn-primary{type: "submit"} 保存
