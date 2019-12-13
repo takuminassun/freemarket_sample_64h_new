@@ -12,12 +12,15 @@
           %i.fa.fa-search
     .menu
       .menu__left
-        .categorybox
-          .categorybox__image
+        %ul
+          %li.pan
+            -# .categorybox__image
             %i.fas.fa-list
             カテゴリーから探す
-        .brandbox
-          .brandbox__image
+            %ul
+              %li レディース
+              
+          %li
             %i.fas.fa-tags
             = link_to "ブランドから探す", destroy_user_session_path, method: :delete
               

@@ -63,63 +63,27 @@
       display: flex;
       margin-top: 8px;
       justify-content: space-between;
-      &__left {
-        display: flex;
+      &__left{
         margin-left: 30px;
-        .categorybox{
+      }
+      ul {
+        display: flex;
+        position: relative;
+        .pan{
+          font-size: 14px;
           cursor: pointer;
           height: 44px;
           position: relative;
           padding: 0px 10px;
-
+          line-height: 36px;
+          i{
+            color: $fma-red;
+          }
           &:hover{
             color: #2086ea;
           }
-
-          &__image {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 36px;
-            white-space: nowrap;
-            .fa-list {
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(234, 53, 45);
-              height: 12px;
-              margin-right: 4px;
-            }
-            a{
-              color: black;
-            }
-          }
-        }
-        .brandbox {
-          cursor: pointer;
-          height: 44px;
-          position: relative;
-          padding: 0px 10px;
-
-          &:hover{
-            color: #2086ea;
-          }
-
-          &__image {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 36px;
-            white-space: nowrap;
-            .fa-tags {
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(234, 53, 45);
-              height: 12px;
-              margin-right: 4px;
-            }
-            a{
-              color: black;
-            }
+          ul{
+            background-color: rgb(13, 174, 238);
           }
         }
       }
