@@ -6,6 +6,9 @@ class SignupController < ApplicationController
   end
 
   def step2
+    binding.pry
+    @user = User.new(user_params)
+    @profile = Profile.new(user_profile_params)
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
     session[:first_name] = user_params[:first_name]
@@ -16,15 +19,17 @@ class SignupController < ApplicationController
     session[:born_month] = user_params[:born_month]
     session[:born_day] = user_params[:born_day]
     session[:nickname] = user_profile_params[:nickname]
-    @user = User.new(user_params)
+    binding.pry
   end
 
   def step3
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new(address_params)
+    binding.pry
   end
 
   def step4
+    binding.pry
     session[:address_first_name] = address_params[:address_first_name]
     session[:address_last_name] = address_params[:address_last_name]
     session[:address_first_name_kana] = address_params[:address_first_name_kana]
@@ -60,6 +65,7 @@ class SignupController < ApplicationController
   end
 
   def address_params
+    binding.pry
     params.require(:address).permit(
       :address_first_name,
       :address_last_name,
