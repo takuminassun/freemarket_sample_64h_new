@@ -7,26 +7,25 @@
         .category__genre__box__text    
           = c.name
 
+-# .item
+-#   .item__name
+-#     .item__name__box
+-#       メンズ新着アイテム
+-#     .item__name__details
+-#       = link_to "もっと見る", "/profile"
+-#   .item__main
+-#     .item__main__content
+-#       .item__main__content__image
+-#         .item__main__content__image__picture
+-#           = image_tag 'bag.jpeg', height: '188px', width: '188px'
+-#         .item__main__content__image__price
+-#           .item__main__content__image__price__money
+-#             ¥2,100
+-#       .item__main__content__text
+-#         .item__main__content__text__sale
+-#           エルメス バッグ
+
 .item
-  .item__name
-    .item__name__box
-      メンズ新着アイテム
-    .item__name__details
-      = link_to "もっと見る", "/profile"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          エルメス バッグ
-
-          .item
   - @items.each do |item|
     =link_to "詳細", "/items/#{item.id}", method: :get
     .item__brock
@@ -36,26 +35,6 @@
     =item.price
     =item.name
     
-
-
-  .item
-    .item__c
-      .item__c__title
-        .item__c__title__name
-          新着アイテム
-        .item__c__title__see
-          もっと見る
-      .item__c__date
-        .item__c__date__king
-          - @items.each do |item|
-            .item__c__date__king__image
-              - item.images.each do |image|
-                = image_tag image.image.url , width: "124", hight: "188"
-              .item__c__date__king__price
-                = item.price
-              .item__c__date__king__name
-                = item.name
-
   .item
     .item__name
       .item__name__box
@@ -68,49 +47,36 @@
   .item__main 
     .item__main__content
       .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            -# = @items.price
-      .item__main__content__text
-        .item__main__content__text__sale
-          -# = @items.name
+        - @items.each do |i|
+          .item__main__content__image__picture
+            - i.images.each do |img|
+              = image_tag img.image.url, width: "124", hight: "188" 
+          .item__main__content__image__price
+            .item__main__content__image__price__money
+              = i.price
+          .item__main__content__text
+            .item__main__content__text__sale
+              = i.name
 
 .item
   .item__name
     .item__name__box
-      レディース
-      新着アイテム
-    .item__name__details
-      = link_to "マイページ", "/mypage"
-.item
+      = link_to "マイページ", "/mypage"     
   .item__name
     .item__name__box
-      メンズ新着アイテム
-    .item__name__details
       = link_to "プロフィール", "/profile"
-.item
   .item__name
     .item__name__box
-      家電・スマホ・カメラ
-    .item__name__details
       = link_to "ログアウト", "/logout"
-.item
   .item__name
     .item__name__box
-      おもちゃ・ホビー・グッズ
-    .item__name__details
       = link_to "ユーザー確認", "/user-confirmation"
       
-
-
 
 .category
   .category__top
     人気のブランド
   .category__genre
-
     .category__genre__box
       .category__genre__box__text
         シャネル
