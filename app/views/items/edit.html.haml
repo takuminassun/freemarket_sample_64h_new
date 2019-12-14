@@ -20,7 +20,7 @@
               .dropzone-area
                 .input_area
                   =i.file_field :image
-                  = image_tag i.object.image.url, width: "300"
+                  = image_tag i.object.image.url, width: "100"
                   =i.hidden_field :id, value: i.object.id
 
       .listing__contents__name
