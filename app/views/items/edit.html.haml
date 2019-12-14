@@ -14,8 +14,6 @@
         .listing__contents__image__text
           最大10枚までアップロードできます
         .image__box
-          -# - @images.each do |image|
-          -#   = image_tag image.image.url, width: "300"
           =f.fields_for :images do |i|
             .dropzone-container
               #preview
