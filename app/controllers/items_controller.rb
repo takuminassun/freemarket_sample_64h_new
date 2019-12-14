@@ -25,13 +25,12 @@ class ItemsController < ApplicationController
 
   def edit 
     @item = Item.find(params[:id])
-    @user = User.find(params[:id])
-    @images = @item.images
+    # @user = User.find(params[:id])
   end
 
   def update
     item = Item.find(params[:id])
-    user = User.find(params[:id])
+    # user = User.find(params[:id])
     if item.update(item_params)
       redirect_to("/items/#{params[:id]}")
     else

@@ -14,14 +14,15 @@
         .listing__contents__image__text
           最大10枚までアップロードできます
         .image__box
-          - @images.each do |image|
-            = image_tag image.image.url, width: "300"
+          -# - @images.each do |image|
+          -#   = image_tag image.image.url, width: "300"
           =f.fields_for :images do |i|
             .dropzone-container
               #preview
               .dropzone-area
                 .input_area
                   =i.file_field :image
+                  -# =i.hidden_field :id, value: i.object.image
 
       .listing__contents__name
         .group
