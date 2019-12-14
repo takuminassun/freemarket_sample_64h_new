@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.order("created_at DESC").page(params[:page]).per(8)
     @images = Image.all
     @categorys = Category.limit(4)
-    @category = Category.find(1)
   end
 
   def new 

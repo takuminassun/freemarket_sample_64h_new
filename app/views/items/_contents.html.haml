@@ -12,8 +12,6 @@
     .item__name__box      
       新着アイテム
     .item__name__details
-      = link_to "もっと見る", "/mypage"
-
 
   .item__main
     - @items.each do |i| 
@@ -30,48 +28,15 @@
             .item__main__content__text
               .item__main__content__text__sale
                 = i.name
-
-.item
+  .page
+    = paginate(@items)              
+.item  
   .item__name
     .item__name__box
       = link_to "マイページ", "/mypage"     
-  .item__name
-    .item__name__box
       = link_to "プロフィール", "/profile"
-  .item__name
-    .item__name__box
       = link_to "ログアウト", "/logout"
-  .item__name
-    .item__name__box
       = link_to "ユーザー確認", "/user-confirmation"
       
 
-.category
-  .category__top
-    人気のブランド
-  .category__genre
-    .category__genre__box
-      .category__genre__box__text
-        シャネル
-    .category__genre__box
-      .category__genre__box__text
-        ルイヴィトン
 
-.item
-  .item__name
-    .item__name__box
-      シャネル
-    .item__name__details
-      =link_to "もっと見る", "/product-listing"
-
-  .item__main
-    .item__main__content
-      .item__main__content__image
-        .item__main__content__image__picture
-          = image_tag 'bag.jpeg', height: '188px', width: '188px'
-        .item__main__content__image__price
-          .item__main__content__image__price__money
-            ¥2,100
-      .item__main__content__text
-        .item__main__content__text__sale
-          シャネルっぽいバッグ
