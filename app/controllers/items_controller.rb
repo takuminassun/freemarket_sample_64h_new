@@ -24,6 +24,10 @@ class ItemsController < ApplicationController
   end
 
 
+  def ancestry
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+  
   private
 
   def item_params
