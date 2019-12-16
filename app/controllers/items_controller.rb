@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show, :edit]
+  before_action :set_item, only:[:show, :edit, :update]
 
   def index
     @items = Item.includes(:images)
@@ -28,16 +28,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
+    if @item.update(item_params)
       redirect_to("/items/#{params[:id]}")
     else
       render = "edit"
     end
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
   end
 
   private
@@ -46,4 +41,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:image,:id] ).merge(user_id: current_user.id)
   end
   
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
