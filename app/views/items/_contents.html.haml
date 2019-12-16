@@ -19,7 +19,7 @@
         .item__main__content__image
           =link_to item_path(i.id) do
             .item__main__content__image__picture
-              - i.images.each do |img|
+              - i.images.first(1).each do |img|
                 = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
             .item__main__content__image__price
               .item__main__content__image__price__money
