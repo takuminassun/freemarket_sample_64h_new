@@ -1,7 +1,9 @@
 .ansed
   - @parents.each do |i|
     = i.name
+    %br
     - i.children.each do |b|
       =b.name
+      %br
       - b.children.each do |c|
         =c.name
