@@ -2,12 +2,9 @@
   .header__all
 
     .headerform
-      -# TOPのメルカリのロゴ
       .mercarilogo
-        = image_tag src="fmarket_logo_red.svg",alt:"mercari",width: "134",height:"36",class: "mercaribox"
-        = link_to "item_index", items_path
+        = link_to image_tag(src="fmarket_logo_red.svg",alt:"fmarket",width: "134",height:"36",class: "mercaribox"), items_path
       .form
-        -#  検索フォーム formforに変更するかも
         %input.input-default{name: "keywrod", placeholder: "何かお探しですか？", type: "search"}
         .form__btn
           %i.fa.fa-search
