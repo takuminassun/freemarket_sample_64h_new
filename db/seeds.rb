@@ -330,7 +330,6 @@ other_antique = other.children.create(name: "アンティーク/コレクショ�
 other_atationery = other.children.create(name: "文房具/事務用品")
 other_office = other.children.create(name: "事務/店舗用品")
 
-
 other_bulksale.children.create([{name: ""}])
 other_pet.children.create([{name: "ペットフード"}, {name: "犬用品"}, {name: "猫用品"}, {name: "魚用品/水草"}, {name: "小動物用品"}, {name: "爬虫類/両生類用品"}, {name: "かご/おり"}, {name: "鳥用品"}, {name: "虫類用品"}])
 other_food.children.create([{name: "菓子"}, {name: "米"}, {name: "野菜"}, {name: "果物"}, {name: "調味料"}, {name: "魚介類(加工食品)"}, {name: "肉類(加工食品)"}, {name: "その他 加工食品"}])
