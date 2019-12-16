@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only:[:show, :edit]
+
   def index
     @items = Item.includes(:images)
     @images = Image.all
@@ -19,13 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images
-    
   end
 
   def edit 
-    @item = Item.find(params[:id])
   end
 
   def update
@@ -37,6 +36,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   private
 
