@@ -1,16 +1,5 @@
 class SignupController < ApplicationController
 
-  require 'payjp'
-
-  def purchase
-    Payjp.api_key = "秘密鍵"
-    Payjp::Charge.create(
-      amount: 809, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
-      currency: 'jpy'
-    )
-  end
-
   def step1
     @user = User.new
     @profile = Profile.new
@@ -35,35 +24,17 @@ class SignupController < ApplicationController
     @address = Address.new
   end
 
-  def step5
-    @user = User.new(
-      email: session[:email],
-      password: session[:password],
-      first_name: session[:first_name],
-      last_name: session[:last_name],
-      first_name_kana: session[:first_name_kana],
-      last_name_kana: session[:last_name_kana],
-      born_year: session[:born_year],
-      born_month: session[:born_month],
-      born_day: session[:born_day],
-      phone_number: session[:phone_number]
-    )
-    @address = Address.new(
-      address_first_name: session[:address_first_name],
-      address_last_name: session[:address_last_name],
-      address_first_name_kana: session[:address_first_name_kana],
-      address_last_name_kana: session[:address_last_name_kana],
-      post_number: session[:post_number],
-      city: session[:city],
-      town: session[:town],
-      building: session[:building]
-    )
-    @profile = Profile.new(nickname: session[:nickname])
-    @user.save!
-    @address.save!
-    @profile.save!
+  def step4
+    session[:address_first_name] = address_params[:address_first_name]
+    session[:address_last_name] = address_params[:address_last_name]
+    session[:address_first_name_kana] = address_params[:address_first_name_kana]
+    session[:address_last_name_kana] = address_params[:address_last_name_kana]
+    session[:post_number] = address_params[:post_number]
+    session[:city] = address_params[:city]
+    session[:town] = address_params[:town]
+    session[:building] = address_params[:building]
+    session[:user_id] = address_params[:user_id]
   end
-
 
   private
 
@@ -88,6 +59,18 @@ class SignupController < ApplicationController
     )
   end
 
-
+  def address_params
+    params.require(:address).permit(
+      :address_first_name,
+      :address_last_name,
+      :address_first_name_kana,
+      :address_last_name_kana,
+      :post_number,
+      :city,
+      :town,
+      :building,
+      :user_id
+    )
+  end
 
 end

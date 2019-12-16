@@ -4,11 +4,10 @@
     .content-header
       %h1 支払い方法
     .content-form
-    = form_with url: cards_path, method: :post, html: { name: "inputForm" } do |f|
-      %label.text カード番号
+      %label.text 電話
       %span.required 必須
       .content-form__input-small-box
-        = f.text_field :card_number, type: 'text', placeholder: '半角数字のみ', maxlength: "16"
+        %input.input-text{type:"text",placeholder: "半角数字のみ"}
       .content-form__credit-box
         = image_tag src="/images/credit-card_28.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
         = image_tag src="/images/credit-card_1.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
@@ -18,18 +17,42 @@
       %label.text 有効期限
       %span.required 必須
       .content-form__day-yearbox
-        = f.select :month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'select-day'
+        %select.select-day{name: "month"}>
+          %option{value: ""} -
+          %option{value: "1"} 1
+          %option{value: "2"} 2
+          %option{value: "3"} 3
+          %option{value: "4"} 4
+          %option{value: "5"} 5
+          %option{value: "6"} 6
+          %option{value: "7"} 7
+          %option{value: "8"} 8
+          %option{value: "9"} 9
+          %option{value: "10"} 10
+          %option{value: "11"} 11
+          %option{value: "12"} 12value: 
         %span.select-content-day 月
-        = f.select :year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'select-day'
+        %select.select-day{name: "year"}>
+          %option{value: ""} -
+          %option{value: "19"} 19
+          %option{value: "20"} 20
+          %option{value: "21"} 21
+          %option{value: "22"} 22
+          %option{value: "23"} 23
+          %option{value: "24"} 24
+          %option{value: "25"} 25
+          %option{value: "26"} 26
+          %option{value: "27"} 27
+          %option{value: "28"} 28
+          %option{value: "29"} 29
         %span 年
-      %label セキュリティコード
+      %label.text 電話
       %span.required 必須
       .content-form__input-small-box
         %input.input-text{type:"text",placeholder: "カード背面4桁もしくは3桁の番号"}
-        = f.text_field :cvc, type: 'text', class: 'input-text', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
       .content-form__description-box
         .content-form__description-box__content-box
           %span ?
           カード裏面の番号とは？
-      = f.submit '次へ進む'
-  = render "devise/layouts/footer"
+      %input.submit{type:"submit", value:"次へ進む"}
+= render "devise/layouts/footer"
