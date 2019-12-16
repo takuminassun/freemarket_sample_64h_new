@@ -3,8 +3,7 @@
   .item
     .item__contents
       %h1 
-        =@item.name
-        = link_to "リンク", edit_item_path(@item.id)
+        = @item.name
       .item__main
         .item__image
           .item__image__box
@@ -49,7 +48,11 @@
           送料込み
       
       %button.pricebtn{name: "price", type: "submit", value: ""}
-        %span 購入画面に進む
+        %span
+          -if user_signed_in? && current_user.id == @item.user_id
+            = link_to "編集する", edit_item_path(@item.id)
+          -else 
+            = link_to "購入画面へ進む"
       .item__text
         .itemtext__bb
           =@item.description
