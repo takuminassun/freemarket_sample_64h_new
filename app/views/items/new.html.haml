@@ -12,7 +12,27 @@
           %span.required-1
             必須
         .listing__contents__image__text
-          最大10枚までアップロードできます
+          最大3枚までアップロードできます       
+        = f.label '現在選んだファイルの画像イメージ'
+        #preview{:style => "display:none"}
+        .view_box
+          = f.fields_for :images do |i|
+            = i.file_field :image, type:"file", class:"file""
+            
+        
+           
+          
+        -# .field.image#img_field{:onclick => "$('#file').click()"}
+        -#   = f.fields_for :images do |i|
+        -#     - if i.object.image.url.present?
+        -#       = image_tag(i.object.image.url)
+        -#     - else
+        -#       %i.fas.fa-image
+        -#       %i.fas.fa-file-upload.add
+        -#       = i.file_field :image, class: "image", style: "display:none;", id: "file"
+      -# %form{:action => "/uploads", :enctype => "multipart/form-data"}          
+                
+
         .image__box
           =f.fields_for :images do |i|
             .dropzone-container
