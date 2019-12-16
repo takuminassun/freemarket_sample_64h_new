@@ -45,7 +45,8 @@
             .mypage__box
               = link_to  do
                 = image_tag "mypage.jpg",class: "face",width: "28"
-                %h2 マイページ
+                %h2 
+                  =link_to "マイページ", user_path(@users)
         - else
           = link_to new_user_registration_path do
             .signup-box
