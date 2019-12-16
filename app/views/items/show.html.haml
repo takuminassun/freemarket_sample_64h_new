@@ -4,12 +4,13 @@
     .item__contents
       %h1 
         =@item.name
+        = link_to "リンク", edit_item_path(@item.id)
       .item__main
         .item__image
           .item__image__box
             .item__image__box__main
             - @images.each do |image|
-              = image_tag image.image.url, width: "300"
+              = image_tag image.image.url, width: "120"
         .item__date
           %table
             %tr 
