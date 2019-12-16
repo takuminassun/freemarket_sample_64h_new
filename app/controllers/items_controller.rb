@@ -2,8 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update]
 
   def index
-    @items = Item.includes(:images)
+
+    @items = Item.order("created_at DESC").page(params[:page]).per(8)
     @images = Image.all
+    @categorys = Category.limit(4)
+
   end
 
   def new 
@@ -14,7 +17,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to "/", notice: '出品しました。'
+      redirect_to root_path, notice: '出品しました。'
     else
       render "new", notice: '出品に失敗しました'
     end
