@@ -68,23 +68,11 @@
         background-color: rgb(245, 245, 245);
         margin-top: 16px;
         border: dashed 1px #ccc;
+        display:flex;
         .dropzone-container{
-          width: 538px;
-          height: 80px;
-          #preview{
-            width: 100%;
-            height: 50px;
-            .img_view{
-              width: 114px;
-              height: 116px;
-              display: inline;
-              img{
-                padding: 20px 0;
-                height: 72.33px;
-                width: 114px;
-                display: flex;
-              }
-            }
+          width:200px;
+          display:flex;
+          .iput_area{
           }
         }
       }
@@ -101,14 +89,14 @@
           display: inline-block;
           font-size: 14px;
         }
-        .item{
+        .name{
           box-sizing: border-box;
           width: 100%;
           margin: 8px 0 0;
           height: 48px;
           padding: 10px 16px 8px;          
         }
-        .explain{
+        .text{
           box-sizing: border-box;
           margin-top: 8px;
           width: 100%;

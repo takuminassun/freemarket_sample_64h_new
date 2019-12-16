@@ -1,6 +1,9 @@
 .wrapper{
   background-color: rgb(240, 240, 240);
   display: block;
+  overflow: hidden;
+  width: 100%;
+  
 
   .exhibit{
     width: 160px;
@@ -10,6 +13,7 @@
     position: fixed;
     z-index: 1;
     cursor: pointer;
+    
 
     &__text{
       width: 160px;
@@ -21,7 +25,9 @@
       color: white;
       background-color: rgb(234, 53, 45);
       border-radius: 50%;
-      
+      a{
+        color: white;
+        }
       .fa.fa-camera{
         font-size: 70px;
       }

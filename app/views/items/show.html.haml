@@ -1,0 +1,184 @@
+.Outline
+  =render 'posts/header'
+  .item
+    .item__contents
+      %h1 
+        =@item.name
+      .item__main
+        .item__image
+          .item__image__box
+            .item__image__box__main
+            - @images.each do |image|
+              = image_tag image.image.url, width: "300"
+        .item__date
+          %table
+            %tr 
+              %th 出品者
+              %td
+                = link_to  "#{@item.user.first_name}"
+            %tr
+              %th カテゴリー
+              %td
+                = link_to  "#{@item.category.name}"
+            %tr
+              %th 商品の状態
+              %td 
+                = @item.status
+            %tr
+              %th 配送料の負担
+              %td 
+                = @item.shipping_burden
+            %tr
+              %th 配送の方法
+              %td 未定
+            %tr
+              %th 配送地域
+              %td 
+                =@item.prefecture.name
+            %tr
+              %th 発送日の目安
+              %td 
+                =@item.shipping_date
+      .price
+        %span.price__item
+          =@item.price
+        %span.price__tax
+          (税込)
+        %span.price__postage
+          送料込み
+      
+      %button.pricebtn{name: "price", type: "submit", value: ""}
+        %span 購入画面に進む
+      .item__text
+        .itemtext__bb
+          =@item.description
+      .item__under 
+        .item__under__left
+          .item__under__left__heart
+            %i.far.fa-heart
+              いいね！6
+          .item__under__left__flag
+            %i.far.fa-flag
+              不適切な商品の警告
+
+        .item__under__right
+          %i.fas.fa-lock
+            あんしん・安全への取り組み
+    .item__comment
+      .item__comment__box
+        .item__comment__box__main
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.input.textcoment{name: "main", type: "text"}
+        %button.comentsubmit{name: "submit", type: "submit", value: ""}
+          %span コメントする
+            
+    .item__linknext
+      .linkleft
+        %i.fas.fa-arrow-left
+          = link_to "前の商品"
+      .linkright
+        %i.fas.fa-arrow-right
+          = link_to "次の商品"
+    .external-link
+      %ul.external-link__box
+        %li
+          %i.fab.fa-facebook-square.fa-3x
+        %li
+          %i.fab.fa-twitter-square.fa-3x
+        %li
+          %i.fab.fa-line.fa-3x
+        %li
+          %i.fab.fa-instagram.fa-3x
+    .item__list__profile    
+      .otheritem
+        %h4.otheritem__head
+          = link_to  "○○さんのその他の出品" 
+        .other-content
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+        
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+        
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+      .otheritem
+        %h4.otheritem__head
+          =link_to  "レディース その他の商品"
+        .other-content
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+        
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+        
+          %section.other-content__box
+            = link_to ""
+            %figure.other-box
+              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+            .othertext
+              %h5.othertext__name
+                商品の名前
+              .othertext__num
+                .othertext__num__price
+                  ¥1,500
+                .othertext__num__heart
+                  %i.far.fa-heart
+                    %span 2
+  =render 'posts/footer'
+
