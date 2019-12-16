@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/purchase', to: "posts#purchase"
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
-  root to: 'posts#index'
+  root to: 'items#index'
 
   
 end

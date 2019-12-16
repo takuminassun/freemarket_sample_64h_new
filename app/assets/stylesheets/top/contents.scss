@@ -1,5 +1,5 @@
 .wrapper{
-  background-color: rgb(240, 240, 240);
+  background-color: #f5f5f5;
   display: block;
   overflow: hidden;
   width: 100%;
@@ -49,7 +49,7 @@
       font-family: Arial, 游ゴシック体;
     }
     &__genre{
-      height: 40px;
+      height: 160px;
       display: inline-block;
       text-align: center;
 
@@ -73,6 +73,7 @@
     width: 1020px;
     margin: 0 auto;
     padding: 42px 0 0 0;
+    background-color: #f5f5f5;
     &__name{
       width: 1020px;
       height: 33px;
@@ -97,20 +98,26 @@
     &__main{
       width: 1040px;
       display: inline-block;
+      margin-bottom:30px;
 
       &__content{
         width: 188px;
         height: 252px;
-        margin: 10px;
+        margin: 30px;
+
         float: left;
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.158);
-
+        .item-image{
+          width: 188px;
+          height: 188px;
+          object-fit: cover; 
+          }
         &__image{
           width: 188px;
           height: 188px;
           position: relative;
-
+ 
           &__price{
             height: 28px;
             display: inline-block;
@@ -137,6 +144,8 @@
           padding: 0 12px;
           font-family: Arial, 游ゴシック体;
           font-size: 14px;
+          background-color: white; 
+          color:black;       
           &__sale{
             width: 164px;
             line-height: 64px;
