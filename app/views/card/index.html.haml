@@ -1,9 +1,9 @@
 .Outline
-  =render "posts/header"
+  =render "shared/header"
   //マイページ
   .credit__all
     .side__mypage
-      =render "posts/side-list"
+      =render "shared/side-list"
     .credits
       %h2 支払い方法
       .credits__contents
@@ -16,4 +16,4 @@
         .credits__contents__footer
           = link_to "支払い方法について", "#"
           %i.fas.fa-chevron-right
-  =render 'posts/footer'
+  =render 'shared/footer'
