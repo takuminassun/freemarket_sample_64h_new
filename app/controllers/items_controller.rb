@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to("/items/#{params[:id]}")
+      redirect_to item_path(params[:id])
     else
       render = "edit"
     end
