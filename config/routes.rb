@@ -6,15 +6,15 @@ Rails.application.routes.draw do
     resources :card, only: :index
   end
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
-  get '/mypage', to: "posts#mypage"
-  get '/profile', to: "posts#profile"
-  get '/user-confirmation', to: "posts#user-confirmation"
-  get '/logout', to: "posts#logout"
+  get '/mypage', to: "users#mypage"
+  get '/profile', to: "users#profile"
+  get '/confirmation', to: "users#confirmation"
+  get '/logout', to: "users#logout"
   get '/product-listing', to: "posts#product-listing"
   get '/purchase', to: "posts#purchase"
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
+
   root to: 'items#index'
 
-  
 end

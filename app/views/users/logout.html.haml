@@ -1,10 +1,10 @@
 .Outline
-  =render "header"
+  =render "shared/header"
   .side-logout
-    =render "side-list"
+    =render "shared/side-list"
     .side-logout__contents
       .side-logout__contents__logout
         .side-logout__contents__logout__box
           %button.logout-btn{type: "submit",value: ""}
-            ログアウト
-  =render "footer"
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+  =render "shared/footer"
