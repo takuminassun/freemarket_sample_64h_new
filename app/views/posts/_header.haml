@@ -13,17 +13,56 @@
     .menu
       .menu__left
         %ul
-          %li.pan
+          %li
             -# .categorybox__image
             %i.fas.fa-list
             カテゴリーから探す
             %ul
-              %li レディース
+              %li 
+                =link_to "レディース"
+              %li 
+                =link_to "メンズ"
+              %li 
+                =link_to "ベビー・キッズ"
+              %li 
+                =link_to "インテリア・住まい・小物"
+              %li 
+                =link_to "本・音楽・ゲーム"
+              %li 
+                =link_to "おもちゃ・ホビー・グッズ"
+              %li 
+                =link_to "コスメ・香水・美容"
+              %li 
+                =link_to "家電・スマホ・カメラ"
+              %li 
+                =link_to "スポーツ・レジャー"
+              %li 
+                =link_to "ハンドメイド"
+              %li 
+                =link_to "チケット"
+              %li 
+                =link_to "自転車・オートバイ"
+              %li 
+                =link_to "その他"
+              %li 
+                =link_to "カテゴリー一覧"
               
           %li
             %i.fas.fa-tags
             = link_to "ブランドから探す", destroy_user_session_path, method: :delete
-              
+            %ul
+              %li
+                =link_to "シャネル"
+              %li
+                =link_to "ナイキ"
+              %li
+                =link_to "ルイ ヴィトン"
+              %li
+                =link_to "シュプリーム"
+              %li
+                =link_to "アディダス"
+              %li
+                =link_to "ブランド一覧"
           -# この中にブランド一覧
       .menu__right
         - if user_signed_in?

@@ -69,13 +69,16 @@
       ul {
         display: flex;
         position: relative;
-        .pan{
+        > li{
           font-size: 14px;
           cursor: pointer;
           height: 44px;
           position: relative;
           padding: 0px 10px;
           line-height: 36px;
+          &:hover ul{
+            display: block;
+          }
           i{
             color: $fma-red;
           }
@@ -83,7 +86,25 @@
             color: #2086ea;
           }
           ul{
-            background-color: rgb(13, 174, 238);
+            background-color: $fma-white;
+            margin-top: 8px;
+            z-index: 2;
+            position: absolute;
+            display: none;
+            :hover{
+                background-color: $fma-red;
+                color: $fma-white;
+              }
+            li{
+              height: 14px;
+              width: 170px;
+              padding: 15px;
+              line-height: 14px;
+              
+              a{
+                color: black;
+              }
+            }
           }
         }
       }
