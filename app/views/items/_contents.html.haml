@@ -29,11 +29,11 @@
               .item__main__content__text__sale
                 = i.name
   .page
-    = paginate(@items)              
+    = paginate(@items)
 .item  
   .item__name
     .item__name__box
-      = link_to "マイページ", mypage_path     
+      = link_to "マイページ", mypage_path
       = link_to "プロフィール", profile_path
       = link_to "ログアウト", logout_path
       = link_to "ユーザー確認", user_confirmation_path
