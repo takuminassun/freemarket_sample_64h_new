@@ -1,6 +1,9 @@
 = render "devise/layouts/header"
 .container
   .contents
+    = form_with url: step2_signup_index_path do
+      :plain
+      <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="公開鍵"></script>
     .content-header
       %h1 会員情報入力
     = form_with model: @user, url: step2_signup_index_path, local: true do |f|

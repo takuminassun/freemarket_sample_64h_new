@@ -12,4 +12,7 @@ Rails.application.routes.draw do
       post "step4"
     end
   end
+
+  resources :cards, only: [:new, :create]
+
 end
