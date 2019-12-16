@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    # @parents = Category.all.order("id ASC").limit(13)
+    # @parenys = Item.index(item_params)
   end
 
   def new 
@@ -8,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)exi
+    @item = Item.new(item_params)
     if @item.save
       redirect_to "/"
     else
@@ -16,6 +18,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def ancestry
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+  
   private
 
   def item_params
