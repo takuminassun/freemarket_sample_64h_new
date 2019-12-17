@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-<<<<<<< HEAD
   root to: 'posts#index'
 
   get "signup", to: "signup#index"
@@ -12,7 +11,7 @@ Rails.application.routes.draw do
       post "step3"
     end
   end
-=======
+  
   resources :items, only: [:index, :new, :create, :show]
   resources :users, only: :show do 
     resources :card, only: :index
@@ -29,5 +28,4 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
 
->>>>>>> master
 end

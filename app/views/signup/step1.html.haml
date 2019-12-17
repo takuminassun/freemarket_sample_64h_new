@@ -58,13 +58,11 @@
             = f.text_field :born_day, autocomplete: "born_day"
             %span 日
         %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        %br
-        %br
         %p2 「次へ進む」のボタンを押すことにより、
-        %a{href: "#"} yahoo表示
+        = link_to "#" yahoo表示
         %p2に同意したものとみなします
         .next-btn.content-box
           = f.submit "次へ進む", class:"next-btn2"
         .privacy.content-box
-          %a{href: "#"} 本人情報の登録について＞
+        = link_to "#" 本人情報の登録について＞
 = render "devise/layouts/footer"
