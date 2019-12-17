@@ -70,6 +70,7 @@
         display: flex;
         position: relative;
         float: left;
+        
         > li{
           font-size: 14px;
           cursor: pointer;
@@ -87,17 +88,18 @@
             color: #2086ea;
           }
           ul{
-            background-color: $fma-white;
+            
             margin-top: 8px;
             z-index: 2;
             position: absolute;
             display: block;
-            //display: none;
+            display: none;
             :hover{
-                background-color: $fma-red;
+                //background-color: $fma-red;
                 //color: $fma-white;
               }
             .first{
+              background-color: $fma-white;
               height: 14px;
               width: 170px;
               padding: 15px;
@@ -105,18 +107,34 @@
               position: relative;
               &:hover ul{
                 display: block;
+                
               }
               
               ul{
-                //display: none;
+                display: none;
                 .second{
                   background-color: $fma-white;
-                  display: inline-block;
                   position: absolute;
+                  position: relative;
                   top: -37px;
                   left: 185px;
                   width: 180px;
                   height: 500px;
+                  &:hover ul{
+                    display: block;
+                  }
+
+                  ul{
+                    display: none;
+                    .third{
+                      background-color: $fma-white;
+                      position: absolute;
+                      top: -405px;
+                      left: 185px;
+                      width: 180px;
+                      height: 500px;
+                    }
+                  }
                 }
               }
               

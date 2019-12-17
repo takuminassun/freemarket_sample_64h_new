@@ -4,7 +4,6 @@ class PostsController < ApplicationController
 
     # @categories = Category.where(params[:id])
     @category_children1 = Category.where(ancestry: 1).limit(11)
-
     @category_children2 = Category.where(ancestry: 2).limit(12)
     # @category_children3 = Category.where(parent_id: 3)
     # @category_children4 = Category.where(parent_id: 4)

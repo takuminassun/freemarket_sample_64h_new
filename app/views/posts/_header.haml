@@ -27,9 +27,10 @@
                       %br
                     %ul
                       %li.third
-                        - @category_children2.each do |i|
-                          =i.name
-                          %br
+                        - @category_children1.each do |i|
+                          - i.children.first(1).each do |b|
+                            =b.name
+                            %br
               %li.first 
                 =link_to "メンズ"
               %li.first 
