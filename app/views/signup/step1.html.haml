@@ -10,7 +10,6 @@
           %p2.requiredtext 必須
           = f.fields_for @profile do |p|
             = p.text_field :nickname,placeholder: "例)フリマ太郎"
-            //%input{placeholder: "例)フリマ太郎"}
         .content__form__mail.content-box
           %p メールアドレス
           %p2.requiredtext 必須
@@ -59,9 +58,6 @@
             = f.text_field :born_day, autocomplete: "born_day"
             %span 日
         %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        -# .content-form__phone-box
-        -#   %p 携帯電話の番号
-        -#   = f.phone_field :phone_number, class: "input", autocomplete: "phone_number"
         %br
         %br
         %p2 「次へ進む」のボタンを押すことにより、

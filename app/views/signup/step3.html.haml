@@ -3,18 +3,18 @@
   .contents
     .content-header
       %h1 発送元・お届け先住所入力
-    = form_with　model: @address, url: step4_signup_index_path, local: true do |f|
+    = form_with model: @address, url: signup_index_path, method: :post, local: true do |f|
       .content-form
         %label.text お名前
         %span.required 必須
         .content-form__input-box
           = f.text_field :address_first_name, autocomplete: "first_name", class:"input-text", placeholder: "例"
-          = f.text_field :last_name, autocomplete: "last_name", class:"input-text", placeholder: "例"
+          = f.text_field :address_last_name, autocomplete: "last_name", class:"input-text", placeholder: "例"
         %label.text お名前カナ
         %span.required 必須
         .content-form__input-box
-          = f.text_field :first_name_kana, autocomplete: "first_name_kana", class:"input-text", placeholder: "例"
-          = f.text_field :last_name_kana, autocomplete: "last_name_kana", class:"input-text", placeholder: "例"
+          = f.text_field :address_first_name_kana, autocomplete: "first_name_kana", class:"input-text", placeholder: "例"
+          = f.text_field :address_last_name_kana, autocomplete: "last_name_kana", class:"input-text", placeholder: "例"
         %label.text 郵便番号
         %span.required 必須
         .content-form__input-small-box
@@ -35,9 +35,5 @@
         %span.required-gray 任意
         .content-form__input-small-box
           = f.text_field :building, autocomplete: "building", class:"input-text", placeholder: "例）北出島ブランデ"
-        %label.text 電話
-        %span.required-gray 任意
-        .content-form__input-small-box
-          = f.text_field :phone_number, autocomplete: "phone_number", class:"input-text", placeholder: "例）0900000000"
-          = f.submit "次へ進む", class: "submit"
+        = f.submit "次へ進む", class: "submit"
 = render "devise/layouts/footer"
