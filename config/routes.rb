@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: :show do 
     resources :card, only: :index
   end
-  resources :items, only: [:index, :new, :create, :show, :edit, :update]
+  resources :items
   get '/mypage', to: "users#mypage"
   get '/profile', to: "users#profile"
   get '/confirmation', to: "users#confirmation"
