@@ -26,7 +26,7 @@
 
       .listing__contents__name
         .group
-          %label 商品名 
+          %label raila商品名 
           %span.required 必須
           %br/
           =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
@@ -97,7 +97,16 @@
             また、出品をもちまして
             =link_to '加盟販売店規約', '#'
             に同意したことになります。
-        =f.submit '出品する', class: "submit"
+        =f.submit '出品する', class: "submit", id: "modal-open-btn"
+        #overlay
+          #modalWindow
+            .modal-message-box
+              %div 確認
+              %div 商品を出品することができました。
+            %button#modal-close-btn 閉じる
+            %button#delete-comformation-btn 削除する
+
+
         .back-btn
           =link_to 'もどる', "/"
         
