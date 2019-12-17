@@ -52,7 +52,7 @@
           -if user_signed_in? && current_user.id == @item.user_id
             = link_to "編集する", edit_item_path(@item.id)
             %button.deletebtn{name: "delete", type: "submit", value: ""}
-              = link_to "削除する", "/items/#{@item.id}", method: :delete
+              = link_to "削除する", item_path(@item.id), method: :delete
           -else 
             = link_to "購入画面へ進む"
       .item__text
