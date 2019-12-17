@@ -22,7 +22,10 @@
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image, type:"file"
+                  = i.label :image, class: "form-image" do
+                    %i.fa.fa-image
+                    = i.index+1
+                    = i.file_field :image, type:"file", class:"form-image-field" 
 
       .listing__contents__name
         .group
