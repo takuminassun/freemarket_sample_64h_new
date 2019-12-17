@@ -1,13 +1,10 @@
 .header
   .header__all
-
+    
     .headerform
-      -# TOPのメルカリのロゴ
       .mercarilogo
-        =link_to root_path do
-          = image_tag src="fmarket_logo_red.svg",alt:"mercari",width: "134",height:"36",class: "mercaribox"
+        = link_to image_tag(src="fmarket_logo_red.svg",alt:"fmarket",width: "134",height:"36",class: "mercaribox"), items_path
       .form
-        -#  検索フォーム formforに変更するかも
         %input.input-default{name: "keywrod", placeholder: "何かお探しですか？", type: "search"}
         .form__btn
           %i.fa.fa-search
@@ -43,8 +40,9 @@
           .mypage
             .mypage__box
               = link_to  do
-                = image_tag "mypage.jpg",class: "face",width: "28"
-                %h2 マイページ
+                = image_tag "mypage.jpg",class: "face",width: "16"
+                %h2 
+                  = link_to "マイページ", mypage_path(current_user)
         - else
           = link_to step1_signup_index_path do
             .signup-box

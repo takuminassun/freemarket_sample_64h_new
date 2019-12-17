@@ -1,3 +1,8 @@
+.Outline {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
 .side-mypage{
   width: 1020px;
   height: 1252px;
@@ -15,7 +20,7 @@
       width: 660px;
       height: 160px;
       padding: 20px;
-      background-image: url(profile-images.jpeg);
+      background-image: image-url("profile-images.jpeg");
       background-size: cover;
 
       .user{

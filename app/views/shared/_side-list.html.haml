@@ -55,24 +55,24 @@
   %h2 設定
   %ul
     %li
-      =link_to "プロフィール"
+      =link_to "プロフィール", profile_path(@user)
       %i.fa.fa-angle-right
     %li
       =link_to "発送元・お届け先住所変更"
       %i.fa.fa-angle-right
     %li
-      =link_to "支払い方法"
+      =link_to "支払い方法", user_card_index_path(@user)
       %i.fa.fa-angle-right
     %li
       =link_to "メール/パスワード"
       %i.fa.fa-angle-right
     %li
-      =link_to "本人情報"
+      =link_to "本人情報", confirmation_path(@user)
       %i.fa.fa-angle-right
     %li
       =link_to "電話番号の確認"
       %i.fa.fa-angle-right
     %li
-      =link_to "ログアウト"
+      = link_to "ログアウト", logout_path
       %i.fa.fa-angle-right
   
