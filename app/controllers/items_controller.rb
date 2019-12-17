@@ -1,5 +1,12 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only:[:show, :edit, :update]
+
   def index
+
+    @items = Item.order("created_at DESC").page(params[:page]).per(8)
+    @images = Image.all
+    @categorys = Category.limit(4)
+
   end
 
   def new 
@@ -18,11 +25,29 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @images = @item.images
+  end
+
+  def edit 
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(params[:id])
+    else
+      render = "edit"
+    end
+  end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:image] ).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :category_id, :price, :status, :description, :shipping_burden, :shipping_date, :prefecture_id, images_attributes: [:image,:id] ).merge(user_id: current_user.id)
+  end
+  
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

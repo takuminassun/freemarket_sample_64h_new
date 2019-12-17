@@ -1,7 +1,7 @@
 .Outline
-  =render 'header'
+  =render 'shared/header'
   .side-profile
-    =render "side-list"
+    =render "shared/side-list"
     .side-profile__contents
       %h2 プロフィール
       .side-profile__contents__back-image
@@ -13,4 +13,4 @@
         %textarea.profile-comment{placeholder: "例）こんにちは☆"}
         %button.change-btn{type: "submit",value: ""}
           変更する
-  =render 'footer'
+  =render 'shared/footer'
