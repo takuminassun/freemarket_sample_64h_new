@@ -8,8 +8,11 @@
         .item__image
           .item__image__box
             .item__image__box__main
-            - @images.each do |image|
-              = image_tag image.image.url, width: "120"
+            - @images.each_with_index do |image, index|
+              - if index == 0
+                = image_tag image.image.url, width: "300"
+              - else
+                = image_tag image.image.url, width: "145"
         .item__date
           %table
             %tr 
@@ -41,7 +44,8 @@
                 =@item.shipping_date
       .price
         %span.price__item
-          =@item.price
+          ¥
+          =@item.price.to_s(:delimited, delimiter: ',')
         %span.price__tax
           (税込)
         %span.price__postage
