@@ -97,18 +97,9 @@
             また、出品をもちまして
             =link_to '加盟販売店規約', '#'
             に同意したことになります。
-        =f.submit '出品する', class: "submit", id: "modal-open-btn"
-        #overlay
-          #modalWindow
-            .modal-message-box
-              %div 確認
-              %div 商品を出品することができました。
-            %button#modal-close-btn 閉じる
-            %button#delete-comformation-btn 削除する
-
-
+        =f.submit '出品する', class: "submit"
         .back-btn
-          =link_to 'もどる', "/"
+          =link_to 'もどる', root_path
         
     .listing__footer
       .nav
