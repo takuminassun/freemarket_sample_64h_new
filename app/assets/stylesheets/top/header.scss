@@ -69,6 +69,7 @@
       ul {
         display: flex;
         position: relative;
+        float: left;
         > li{
           font-size: 14px;
           cursor: pointer;
@@ -90,16 +91,34 @@
             margin-top: 8px;
             z-index: 2;
             position: absolute;
-            display: none;
+            display: block;
+            //display: none;
             :hover{
                 background-color: $fma-red;
-                color: $fma-white;
+                //color: $fma-white;
               }
-            li{
+            .first{
               height: 14px;
               width: 170px;
               padding: 15px;
               line-height: 14px;
+              position: relative;
+              &:hover ul{
+                display: block;
+              }
+              
+              ul{
+                //display: none;
+                .second{
+                  background-color: $fma-white;
+                  display: inline-block;
+                  position: absolute;
+                  top: -37px;
+                  left: 185px;
+                  width: 180px;
+                  height: 500px;
+                }
+              }
               
               a{
                 color: black;

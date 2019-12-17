@@ -17,52 +17,63 @@
             -# .categorybox__image
             %i.fas.fa-list
             カテゴリーから探す
-            %ul
-              %li 
+            %ul.mather
+              %li.first
                 =link_to "レディース"
-              %li 
+                %ul
+                  %li.second
+                    - @category_children1.each do |i|
+                      =i.name
+                      %br
+                    %ul
+                      %li.third
+                        - @category_children2.each do |i|
+                          =i.name
+                          %br
+              %li.first 
                 =link_to "メンズ"
-              %li 
+              %li.first 
                 =link_to "ベビー・キッズ"
-              %li 
+              %li.first 
                 =link_to "インテリア・住まい・小物"
-              %li 
+              %li.first 
                 =link_to "本・音楽・ゲーム"
-              %li 
+              %li.first 
                 =link_to "おもちゃ・ホビー・グッズ"
-              %li 
+              %li.first 
                 =link_to "コスメ・香水・美容"
-              %li 
+              %li.first 
                 =link_to "家電・スマホ・カメラ"
-              %li 
+              %li.first
                 =link_to "スポーツ・レジャー"
-              %li 
+              %li.first 
                 =link_to "ハンドメイド"
-              %li 
+              %li.first 
                 =link_to "チケット"
-              %li 
+              %li.first 
                 =link_to "自転車・オートバイ"
-              %li 
+              %li.first 
                 =link_to "その他"
-              %li 
+              %li.first 
                 =link_to "カテゴリー一覧"
-              
+            %ul.children
+              = render partial:"./items/ancestry-children", collection: @parent
           %li
             %i.fas.fa-tags
             = link_to "ブランドから探す", destroy_user_session_path, method: :delete
-            %ul
-              %li
-                =link_to "シャネル"
-              %li
-                =link_to "ナイキ"
-              %li
-                =link_to "ルイ ヴィトン"
-              %li
-                =link_to "シュプリーム"
-              %li
-                =link_to "アディダス"
-              %li
-                =link_to "ブランド一覧"
+            -# %ul
+            -#   %li
+            -#     =link_to "シャネル"
+            -#   %li
+            -#     =link_to "ナイキ"
+            -#   %li
+            -#     =link_to "ルイ ヴィトン"
+            -#   %li
+            -#     =link_to "シュプリーム"
+            -#   %li
+            -#     =link_to "アディダス"
+            -#   %li
+            -#     =link_to "ブランド一覧"
           -# この中にブランド一覧
       .menu__right
         - if user_signed_in?
