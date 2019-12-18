@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
+  before_action :correct_user, only:[:edit, :update]
 
   def index
 
@@ -31,6 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def edit 
+
   end
 
   def update
@@ -58,6 +60,13 @@ class ItemsController < ApplicationController
   
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def correct_user
+    @item = current_user.items.find_by(id: params[:id])
+    unless @item
+      redirect_to root_path
+    end
   end
 
 end

@@ -7,7 +7,8 @@
       .back-image
         .user
           = image_tag "mypage.jpg",size:"60x60",class: "user__icon"
-          %h2 バナナ星人
+          %h2 
+            = @user.first_name
           .user__number
             .user__number__box
               .user__number__box__text
