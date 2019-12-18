@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :born_year, null: false
       t.integer :born_month, null: false
       t.integer :born_day, null: false
-      t.string :phone_number, null: false, unique: true
+      t.string :phone_number, unique: true
 
       t.timestamps null: false
     end
