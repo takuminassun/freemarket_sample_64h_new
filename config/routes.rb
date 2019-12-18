@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,
  controllers: {
-  registrations: 'users/registrations' ,
+  # registrations: 'users/registrations' ,
   omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/purchase', to: "posts#purchase"
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
+  resources :users, only: [:show]
   root to: 'posts#index'
 
   
