@@ -1,5 +1,4 @@
-
-//= render "devise/layouts/header"
+= render "devise/layouts/header"
 .single
   .single__header
     = link_to root_path do
@@ -23,7 +22,5 @@
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class: "login-information"
         = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード",class: "login-information"
         = f.submit "ログイン",class:"submit-login"
-        
-  //= render "devise/shared/links"
 = render "devise/layouts/footer"
 
