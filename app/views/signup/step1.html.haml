@@ -59,10 +59,12 @@
             %span 日
         %p3 ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         %p2 「次へ進む」のボタンを押すことにより、
-        = link_to "#" yahoo表示
-        %p2に同意したものとみなします
+        = link_to "/" do
+          %span 利用規約
+        %span に同意したものとみなします。
         .next-btn.content-box
           = f.submit "次へ進む", class:"next-btn2"
         .privacy.content-box
-        = link_to "#" 本人情報の登録について＞
-= render "devise/layouts/footer"
+        = link_to "/" do
+          %p 本人情報の登録について
+    = render "devise/layouts/footer"
