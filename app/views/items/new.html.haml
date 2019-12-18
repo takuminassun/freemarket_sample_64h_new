@@ -17,7 +17,11 @@
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image
+                  =i.file_field :image, id: :item_img
+                  -if @item.images.present?
+                    = image_tag i.image.url, id: :image_prev
+                  -else 
+                    %p クリックしてください
 
       .listing__contents__name
         .group
