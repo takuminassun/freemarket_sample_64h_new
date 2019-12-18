@@ -11,18 +11,13 @@
           %h3 出品画像
           %span.required-1
             必須
-        .listing__contents__image__text
-          追加画像プレビュー
-          （最大3枚までアップロードできます）       
-        .preview-box
-          .preview
         .image__box
           =f.fields_for :images do |i|
             .dropzone-container
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image, type:"file"
+                  =i.file_field :image
 
       .listing__contents__name
         .group

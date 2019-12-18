@@ -80,10 +80,44 @@
           }
         }
     .image__box{
-      height: 65px;
+      height: 172px;
       background-color: rgb(245, 245, 245);
       margin-top: 16px;
       border: dashed 1px #ccc;
+      display: flex;
+      .dropzone-container{
+        width: 33%;
+        background-color: purple;
+        #preview{
+
+          .img_view{
+            width: 116px;
+            img{
+              height: 172px;
+            }
+            .btn_wrapper{
+              display: flex;
+              font-size: 14px;
+              height: 44px;
+              .btn.edit{
+                background: #f5f5f5;
+                text-align: center;
+                width: 50%;
+                color: #0099e8;
+                line-height: 44px;
+              }
+              .delete{
+                background: #f5f5f5;
+                text-align: center;
+                width: 50%;
+                color: #0099e8;
+                line-height: 44px;
+              }
+            }
+          }
+        }
+        
+      }
       }      
     }
     &__name{
@@ -136,10 +170,7 @@
           .select{
             margin-top: 8px;
             width: 400px;
-            #prefecture_id{
-              width: 100%;
-            }
-            .status{
+            select{
               width: 100%;
               height: 48px;
               background-color: #fff;
@@ -168,16 +199,11 @@
         }
         .group{
           margin-bottom: 40px;
-          .select{
-            margin-top: 8px;
-            width: 400px;
-            
-            .status{
-              width: 100%;
-              height: 48px;
-              background-color: #fff;
-              border: 1px solid #ccc;
-            }
+          select{
+            width: 100%;
+            height: 48px;
+            background-color: #fff;
+            border: 1px solid #ccc;
           }
         }
       }
@@ -287,10 +313,11 @@
   }
   .listing__footer{
     box-sizing: border-box;
-    width: 456px;
+    width: 700px;
     height: 220px;
     margin: 0 auto;
     padding: 40px 0;
+    background: rgb(245, 245, 245);
     ul{
       display: flex;
       justify-content: center;
