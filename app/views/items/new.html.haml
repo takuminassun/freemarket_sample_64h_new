@@ -17,15 +17,14 @@
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image, id: :item_img
-                  -if @item.images.present?
-                    = image_tag i.image.url, id: :image_prev
-                  -else 
-                    %p クリックしてください
+                  =i.label :image, class: "image" do
+                    #img_field{:onclick => "$('#file').click()"}
+                      %p ここをクリックしてください
+                  =i.file_field :image, class: "image", style: "display:none;", id: "file"
 
       .listing__contents__name
         .group
-          %label raila商品名 
+          %label 商品名 
           %span.required 必須
           %br/
           =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
