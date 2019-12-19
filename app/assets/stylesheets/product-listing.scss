@@ -62,7 +62,6 @@
         font-size: 14px;
       }
       #image-box-1{
-        position: relative;
         box-sizing: border-box;
         width: 612px;
         height: 248px;
@@ -71,6 +70,7 @@
         display: flex;
         flex-wrap: wrap;
         border: dashed 1px #ccc;
+        position: relative;
         .item-num-0{
           width: 114px;
         }
@@ -103,6 +103,7 @@
           width: 114px;
         }
         label{
+          position: absolute;
           display: block;
           width: 610px;
           height: 246px;
