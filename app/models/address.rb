@@ -13,7 +13,6 @@ class Address < ApplicationRecord
   end
 
   with_options format: { with: /\A[0-9]+\z/ } do
-    validates :post_number
     validates :town
   end
   
