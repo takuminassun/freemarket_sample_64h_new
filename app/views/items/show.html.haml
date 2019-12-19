@@ -1,15 +1,18 @@
 .Outline
-  =render 'posts/header'
+  =render 'shared/header'
   .item
     .item__contents
       %h1 
-        =@item.name
+        = @item.name
       .item__main
         .item__image
           .item__image__box
             .item__image__box__main
-            - @images.each do |image|
-              = image_tag image.image.url, width: "300"
+            - @images.each_with_index do |image, index|
+              - if index == 0
+                = image_tag image.image.url, width: "300"
+              - else
+                = image_tag image.image.url, width: "145"
         .item__date
           %table
             %tr 
@@ -41,14 +44,21 @@
                 =@item.shipping_date
       .price
         %span.price__item
-          =@item.price
+          ¥
+          =@item.price.to_s(:delimited, delimiter: ',')
         %span.price__tax
           (税込)
         %span.price__postage
           送料込み
       
       %button.pricebtn{name: "price", type: "submit", value: ""}
-        %span 購入画面に進む
+        %span
+          -if user_signed_in? && current_user.id == @item.user_id
+            = link_to "編集する", edit_item_path(@item.id)
+            %button.deletebtn{name: "delete", type: "submit", value: ""}
+              = link_to "削除する", item_path(@item.id), method: :delete
+          -else 
+            = link_to "購入画面へ進む"
       .item__text
         .itemtext__bb
           =@item.description
@@ -97,7 +107,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -111,7 +121,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -125,7 +135,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -142,7 +152,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -156,7 +166,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -170,7 +180,7 @@
           %section.other-content__box
             = link_to ""
             %figure.other-box
-              = image_tag src="/images/mypage.jpg/",alt:"",width: "50",class:"srcc2"
+              = image_tag src="mypage.jpg",alt:"",width: "50",class:"srcc2"
             .othertext
               %h5.othertext__name
                 商品の名前
@@ -180,5 +190,5 @@
                 .othertext__num__heart
                   %i.far.fa-heart
                     %span 2
-  =render 'posts/footer'
+  =render 'shared/footer'
 

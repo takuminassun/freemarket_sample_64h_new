@@ -11,15 +11,16 @@
           %h3 出品画像
           %span.required-1
             必須
-        .listing__contents__image__text
-          最大10枚までアップロードできます
         .image__box
           =f.fields_for :images do |i|
             .dropzone-container
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image
+                  =i.label :image, class: "image" do
+                    #img_field{:onclick => "$('#file').click()"}
+                      %p ここをクリックしてください
+                  =i.file_field :image, class: "image", style: "display:none;", id: "file"
 
       .listing__contents__name
         .group
@@ -96,7 +97,7 @@
             に同意したことになります。
         =f.submit '出品する', class: "submit"
         .back-btn
-          =link_to 'もどる', "/"
+          =link_to 'もどる', root_path
         
     .listing__footer
       .nav

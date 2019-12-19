@@ -54,7 +54,7 @@
 
 
 .footer-second{
-  height: 379px;
+  height: 100%;
   width: 100vw;
   padding: 0 20px 10px 20px;
   background-color: black;
@@ -115,7 +115,7 @@
   &__bottombox{
     width: 1020px;
     height: 33px;
-    margin: 30px auto 20px;
+    margin: 30px auto;
 
     p{
       float: right;
