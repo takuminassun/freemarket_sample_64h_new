@@ -47,7 +47,7 @@
           top: 0;
           right: 0;
           text-align: center;
-          line-height: 40px;           
+          line-height: 40px;
           .fa-search {
             max-width: 100%;
             max-height: 100%;
@@ -63,62 +63,94 @@
       display: flex;
       margin-top: 8px;
       justify-content: space-between;
-      &__left {
-        display: flex;
+      &__left{
         margin-left: 30px;
-        .categorybox{
-          cursor: pointer;
-          height: 44px;
-          position: relative;
-          padding: 0px 10px;
-
+      }
+      ul {
+        display: flex;
+        position: relative;
+        float: left;
+        
+        > li{
+            font-size: 14px;
+            cursor: pointer;
+            height: 44px;
+            padding: 0px 10px;
+            line-height: 36px;
+            &:hover ul.parent{
+              display: block;
+            }
+            a{
+              color: $fma-black;
+            }
+          i{
+            color: $fma-red;
+          }
           &:hover{
             color: #2086ea;
           }
-
-          &__image {
+          ul.parent{
+            margin-top: 8px;
+            z-index: 2;
+            position: absolute;
             display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 36px;
-            white-space: nowrap;
-            .fa-list {
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(234, 53, 45);
-              height: 12px;
-              margin-right: 4px;
-            }
-            a{
-              color: black;
-            }
-          }
-        }
-        .brandbox {
-          cursor: pointer;
-          height: 44px;
-          position: relative;
-          padding: 0px 10px;
+            display: none;
 
-          &:hover{
-            color: #2086ea;
-          }
+            > li.redy{
+              background-color: $fma-white;
+              height: 14px;
+              width: 170px;
+              padding: 15px;
+              line-height: 14px;
+              &:hover {
+                background-color: $fma-red;
+              }
+              &:hover a {
+                color: $fma-white;
+              }
+              &:hover ul.child{
+                display: block;
+                }
+              
+              ul.child{
+                width: 230px;
+                height: 616px;
+                position: absolute;
+                top: 0px;
+                left: 200px;
+                display: block;
+                display: none;
+                z-index: -1;
+                background-color: $fma-white;
+                
+                > li.redy-child{
+                  &:hover {
+                    background-color: $fma-bg-gray;
+                  }
+                    a{
+                      color: black;
+                    }
+                  &:hover ul.grand{
+                    display: block;
+                  }
 
-          &__image {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 36px;
-            white-space: nowrap;
-            .fa-tags {
-              max-width: 100%;
-              max-height: 100%;
-              color: rgb(234, 53, 45);
-              height: 12px;
-              margin-right: 4px;
-            }
-            a{
-              color: black;
+                  ul.grand{
+                    display: block;
+                    display: none;
+                    width: 250px;
+                    position: absolute;
+                    left: 170px;
+                    top: 0px;
+                    height: 616px;
+                    background-color: $fma-white;
+                    > li.redy-grand{
+                      &:hover {
+                        background-color: $fma-bg-gray;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
