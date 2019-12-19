@@ -38,10 +38,9 @@
     }
     
     &__image{
-      width: 620px;
       padding: 40px;
       border-top: 1px solid #eee;
-      height: 223px;
+      height: 300px;
       &__head{
         display: flex;
         h3{
@@ -58,56 +57,72 @@
           height: 19px;
         }
       }
-      &__text{
-        margin: 0 auto;
-        font-size: 13px;
-        text-align: center;
+      p{
+        margin-top: 8px;
+        font-size: 14px;
       }
-
-      
-      .preview-box{
-        padding: 0.5em 1em;
-        font-weight: bold;
-        border: solid 2px #f5f5f5;
-        height:150px; 
-        width:200px;
-        text-align: center;
-        margin: 0 auto;
-        img{
-          height:150px; 
-          width:200px;
-          object-fit:contain;
+      #image-box-1{
+        position: relative;
+        box-sizing: border-box;
+        width: 612px;
+        height: 248px;
+        background-color: #f5f5f5;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        border: dashed 1px #ccc;
+        .item-num-0{
+          width: 114px;
+        }
+        .item-num-1{
+          width: 114px;
+        }
+        .item-num-2{
+          width: 114px;
+        }
+        .item-num-3{
+          width: 114px;
+        }
+        .item-num-4{
+          width: 114px;
+        }
+        //下段のfile_field
+        .item-num-5{
+          width: 114px;
+        }
+        .item-num-6{
+          width: 114px;
+        }
+        .item-num-7{
+          width: 114px;
+        }
+        .item-num-8{
+          width: 114px;
+        }
+        .item-num-9{
+          width: 114px;
+        }
+        label{
+          display: block;
+          width: 610px;
+          height: 246px;
+          text-align: center;
+          line-height: 246px;
+          .camera{
+            display: block;
+            position: absolute;
+            top: -35px;
+            left: 260px;
           }
         }
-    .image__box{
-      height: 172px;
-      background-color: rgb(245, 245, 245);
-      margin-top: 16px;
-      border: dashed 1px #ccc;
-      display: flex;
-      .dropzone-container{
-       width: 50%;
-        margin: 0 auto;
-        .dropzone-area{
-          height: 100%;
-          .input_area{
-            height: 100%;
-            #img_field{
-              height: 100%;
-              img{
-
-                height: 100%;
-              }
-              p{
-                line-height: 172px;
-                text-align: center;
-              }
-            }
+        .item-image{
+          margin-right: 8px;
+          .item-image__operetion{
+            text-align: center;
+            color: #0099e8;
           }
         }
-        
       }
-      }      
     }
     &__name{
       padding: 40px;
