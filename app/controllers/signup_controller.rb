@@ -34,7 +34,8 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       born_year: session[:born_year],
       born_month: session[:born_month],
-      born_day: session[:born_day]
+      born_day: session[:born_day],
+      phone_number: session[:phone_number]
     )
     @profile = Profile.new(
       nickname: session[:nickname]
@@ -51,8 +52,8 @@ class SignupController < ApplicationController
     )
     if @user.valid? && @profile.valid? && @address.valid?
       Address.create(address_params)
-      @user.save
-      @profile.save
+      @user.save!
+      @profile.save!
     else
       redirect_to action: 'step1'
     end
