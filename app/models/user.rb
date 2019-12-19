@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
-  has_one :address
-  has_one :profile
+  has_one :address, inverse_of: :user
+  has_one :profile, inverse_of: :user
   has_many :items
+
   has_many :sns_credentials, dependent: :destroy
 
   def self.find_oauth(auth)
@@ -49,4 +50,25 @@ class User < ApplicationRecord
     end
     return user
   end
+
+
+  # 漢字のみ許可
+  with_options format: { with: /\A[一-龥]+\z/ } do
+    validates :first_name
+    validates :last_name
+  end
+
+  # 全角カタカナのみ許可
+  with_options format: { with: /\A[ァ-ヶー－]+\z/ } do
+    validates :first_name_kana
+    validates :last_name_kana
+  end
+  
+  # 半角の数字のみ許可
+  with_options format: { with: /\A[0-9]+\z/ } do
+    validates :born_year
+    validates :born_month
+    validates :born_day
+  end
+  
 end
