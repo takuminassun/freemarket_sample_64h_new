@@ -11,17 +11,16 @@
           %h3 出品画像
           %span.required-1
             必須
-        .listing__contents__image__text
-          最大10枚までアップロードできます
         .image__box
           =f.fields_for :images do |i|
             .dropzone-container
               #preview
               .dropzone-area
                 .input_area
-                  =i.file_field :image
-                  = image_tag i.object.image.url, width: "100"
-                  =i.hidden_field :id, value: i.object.id
+                  =i.label :image, class: "image" do
+                    #img_field{:onclick => "$('#file').click()"}
+                      = image_tag i.object.image.url
+                  =i.file_field :image, class: "image", style: "display:none;", id: "file"
 
       .listing__contents__name
         .group

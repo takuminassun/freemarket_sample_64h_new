@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
+  before_action :correct_user, only: :edit
 
   def index
 
@@ -11,7 +12,8 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
-    3.times { @item.images.build}
+    @item.images.build
+    # 3.times { @item.images.build}
   end
 
   def create
@@ -30,6 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def edit 
+
   end
 
   def update
@@ -49,6 +52,10 @@ class ItemsController < ApplicationController
   end
 
 
+  def ancestry
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+  
   private
 
   def item_params
@@ -57,6 +64,13 @@ class ItemsController < ApplicationController
   
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def correct_user
+    @item = current_user.items.find_by(id: params[:id])
+    unless @item
+      redirect_to root_path
+    end
   end
 
 end
