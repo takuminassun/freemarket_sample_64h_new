@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   get '/login', to: "devise/registration#login"
   resources :users, only: [:show]
   root to: 'posts#index'
-
   
 end
