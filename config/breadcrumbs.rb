@@ -4,19 +4,30 @@ end
 
 crumb :mypage do
   link "マイページ", mypage_path
+  parent :root
 end
 
 crumb :profile do
-  link "マイページ", profile_path
+  link "プロフィール", profile_path
+  parent :mypage
 end
 
 crumb :card do
   link "支払い方法", user_card_index_path
+  parent :mypage
 end
 
 crumb :confirmation do
-  link "マイページ", confirmation_path
+  link "本人情報", confirmation_path
+  parent :mypage
 end
+
+crumb :logout do
+  link "ログアウト", confirmation_path
+  parent :mypage
+end
+
+
 
 # crumb :project do |project|
 #   link project.name, project_path(project)
