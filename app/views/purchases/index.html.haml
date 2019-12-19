@@ -1,0 +1,76 @@
+.buy
+  .buy__header
+    = link_to root_path do
+      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+  .buy__centerbox
+    .buy__centerbox__head
+      購入内容の確認
+    .buy__centerbox__item
+      .buy__centerbox__item__bx
+        .buy__centerbox__item__bx__image
+          = image_tag "/fmarket_logo_red.svg"
+        .buy__centerbox__item__bx__right
+          .buy__centerbox__item__bx__right__name
+            = @item.name
+          .buy__centerbox__item__bx__right__detail
+            - i_price = @item.price.to_s
+            = "¥" + i_price + " (税込) 送料込み"
+    .buy__centerbox__buyinfo
+      .buy__centerbox__buyinfo__price
+        .buy__centerbox__buyinfo__price__upper
+          .buy__centerbox__buyinfo__price__upper__detail
+            支払い金額 
+          .buy__centerbox__buyinfo__vprice__upper__price
+            = "¥" + i_price
+        .buy__centerbox__buyinfo__price__under
+          %input{type:"checkbox", value:"1"}/
+          %label{for:"status_all"} ポイントを使用 (所持ポイント: P180)  
+      .buy__centerbox__buyinfo__card
+        .buy__centerbox__buyinfo__card__upper
+          .buy__centerbox__buyinfo__card__upper__detail
+            支払い方法
+          .buy__centerbox__buyinfo__card__upper__change
+            =link_to "#" do
+              .buy__centerbox__buyinfo__card__upper__change__text
+                変更する
+        .buy__centerbox__buyinfo__card__under
+          クレジットカード
+          %br/
+          - if @default_card_information.blank?
+            %br /
+          - else
+            -#以下カード情報を表示
+            = "**** **** **** " + @default_card_information.last4
+          %br/
+          -# - exp_month = @default_card_information.exp_month.to_s
+          -# - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          -# = "有効期限" + exp_month + " / " + exp_year
+          %h4.card-logo
+            = image_tag "/logo_gray.svg", size: "15x49", alt:"visa"
+      .buy__centerbox__buyinfo__adress
+        .buy__centerbox__buyinfo__adress__upper
+          .buy__centerbox__buyinfo__adress__upper__detail
+            配送先
+          .buy__centerbox__buyinfo__adress__upper__change
+            =link_to "#" do 
+              .buy__centerbox__buyinfo__adress__upper__change__text
+                変更する
+        .buy__centerbox__buyinfo__adress__under
+          〒000-0001
+          %br/
+          兵庫県 宝塚市
+          〇〇町0-0-3
+          %br/
+          hoge 太郎
+      .buy__centerbox__buyinfo__buybutton
+        =link_to pay_item_purchases_path, method: :post do
+          購入する
+  .buy__footer
+    .buy__footer__box
+      %ul#ul
+        =link_to "プライバシーポリシー","#",class:"buy__footer__box__atag"
+        = link_to "メルカリ利用規約","#",class:"buy__footer__box__atag"
+        = link_to "特定商取引に関する表記","#",class:"buy__footer__box__atag"
+        = link_to '', "/", id: "buy__footer__box__atag"
+        = image_tag "/logo_gray.svg", size: "100x85", class: "single_header__img"
+      %p#p ©Meruari,Inc

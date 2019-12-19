@@ -58,7 +58,7 @@
             %button.deletebtn{name: "delete", type: "submit", value: ""}
               = link_to "削除する", item_path(@item.id), method: :delete
           -else 
-            = link_to "購入画面へ進む"
+            = link_to "購入画面へ進む", item_purchases_path(@item.id)
       .item__text
         .itemtext__bb
           =@item.description

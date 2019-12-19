@@ -1,0 +1,43 @@
+.buy
+  .buy__header
+    = link_to root_path do
+      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+  .buy__alert
+    .buy__alert__top
+      %i.far.fa-clock.alert__icon
+      .buy__alert__top__text
+        発送をお待ちください
+    .buy__alert__bottom
+      出品者からの発送通知をお待ちください
+  .buy__centerbox
+    .buy__centerbox__head
+      購入が完了しました
+    .buy__centerbox__item
+      .buy__centerbox__item__bx
+        .buy__centerbox__item__bx__image
+          = image_tag "/fmarket_logo_red.svg"
+        .buy__centerbox__item__bx__right
+          .buy__centerbox__item__bx__right__name
+            = @item.name
+          .buy__centerbox__item__bx__right__detail
+            - i_price = @item.price.to_s
+            = "¥" + i_price + " (税込) 送料込み"
+    .buy__centerbox__buyinfo
+      .buy__centerbox__buyinfo__price
+        .buy__centerbox__buyinfo__price__upper
+          .buy__centerbox__buyinfo__price__upper__detail
+            支払い金額 
+          .buy__centerbox__buyinfo__vprice__upper__price
+            = "¥" + i_price
+      .buy__centerbox__buyinfo__buybutton
+        = link_to root_path do
+          %button.btn{type:"submit",class:"buy__centerbox__buyinfo__buybutton__red"} 戻る
+  .buy__footer
+    .buy__footer__box
+      %ul#ul
+        =link_to "プライバシーポリシー","#",class:"buy__footer__box__atag"
+        = link_to "メルカリ利用規約","#",class:"buy__footer__box__atag"
+        = link_to "特定商取引に関する表記","#",class:"buy__footer__box__atag"
+        = link_to '', "/", id: "buy__footer__box__atag"
+        = image_tag "/logo_gray.svg", size: "100x85", class: "single_header__img"
+      %p#p ©Meruari,Inc
