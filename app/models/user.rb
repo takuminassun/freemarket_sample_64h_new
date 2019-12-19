@@ -44,7 +44,7 @@ class User < ApplicationRecord
           provider: provider,
           user_id: user.id
           )
-          user.save(validate: false)
+          user.save
       end
     end
     return user
