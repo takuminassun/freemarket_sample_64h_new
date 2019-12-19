@@ -23,7 +23,7 @@ class PurchasesController < ApplicationController
     :customer => @card.customer_id,  #顧客ID
     :currency => 'jpy',              #日本円
   )
-  @item.update(item_params_buyer)
+  # @item.update(item_params_buyer)
   redirect_to action: 'done' #完了画面に移動
   end
 
