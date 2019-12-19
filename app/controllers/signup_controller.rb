@@ -20,6 +20,7 @@ class SignupController < ApplicationController
   end
 
   def step3
+    binding.pry
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new
   end
@@ -34,7 +35,8 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       born_year: session[:born_year],
       born_month: session[:born_month],
-      born_day: session[:born_day]
+      born_day: session[:born_day],
+      phone_number: session[:phone_number]
     )
     @profile = Profile.new(
       nickname: session[:nickname]
@@ -49,8 +51,10 @@ class SignupController < ApplicationController
       town: address_params[:town],
       building: address_params[:building]
     )
+    binding.pry
     if @user.valid? && @profile.valid? && @address.valid?
       Address.create(address_params)
+      binding.pry
       @user.save
       @profile.save
     else
