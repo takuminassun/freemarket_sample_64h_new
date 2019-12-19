@@ -20,7 +20,6 @@ class SignupController < ApplicationController
   end
 
   def step3
-    binding.pry
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new
   end
@@ -51,12 +50,10 @@ class SignupController < ApplicationController
       town: address_params[:town],
       building: address_params[:building]
     )
-    binding.pry
     if @user.valid? && @profile.valid? && @address.valid?
       Address.create(address_params)
-      binding.pry
-      @user.save
-      @profile.save
+      @user.save!
+      @profile.save!
     else
       redirect_to action: 'step1'
     end
