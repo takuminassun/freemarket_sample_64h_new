@@ -7,7 +7,7 @@
       .content-form
         %label.text お名前
         %span.required 必須
-        - if @address.errors[:address_first_name].any? || @user.errors[:address_last_name].any?
+        - if @address.errors[:address_first_name].any? || @address.errors[:address_last_name].any?
           .error-message
             %p もう一度入力してください！
         .content-form__input-box
@@ -15,7 +15,7 @@
           = f.text_field :address_last_name, autocomplete: "last_name", class:"input-text", placeholder: "例"
         %label.text お名前カナ
         %span.required 必須
-        - if @address.errors[:address_first_name_kana].any? || @user.errors[:address_last_name_kana].any?
+        - if @address.errors[:address_first_name_kana].any? || @address.errors[:address_last_name_kana].any?
           .error-message
             %p もう一度入力してください！
         .content-form__input-box
