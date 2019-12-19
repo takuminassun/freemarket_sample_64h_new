@@ -1,0 +1,4 @@
+%li.redy-child
+  = link_to "#{category.name}"
+  %ul.grand
+    = render partial: "./items/ancestry_grand", collection: category.children, as: "children"
