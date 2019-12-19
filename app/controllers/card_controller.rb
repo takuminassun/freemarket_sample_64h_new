@@ -14,7 +14,7 @@ class CardController < ApplicationController
 
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] # APIキーの呼び出し
     if params['payjp_token'].blank? # ここはJavaScriptの.append()内のname属性です
-      render '/signup/step4'
+      render user_card_index_path
     else
       customer = Payjp::Customer.create(        # customerの定義、ここの情報を元に、カード情報との紐付けがされる
         card: params['payjp_token'],            # 必須です
