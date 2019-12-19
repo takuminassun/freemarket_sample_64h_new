@@ -14,6 +14,8 @@ class PostsController < ApplicationController
     @category_children11 = Category.where(ancestry:818)
     @category_children12 = Category.where(ancestry:869)
     @category_children13 = Category.where(ancestry:926)
+    @users = User.all
+    @items = Item.all
   end
   
   

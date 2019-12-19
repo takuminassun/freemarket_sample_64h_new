@@ -1,0 +1,40 @@
+.category
+  .category__top
+    注目のカテゴリー
+  .category__genre
+    - @categorys.each do |c| 
+      .category__genre__box       
+        .category__genre__box__text    
+          = c.name
+
+.item
+  .item__name
+    .item__name__box      
+      新着アイテム
+    .item__name__details
+
+  .item__main
+    - @items.each do |i| 
+      .item__main__content
+        .item__main__content__image
+          =link_to item_path(i.id) do
+            .item__main__content__image__picture
+              - i.images.first(1).each do |img|
+                = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+            .item__main__content__image__price
+              .item__main__content__image__price__money
+                ¥
+                = i.price.to_s(:delimited)
+            .item__main__content__text
+              .item__main__content__text__sale
+                = i.name
+  .page
+    = paginate(@items)
+.item  
+  .item__name
+    .item__name__box
+      
+      
+      
+
+

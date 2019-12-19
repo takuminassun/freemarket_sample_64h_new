@@ -1,0 +1,57 @@
+.Outline
+  =render "shared/header"
+  .side-user
+    =render "shared/side-list"
+    .side-user__contents
+      %h2 本人情報の登録
+      .side-user__contents__form-box
+        .side-user__contents__form-box__caution
+          %p お客さまの本人情報をご登録ください。
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p
+          =link_to "本人確認書類のアップロードにについて＞"
+        .form-group
+          %label お名前
+          %p 谷脇大斗
+        .form-group
+          %label お名前カナ
+          %p タニワキヒロト
+        .form-group
+          %label 生年月日
+          %p 1996/09/27
+
+        .form-group
+          %label 郵便番号
+          %span 任意
+          .input-box
+            %input{type: "text",placeholder: "例）1234567"}/
+        .form-group
+          %label 都道府県
+          %span 任意
+          .input-box
+            = form_for '' do |f|
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
+
+        .form-group
+          %label 市町村
+          %span 任意
+          .input-box
+            %input{type: "text",placeholder: "例）横浜市緑区"}/
+        .form-group
+          %label 番地
+          %span 任意
+          .input-box
+            %input{type: "text",placeholder: "例）青山1−1−1）"}/
+        .form-group
+          %label 建物名
+          %span 任意
+          .input-box
+            %input{type: "text",placeholder: "例）柳ビル103"}/
+        
+        %button.profile-change-btn{type: "submit",value: ""}
+          変更する
+
+        .form-group
+          %p.end
+            =link_to "本人情報の登録について＞"
+  =render "shared/footer"

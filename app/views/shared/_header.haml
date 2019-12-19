@@ -1,0 +1,124 @@
+.header
+  .header__all
+    
+    .headerform
+      .mercarilogo
+        = link_to image_tag(src="fmarket_logo_red.svg",alt:"fmarket",width: "134",height:"36",class: "mercaribox"), items_path
+      .form
+        %input.input-default{name: "keywrod", placeholder: "何かお探しですか？", type: "search"}
+        .form__btn
+          %i.fa.fa-search
+    .menu
+      .menu__left
+        %ul
+          %li
+            %i.fas.fa-list
+            カテゴリーから探す
+            %ul.parent
+              %li.redy
+                =link_to "レディース"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children1, as: "category"
+              %li.redy
+                =link_to "メンズ"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children2, as: "category"
+              %li.redy
+                =link_to "ベビー・キッズ"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children3, as: "category"
+              %li.redy
+                =link_to "インテリア・住まい・小物"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children4, as: "category"
+              %li.redy
+                =link_to "本・音楽・ゲーム"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children5, as: "category"
+              %li.redy
+                =link_to "おもちゃ・ホビー・グッズ"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children6, as: "category"
+              %li.redy
+                =link_to "コスメ・香水・美容"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children7, as: "category"
+              %li.redy
+                =link_to "家電・スマホ・カメラ"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children8, as: "category"
+              %li.redy
+                =link_to "スポーツ・レジャー"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children9, as: "category"
+              %li.redy
+                =link_to "ハンドメイド"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children10, as: "category"
+              %li.redy
+                =link_to "チケット"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children11, as: "category"
+              %li.redy
+                =link_to "自転車・オートバイ"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children12, as: "category"
+              %li.redy
+                =link_to "その他"
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children13, as: "category"
+              %li.redy
+                =link_to "カテゴリー一覧"
+            %ul.children
+              
+          %li
+            %i.fas.fa-tags
+            = link_to "ブランドから探す", destroy_user_session_path, method: :delete
+            %ul.parent
+              %li.redy
+                =link_to "シャネル"
+              %li.redy
+                =link_to "ナイキ"
+              %li.redy
+                =link_to "ルイ ヴィトン"
+              %li.redy
+                =link_to "シュプリーム"
+              %li.redy
+                =link_to "アディダス"
+              %li.redy
+                =link_to "ブランド一覧"
+          -# この中にブランド一覧
+      .menu__right
+        - if user_signed_in?
+          .good-box
+            .good-box__image
+              = link_to  do
+                %i.far.fa-heart
+                いいね！一覧
+          .noticebox
+            .noticebox__image
+              = link_to  do
+                %i.far.fa-bell
+                お知らせ
+          .todolistbox
+            .todolistbox__image
+              = link_to new_user_registration_path do
+                %i.fas.fa-check
+                やることリスト
+          .mypage
+            .mypage__box
+              = link_to  do
+                = image_tag "mypage.jpg",class: "face",width: "16"
+                %h2 
+                  = link_to "マイページ", mypage_path(current_user)
+        - else
+          = link_to step1_signup_index_path do
+            .signup-box
+              新規会員登録
+          = link_to new_user_session_path do
+            .login-box
+              ログイン
+
+
+
+
