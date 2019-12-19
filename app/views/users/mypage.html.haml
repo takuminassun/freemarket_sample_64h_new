@@ -1,6 +1,11 @@
 .Outline
   =render "shared/header"
-  //マイページ
+  .pan
+    %ul.pan
+      %li.bread
+        - breadcrumb :mypage 
+        = breadcrumbs separator: "&rsaquo;"
+    //マイページ
   .side-mypage
     =render "shared/side-list"
     .contents
