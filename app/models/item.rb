@@ -5,4 +5,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :category
   belongs_to :user
+  # belongs_to :buyer, class_name: "User"
 end

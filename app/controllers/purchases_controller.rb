@@ -23,6 +23,7 @@ class PurchasesController < ApplicationController
     :customer => @card.customer_id,  #顧客ID
     :currency => 'jpy',              #日本円
   )
+  @item.update(item_params_buyer)
   redirect_to action: 'done' #完了画面に移動
   end
 
@@ -37,4 +38,10 @@ class PurchasesController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
+
+  def item_params_buyer
+    params.require(:item).merge(buyer_id: current_user.id)
+  end
+ 
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_104253) do
+ActiveRecord::Schema.define(version: 2019_12_19_080615) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address_first_name", null: false
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_104253) do
     t.datetime "updated_at", null: false
     t.integer "image_id"
     t.integer "prefecture_id"
+    t.integer "buyer_id"
+    t.integer "buy_and_sell"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,6 +77,15 @@ ActiveRecord::Schema.define(version: 2019_12_18_104253) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,12 +101,12 @@ ActiveRecord::Schema.define(version: 2019_12_18_104253) do
     t.integer "born_year", null: false
     t.integer "born_month", null: false
     t.integer "born_day", null: false
-    t.string "phone_number"
+    t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "sns_name"
   end
 
   add_foreign_key "cards", "users"
+  add_foreign_key "sns_credentials", "users"
 end
