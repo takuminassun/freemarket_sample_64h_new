@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :items
 
 
-  # 漢字のみ許可
-  with_options format: { with: /\A[一-龥]+\z/ } do
+  # 漢字とひらがなのみ許可
+  with_options format: { with: /\A[一-龥ぁ-ん]+\z/ } do
     validates :first_name
     validates :last_name
   end
