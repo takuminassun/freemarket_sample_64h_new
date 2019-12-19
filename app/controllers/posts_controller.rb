@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
   def index
-    # @parents = Category.all.order("id ASC").limit(13)
-
     @categories = Category.where(params[:id])
     @category_children1 = Category.where(ancestry:1)
     @category_children2 = Category.where(ancestry:104)
