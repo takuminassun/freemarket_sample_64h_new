@@ -55,9 +55,7 @@ class SignupController < ApplicationController
       @profile = Profile.new(
         nickname: session[:nickname]
       )
-      binding.pry
       if @profile.valid? && @user.valid?
-        binding.pry
         @user.save!
         @profile = Profile.new(
           nickname: session[:nickname],
@@ -77,7 +75,6 @@ class SignupController < ApplicationController
         @address.save
         @user.save
         @profile.save
-        binding.pry
       else
         redirect_to action: 'step1'
       end
