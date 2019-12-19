@@ -14,74 +14,81 @@
       .menu__left
         %ul
           %li
-            -# .categorybox__image
             %i.fas.fa-list
             カテゴリーから探す
-            %ul
-              %li.first
+            %ul.parent
+              %li.redy
                 =link_to "レディース"
-                %ul
-                  %li.second
-                    - @category_children1.each do |i|
-                      - i.children.first(11).each do |b|
-                        =b.name
-                        %br
-                    %ul
-                      %li.third
-                        - @category_ground_children1.each do |i|
-                          - i.children.each do |b|
-                            =b.name
-                            %br
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children1, as: "category"
+              %li.redy
                 =link_to "メンズ"
-                %ul
-                  %li
-                    - @category_children2.each do |i|
-                      - i.children.first(11).each do |b|
-                        =b.name
-                        %br
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children2, as: "category"
+              %li.redy
                 =link_to "ベビー・キッズ"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children3, as: "category"
+              %li.redy
                 =link_to "インテリア・住まい・小物"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children4, as: "category"
+              %li.redy
                 =link_to "本・音楽・ゲーム"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children5, as: "category"
+              %li.redy
                 =link_to "おもちゃ・ホビー・グッズ"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children6, as: "category"
+              %li.redy
                 =link_to "コスメ・香水・美容"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children7, as: "category"
+              %li.redy
                 =link_to "家電・スマホ・カメラ"
-              %li.first
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children8, as: "category"
+              %li.redy
                 =link_to "スポーツ・レジャー"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children9, as: "category"
+              %li.redy
                 =link_to "ハンドメイド"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children10, as: "category"
+              %li.redy
                 =link_to "チケット"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children11, as: "category"
+              %li.redy
                 =link_to "自転車・オートバイ"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children12, as: "category"
+              %li.redy
                 =link_to "その他"
-              %li.first 
+                %ul.child
+                  = render partial: "./items/ancestry_children", collection: @category_children13, as: "category"
+              %li.redy
                 =link_to "カテゴリー一覧"
             %ul.children
-              = render partial:"./items/ancestry-children", collection: @parent
+              
           %li
             %i.fas.fa-tags
             = link_to "ブランドから探す", destroy_user_session_path, method: :delete
-            -# %ul
-            -#   %li
-            -#     =link_to "シャネル"
-            -#   %li
-            -#     =link_to "ナイキ"
-            -#   %li
-            -#     =link_to "ルイ ヴィトン"
-            -#   %li
-            -#     =link_to "シュプリーム"
-            -#   %li
-            -#     =link_to "アディダス"
-            -#   %li
-            -#     =link_to "ブランド一覧"
+            %ul.parent
+              %li.redy
+                =link_to "シャネル"
+              %li.redy
+                =link_to "ナイキ"
+              %li.redy
+                =link_to "ルイ ヴィトン"
+              %li.redy
+                =link_to "シュプリーム"
+              %li.redy
+                =link_to "アディダス"
+              %li.redy
+                =link_to "ブランド一覧"
           -# この中にブランド一覧
       .menu__right
         - if user_signed_in?
