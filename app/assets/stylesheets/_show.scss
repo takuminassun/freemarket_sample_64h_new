@@ -45,8 +45,9 @@ a {
             display: flex;
             flex-wrap: wrap;
             &__img{
-              height: 55px;
-              width: 55px;
+              background-color: #fff;
+              height: 60px;
+              width: 60px;
             }
           }
         }
