@@ -8,11 +8,12 @@
         .item__image
           .item__image__box
             .item__image__box__main
-            - @images.each_with_index do |image, index|
-              - if index == 0
-                = image_tag image.image.url, width: "300"
-              - else
-                = image_tag image.image.url, width: "145"
+              - @images.each do |image|
+                = image_tag image.image.url
+            .item__image__box__sub
+              - @images.each do |image|
+                .item__image__box__sub__img
+                  = image_tag image.image.url, size: "60x60"
         .item__date
           %table
             %tr 
