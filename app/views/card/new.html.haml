@@ -1,9 +1,12 @@
 .Outline
   =render "shared/header"
-  =render "shared/side-list"
-  .card_wrapper
-    .card_container
-      .card__main
+  .credit__all
+    .side__mypage
+      =render "shared/side-list"
+    .credits
+      %h2 支払い方法
+      .credits__contents
+        .card__main
         .card__main__container
           %h2.card__main__container__title 支払い方法
           = form_with url: user_card_index_path(@user), name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
@@ -61,6 +64,20 @@
                     %p セキュリティーコードとは
                 .card__main__container__formGroup#card_token
                   = f.submit "追加する", class: "btn_default btn_mail", id: "token_submit"
+
+
+        .credits__contents__header
+          クレジットカード一覧
+        .credits__contents__body
+          .card__index
+            %i.far.fa-credit-card
+            = link_to "クレジットカードを追加する", new_user_card_path(@user)
+        .credits__contents__footer
+          = link_to "支払い方法について", "#"
+          %i.fas.fa-chevron-right
+        .card_wrapper
+          .card_container
+      
 
 
   =render 'shared/footer'
