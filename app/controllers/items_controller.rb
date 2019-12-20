@@ -33,7 +33,8 @@ class ItemsController < ApplicationController
   end
 
   def edit 
-
+    @images = @item.images
+    
   end
 
   def update
