@@ -4,10 +4,14 @@
     .content-header
       %h1 電話番号の確認
     .content-form
-      = form_with model: @user, url: step3_signup_index_path,local: true do|f|
+      = form_with model: @user, url: step3_signup_index_path, local: true do |f|
         .content-form__phone-box
+          - if @user.errors[:phone_number].any?
+            .error-message
+              %p もう一度入力してください！
           %p 携帯電話の番号
           = f.phone_field :phone_number, class: "input", autocomplete: "phone_number"
+
         %p.authenticate 本人の確認のため、携帯電話のSNS（ショートメッセージサービス）を利用して認証を行います
         = f.submit "SMSを送信", class: "submit"
         %p.authenticate ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

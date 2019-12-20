@@ -16,14 +16,16 @@
   line-height: 60px;
   font-size: 18px;
   cursor: pointer;
-  color: #fff;
+  a{
+    color: #fff;
+  }
 }
 
 
 .footer-first {
   height: 260px;
   width: 100%;
-  background-image: url("footer_background-image.jpeg");
+  background-image: image-url("footer_background-image.jpeg");
   background-size: cover;
   &__box{
     height: 260px;
