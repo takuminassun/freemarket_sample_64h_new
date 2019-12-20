@@ -9,16 +9,22 @@ Rails.application.routes.draw do
   get "signup", to: "signup#index"
   resources :signup do
     collection do
-      get "index"
       get "step1"
       post "step2"
       post "step3"
     end
   end
   
-  resources :items, only: [:index, :new, :create, :show]
+  resources :items do
+    resources :purchases, only: [:index] do
+      collection do 
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
+  end
   resources :users, only: :show do 
-    resources :card, only: :index
+    resources :card, only: [:index, :new, :create]
   end
   resources :items
   get '/mypage', to: "users#mypage"
