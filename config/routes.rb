@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "signup", to: "signup#index"
   resources :signup do
     collection do
-      get "index"
       get "step1"
       post "step2"
       post "step3"

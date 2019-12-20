@@ -12,7 +12,7 @@
               カード番号
               %span.required 必須
               .content-body
-              = f.text_field "number", class: "credit-box", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
+              = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
             .credits__contents__body
               = image_tag src="/images/credit-card_28.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
               = image_tag src="/images/credit-card_1.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
@@ -24,7 +24,7 @@
                 有効期限
                 %span.required 必須
                 .credits__contents__body
-                  %select.content-form__day-yearbox{name: "exp_month", type: "text"}
+                  %select.content-form__day-yearbox#exp_month{name: "exp_month", type: "text"}
                     %option{value: ""} --
                     %option{value: "01"} 01
                     %option{value: "02"} 02

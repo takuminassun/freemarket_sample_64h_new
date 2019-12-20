@@ -11,7 +11,6 @@ class CardController < ApplicationController
 
   def create
     @card = Card.new
-
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] # APIキーの呼び出し
     if params['payjp_token'].blank? # ここはJavaScriptの.append()内のname属性です
       render new_user_card_path

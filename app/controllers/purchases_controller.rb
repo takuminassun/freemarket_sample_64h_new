@@ -34,7 +34,7 @@ class PurchasesController < ApplicationController
   private
 
   def set_card
-    @card = Card.where(user_id: current_user).first
+    @card = Card.find_by(user_id: current_user)
   end
 
   def set_item
