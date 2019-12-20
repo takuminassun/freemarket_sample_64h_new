@@ -1,5 +1,10 @@
 .Outline
   =render "shared/header"
+  .pan
+    %ul.pan
+      %li.bread
+        - breadcrumb :logout
+        = breadcrumbs separator: "&rsaquo;"
   .side-logout
     =render "shared/side-list"
     .side-logout__contents

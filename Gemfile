@@ -83,3 +83,8 @@ gem 'ancestry'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'payjp'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'gretel'
+

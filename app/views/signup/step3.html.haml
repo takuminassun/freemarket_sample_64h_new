@@ -7,16 +7,25 @@
       .content-form
         %label.text お名前
         %span.required 必須
+        - if @address.errors[:address_first_name].any? || @address.errors[:address_last_name].any?
+          .error-message
+            %p もう一度入力してください！
         .content-form__input-box
           = f.text_field :address_first_name, autocomplete: "first_name", class:"input-text", placeholder: "例"
           = f.text_field :address_last_name, autocomplete: "last_name", class:"input-text", placeholder: "例"
         %label.text お名前カナ
         %span.required 必須
+        - if @address.errors[:address_first_name_kana].any? || @address.errors[:address_last_name_kana].any?
+          .error-message
+            %p もう一度入力してください！
         .content-form__input-box
           = f.text_field :address_first_name_kana, autocomplete: "first_name_kana", class:"input-text", placeholder: "例"
           = f.text_field :address_last_name_kana, autocomplete: "last_name_kana", class:"input-text", placeholder: "例"
         %label.text 郵便番号
         %span.required 必須
+        - if @address.errors[:post_number].any?
+          .error-message
+            %p もう一度入力してください！
         .content-form__input-small-box
           = f.text_field :post_number, autocomplete: "post_number", class:"input-text", placeholder: "例）123-4567"
         %label.text 都道府県
@@ -25,10 +34,16 @@
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input-text'
         %label.text 市町村区
         %span.required 必須
+        - if @address.errors[:city].any?
+          .error-message
+            %p もう一度入力してください！
         .content-form__input-small-box
           = f.text_field :city, autocomplete: "city", class:"input-text", placeholder: "例）和歌山市"
         %label.text 番地
         %span.required 必須
+        - if @address.errors[:town].any?
+          .error-message
+            %p もう一度入力してください！
         .content-form__input-small-box
           = f.text_field :town, autocomplete: "town", class:"input-text", placeholder: "例）北出島１５６−７"
         %label.text 建物名
