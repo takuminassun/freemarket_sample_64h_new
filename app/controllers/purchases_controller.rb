@@ -36,11 +36,11 @@ class PurchasesController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user).first
   end
+
   def set_item
-    @item = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])   
+    if @item.buyer_id.present? || current_user.id == @item.user_id 
+      redirect_to root_path
+    end
   end
-
-
- 
-
 end
