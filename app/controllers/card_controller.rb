@@ -10,11 +10,14 @@ class CardController < ApplicationController
   end
 
   def create
+    # binding.pry
     @card = Card.new
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] # APIキーの呼び出し
     if params['payjp_token'].blank? # ここはJavaScriptの.append()内のname属性です
+      binding.pry
       render new_user_card_path
     else
+      binding.pry
       customer = Payjp::Customer.create(        # customerの定義、ここの情報を元に、カード情報との紐付けがされる
         card: params['payjp_token'],            # 必須です
         metadata: {user_id: current_user.id}    # なくてもいいです
