@@ -1,3 +1,4 @@
+
 $(document).on('turbolinks:load', function(){
   document.addEventListener(
     "DOMContentLoaded", e =>{
@@ -25,9 +26,3 @@ $(document).on('turbolinks:load', function(){
               alert("Error");
             }
           });
-        });
-      }
-    },
-    false
-  );
-})
