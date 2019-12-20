@@ -10,6 +10,6 @@
     .side-logout__contents
       .side-logout__contents__logout
         .side-logout__contents__logout__box
-          %button.logout-btn{type: "submit",value: ""}
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+            
   =render "shared/footer"

@@ -10,7 +10,7 @@
             .item__image__box__main
             - @images.each_with_index do |image, index|
               - if index == 0
-                = image_tag image.image.url, width: "300"
+                = image_tag image.image.url, width: "300", height: "375"
               - else
                 = image_tag image.image.url, width: "145"
         .item__date
@@ -51,14 +51,14 @@
         %span.price__postage
           送料込み
       
-      %button.pricebtn{name: "price", type: "submit", value: ""}
-        %span
-          -if user_signed_in? && current_user.id == @item.user_id
-            = link_to "編集する", edit_item_path(@item.id)
-            %button.deletebtn{name: "delete", type: "submit", value: ""}
-              = link_to "削除する", item_path(@item.id), method: :delete
-          -else 
-            = link_to "購入画面へ進む"
+      -# %button.pricebtn{name: "price", type: "submit", value: ""}
+      %span
+        -if user_signed_in? && current_user.id == @item.user_id
+          = link_to "編集する", edit_item_path(@item.id), class: "pricebtn"
+          -# %button.deletebtn{name: "delete", type: "submit", value: ""}
+          = link_to "削除する", item_path(@item.id), method: :delete, class: "deletebtn"
+        -else 
+          = link_to "購入画面へ進む"
       .item__text
         .itemtext__bb
           =@item.description
