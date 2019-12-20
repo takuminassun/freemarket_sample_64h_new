@@ -1,10 +1,14 @@
 .Outline
   =render "shared/header"
+  .pan
+    %ul.pan
+      %li.bread
+        - breadcrumb :logout
+        = breadcrumbs separator: "&rsaquo;"
   .side-logout
     =render "shared/side-list"
     .side-logout__contents
       .side-logout__contents__logout
         .side-logout__contents__logout__box
-          %button.logout-btn{type: "submit",value: ""}
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn"
   =render "shared/footer"

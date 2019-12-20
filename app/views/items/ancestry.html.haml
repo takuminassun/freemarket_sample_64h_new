@@ -1,0 +1,7 @@
+.ansed
+  - @parents.each do |i|
+    = i.name
+    - i.children.each do |b|
+      =b.name
+      - b.children.each do |c|
+        =c.name

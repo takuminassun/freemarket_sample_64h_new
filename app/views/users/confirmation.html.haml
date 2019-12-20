@@ -1,5 +1,10 @@
 .Outline
   =render "shared/header"
+  .pan
+    %ul.pan
+      %li.bread
+        - breadcrumb :confirmation
+        = breadcrumbs separator: "&rsaquo;"
   .side-user
     =render "shared/side-list"
     .side-user__contents

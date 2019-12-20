@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+  controllers: {
+   # registrations: 'users/registrations' ,
+   omniauth_callbacks: 'users/omniauth_callbacks'
+   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "signup", to: "signup#index"
@@ -11,9 +15,16 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:index, :new, :create, :show]
+  resources :items do
+    resources :purchases, only: [:index] do
+      collection do 
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
+  end
   resources :users, only: :show do 
-    resources :card, only: :index
+    resources :card, only: [:index, :new, :create]
   end
   resources :items
   get '/mypage', to: "users#mypage"
@@ -24,7 +35,8 @@ Rails.application.routes.draw do
   get '/purchase', to: "posts#purchase"
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
-
+  get '/ancestry', to: "items#ancestry"
+  
   root to: 'items#index'
 
 end

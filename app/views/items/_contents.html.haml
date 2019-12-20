@@ -2,7 +2,7 @@
   .category__top
     注目のカテゴリー
   .category__genre
-    - @categorys.each do |c| 
+    -# - @categorys.each do |c| 
       .category__genre__box       
         .category__genre__box__text    
           = c.name
@@ -28,8 +28,13 @@
             .item__main__content__text
               .item__main__content__text__sale
                 = i.name
+            -if i.buyer_id.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
+
   .page
-    = paginate(@items)
+    -# = paginate(@items)
 .item  
   .item__name
     .item__name__box

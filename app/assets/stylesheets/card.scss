@@ -5,7 +5,7 @@
   .credits{
     margin-top: 10px;
     width: 700px;
-    height: 360px;
+    height: 1000px;
     background-color: #fff;
     h2{
       font-size: 24px;
@@ -28,7 +28,6 @@
         height: 50px;
         width: 572px;
         margin: 0 auto;
-        border-bottom: 1px solid #f5f5f5;
         .card__index{
           width: 320px;
           height: 50px;
@@ -63,4 +62,71 @@
       }
     }
   }
+}
+
+.content-form {
+  margin: 0 auto;
+  .content-body{
+  margin-top:30px;
+  }
+  .credit-box{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    .credit-card{
+      margin-right: 5px;
+    }
+  }
+
+  &__day-yearbox{
+    width: 100%;
+    height: 40px;
+    margin-top: 8px;
+    display: flex;
+    margin-bottom: 20px;
+
+    .select-day{
+      width: 100px;
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    span{
+      margin-top: 7px;
+    }
+    .select-content-day{
+      margin-right: 15px;
+    }
+  }
+  &__description-box{
+    width: 100%;
+    height: 24px;
+    text-align: right;
+    color: #0099e8;
+    font-size: 14px;
+
+    &__content-box{
+      display: inline-block;
+
+      span{
+        width: 14px;
+        height: 14px;
+        background-color: #0099e8;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.input__default{
+  height:30px;
 }
