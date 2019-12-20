@@ -1,5 +1,9 @@
 class SignupController < ApplicationController
 
+
+  def index
+  end
+
   def step1
     @user = User.new
     @profile = Profile.new
