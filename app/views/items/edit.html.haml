@@ -11,14 +11,21 @@
           %h3 出品画像
           %span.required-1
             必須
-        %p 最大10枚までアップロードできます
+        %p 新しく画像をアップロードしてください
 
         #image-box-1
           = f.fields_for :images do |i|
             .input-area
-              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value: "", style: "display:none", id: "img-file", multiple: true
-              %label{for: "img-file"}
-                = image_tag i.object.image.url
+              =i.label :image, class: "image" do
+                #img_field{:onclick => "$('#file').click()"}
+                  = image_tag i.object.image.url
+                =i.file_field :image, class: "image", style: "display:none", id: "file"
+
+
+            -# .input-area
+            -#   = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value: "", style: "display:none", id: "img-file", multiple: true
+            -#   %label{for: "img-file"}
+            -#     = image_tag i.object.image.url
 
       .edit__contents__name
         .group

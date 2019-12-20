@@ -50,7 +50,7 @@ $(document).on("turbolinks:load", function() {
                         <div class='item-image__operetion--delete'>削除</div>
                       </div>
                     </div>`
-        //image-box__containerの前にhtmlオブジェクトを追加　
+        //image-box__containerの前にhtmlオブジェクトを追加
         $('#image-box__container').before(html);
         };
         //image-box__containerにitem-num-(変数)という名前のクラスを追加する
