@@ -24,8 +24,8 @@ document.addEventListener(
             alert("Error");
           }
         });
-      });
-    }
-  },
-  false
-);
+      }
+    },
+    false
+  );
+})
