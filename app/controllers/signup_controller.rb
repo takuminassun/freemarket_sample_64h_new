@@ -79,6 +79,7 @@ class SignupController < ApplicationController
         @address.save
         @user.save
         @profile.save
+        sign_in @user
       else
         redirect_to action: 'step1'
       end
