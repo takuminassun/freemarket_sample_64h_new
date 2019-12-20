@@ -4,80 +4,65 @@
     .side__mypage
       =render "shared/side-list"
     .credits
-      %h2 支払い方法
+      %h2 クレジットカード情報入力
       .credits__contents
-        .card__main
-        .card__main__container
-          %h2.card__main__container__title 支払い方法
-          = form_with url: user_card_index_path(@user), name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
-            .card__main__container__formGroup
-              %label{for: "nickname"}
-                カード番号
-                %span.form__require 必須
+        = form_with url: user_card_index_path(@user), name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
+          .credits__contents__body
+            %label{for: "nickname"}
+              カード番号
+              %span.card__index 必須
               = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
-              .card__main__container__formGroup__sub
+              .card__main__container
                 %i.fab.fa-cc-visa
                 %i.fab.fa-cc-mastercard
                 %i.fab.fa-cc-jcb
                 %i.fab.fa-cc-discover
                 %i.fab.fa-cc-amex
-            .card__main__container__formGroup
+            .credits__contents__header
               %label{for: "nickname"}
                 有効期限
                 %span.form__require 必須
-              .card__main__container__formGroup__sub
-                %select.select__wap#exp_month{name: "exp_month", type: "text"}
-                  %option{value: ""} --
-                  %option{value: "01"} 01
-                  %option{value: "02"} 02
-                  %option{value: "03"} 03
-                  %option{value: "04"} 04
-                  %option{value: "05"} 05
-                  %option{value: "06"} 06
-                  %option{value: "07"} 07
-                  %option{value: "08"} 08
-                  %option{value: "09"} 09
-                  %option{value: "10"} 10
-                  %option{value: "11"} 11
-                  %option{value: "12"} 12
-                %i.fas.fa-chevron-down.select_arrow
-                %p 月
-                %select.select__wap#exp_year{name: "exp_year", type: "text"}
-                  %option{value: ""} --
-                  %option{value: "2019"} 19
-                  %option{value: "2020"} 20
-                  %option{value: "2021"} 21
-                  %option{value: "2022"} 22
-                  %option{value: "2023"} 23
-                  %option{value: "2024"} 24
-                  %option{value: "2025"} 25
-                %i.fas.fa-chevron-down.select_arrow
-                %p 年
-              .card__main__container__formGroup
+                .credits__contents__body
+                  %select.select__wap#exp_month{name: "exp_month", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "01"} 01
+                    %option{value: "02"} 02
+                    %option{value: "03"} 03
+                    %option{value: "04"} 04
+                    %option{value: "05"} 05
+                    %option{value: "06"} 06
+                    %option{value: "07"} 07
+                    %option{value: "08"} 08
+                    %option{value: "09"} 09
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                  %i.fas.fa-chevron-down.select_arrow
+                  %p 月
+                  %select.select__wap#exp_year{name: "exp_year", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "2019"} 19
+                    %option{value: "2020"} 20
+                    %option{value: "2021"} 21
+                    %option{value: "2022"} 22
+                    %option{value: "2023"} 23
+                    %option{value: "2024"} 24
+                    %option{value: "2025"} 25
+                  %i.fas.fa-chevron-down.select_arrow
+                  %p 年
+              .credits__contents__header
                 %label{for: "nickname"}
                   セキュリティーコード
                   %span.form__require 必須
                 = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
-                .card__main__container__formGroup__link
+                .credits__contents__body
                   = link_to root_path do
                     %i.fas.fa-question-circle
                     %p セキュリティーコードとは
-                .card__main__container__formGroup#card_token
-                  = f.submit "追加する", class: "btn_default btn_mail", id: "token_submit"
-
-
-        .credits__contents__header
-          クレジットカード一覧
-        .credits__contents__body
-          .card__index
-            %i.far.fa-credit-card
-            = link_to "クレジットカードを追加する", new_user_card_path(@user)
-        .credits__contents__footer
-          = link_to "支払い方法について", "#"
-          %i.fas.fa-chevron-right
-        .card_wrapper
-          .card_container
-      
-
-
+                .credits__contents__body
+                  .card__index
+                    = f.submit "登録する", class: "btn_default btn_mail", id: "token_submit"
+                    .credits__contents__footer
+                      .fa-chevron-right
+                        = link_to "支払い方法について", "#" 
   =render 'shared/footer'
