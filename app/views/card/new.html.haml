@@ -5,25 +5,26 @@
       =render "shared/side-list"
     .credits
       %h2 クレジットカード情報入力
-      .credits__contents
+      .credits__contents__header
         = form_with url: user_card_index_path(@user), name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
-          .credits__contents__body
+          .credits__contents__body.content-form
             %label{for: "nickname"}
               カード番号
-              %span.card__index 必須
-              = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
-              .card__main__container
-                %i.fab.fa-cc-visa
-                %i.fab.fa-cc-mastercard
-                %i.fab.fa-cc-jcb
-                %i.fab.fa-cc-discover
-                %i.fab.fa-cc-amex
-            .credits__contents__header
+              %span.required 必須
+              .content-body
+              = f.text_field "number", class: "credit-box", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
+            .credits__contents__body
+              = image_tag src="/images/credit-card_28.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_1.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_9.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_22.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_2.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+            .credits__contents__body
               %label{for: "nickname"}
                 有効期限
-                %span.form__require 必須
+                %span.required 必須
                 .credits__contents__body
-                  %select.select__wap#exp_month{name: "exp_month", type: "text"}
+                  %select.content-form__day-yearbox{name: "exp_month", type: "text"}
                     %option{value: ""} --
                     %option{value: "01"} 01
                     %option{value: "02"} 02
@@ -39,7 +40,7 @@
                     %option{value: "12"} 12
                   %i.fas.fa-chevron-down.select_arrow
                   %p 月
-                  %select.select__wap#exp_year{name: "exp_year", type: "text"}
+                  %select.select-day#exp_year{name: "exp_year", type: "text"}
                     %option{value: ""} --
                     %option{value: "2019"} 19
                     %option{value: "2020"} 20
@@ -50,10 +51,11 @@
                     %option{value: "2025"} 25
                   %i.fas.fa-chevron-down.select_arrow
                   %p 年
-              .credits__contents__header
+              .credits__contents__body
                 %label{for: "nickname"}
                   セキュリティーコード
-                  %span.form__require 必須
+                  %span.required 必須
+                .credits__contents__body
                 = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
                 .credits__contents__body
                   = link_to root_path do
@@ -65,4 +67,4 @@
                     .credits__contents__footer
                       .fa-chevron-right
                         = link_to "支払い方法について", "#" 
-  =render 'shared/footer'
+=render 'shared/footer'
