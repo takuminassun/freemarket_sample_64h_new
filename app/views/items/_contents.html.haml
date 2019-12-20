@@ -28,6 +28,11 @@
             .item__main__content__text
               .item__main__content__text__sale
                 = i.name
+            -if i.buyer_id.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
+
   .page
     -# = paginate(@items)
 .item  

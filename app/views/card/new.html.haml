@@ -1,0 +1,70 @@
+.Outline
+  =render "shared/header"
+  .credit__all
+    .side__mypage
+      =render "shared/side-list"
+    .credits
+      %h2 クレジットカード情報入力
+      .credits__contents__header
+        = form_with url: user_card_index_path(@user), name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
+          .credits__contents__body.content-form
+            %label{for: "nickname"}
+              カード番号
+              %span.required 必須
+              .content-body
+              = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
+            .credits__contents__body
+              = image_tag src="/images/credit-card_28.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_1.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_9.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_22.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+              = image_tag src="/images/credit-card_2.png",alt:"credit",width: "50px",height: "40px",class: "credit-card"
+            .credits__contents__body
+              %label{for: "nickname"}
+                有効期限
+                %span.required 必須
+                .credits__contents__body
+                  %select.content-form__day-yearbox#exp_month{name: "exp_month", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "01"} 01
+                    %option{value: "02"} 02
+                    %option{value: "03"} 03
+                    %option{value: "04"} 04
+                    %option{value: "05"} 05
+                    %option{value: "06"} 06
+                    %option{value: "07"} 07
+                    %option{value: "08"} 08
+                    %option{value: "09"} 09
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                  %i.fas.fa-chevron-down.select_arrow
+                  %p 月
+                  %select.select-day#exp_year{name: "exp_year", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "2019"} 19
+                    %option{value: "2020"} 20
+                    %option{value: "2021"} 21
+                    %option{value: "2022"} 22
+                    %option{value: "2023"} 23
+                    %option{value: "2024"} 24
+                    %option{value: "2025"} 25
+                  %i.fas.fa-chevron-down.select_arrow
+                  %p 年
+              .credits__contents__body
+                %label{for: "nickname"}
+                  セキュリティーコード
+                  %span.required 必須
+                .credits__contents__body
+                = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
+                .credits__contents__body
+                  = link_to root_path do
+                    %i.fas.fa-question-circle
+                    %p セキュリティーコードとは
+                .credits__contents__body
+                  .card__index
+                    = f.submit "登録する", class: "btn_default btn_mail", id: "token_submit"
+                    .credits__contents__footer
+                      .fa-chevron-right
+                        = link_to "支払い方法について", "#" 
+=render 'shared/footer'
