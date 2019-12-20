@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_104351) do
     t.integer "born_year", null: false
     t.integer "born_month", null: false
     t.integer "born_day", null: false
-    t.string "phone_number", null: false
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sns_name"
