@@ -1,0 +1,141 @@
+.buy{
+  background-color: $fma-bg-gray;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  display: block;
+
+  &__main{
+    width: 700px;
+    height: 900px;
+    margin: 0 auto;
+    background-color: $fma-white;
+
+    &__item{
+      width: calc(100%-64px);
+      padding: 32px;
+      font-size: 22px;
+      text-align: center;
+      border-bottom: solid 1px $fma-bg-gray;
+      font-weight: bold;
+      &__bx{
+        width: 350px;
+        height: 80px;
+        margin: 0 auto;
+      
+        &__image{
+          float: left;
+        }
+        
+        &__right{
+          margin-left: 16px;
+          float: left;
+          font-size: 14px;
+
+          &__name{
+            margin-bottom: 8px;
+            text-align: start;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+    &__buyinfo{
+      width: calc(100%-32px);
+      padding: 32px 16px 48px;
+
+      &__content{
+        width: 350px;
+        margin: 0 auto;
+
+        &__upper{
+          width: 100%;
+          display: inline-block;
+
+          &__detail{
+            width: 60%;
+            font-size: 18px;
+            padding-top: 10px;
+            float: left;
+          }
+
+          &__price{
+            width: 40%;
+            float: left;
+            text-align: end;
+            font-size: 30px;
+          }
+        }
+
+        &__under{
+            font-size: 14px;
+            padding: 24px 0 32px;
+            border-bottom: solid 1px $fma-bg-gray;
+        }
+
+        &__card{
+          padding: 32px 0;
+          border-bottom: solid 1px $fma-bg-gray;
+
+          &__upper{
+            font-size: 14px;
+            height: 21px;
+
+            &__detail{
+              font-weight: bold;
+              width: 70%;
+              float: left;
+            }
+            &__change{
+              width: 30%;
+              text-align: end;
+              float: left;
+            }
+          }
+
+          &__under{
+            font-size: 14px;
+            margin-top: 8px;
+          }
+        }
+
+        &__adress{
+          padding: 32px 0;
+          border-bottom: solid 1px $fma-bg-gray;
+
+          &__upper{
+            font-size: 14px;
+            height: 21px;
+
+            &__detail{
+              font-weight: bold;
+              width: 70%;
+              float: left;
+            }
+            &__change{
+              width: 30%;
+              text-align: end;
+              float: left;
+            }
+          }
+
+          &__under{
+            font-size: 14px;
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &__buybutton{
+        padding-top: 32px;
+
+        &__link{
+          background-color: $fma-red;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          color: white;
+        }
+      }
+    }
+  }
+}
