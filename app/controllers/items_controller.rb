@@ -14,16 +14,15 @@ class ItemsController < ApplicationController
   def new 
     @item = Item.new
     @item.images.build
-    # 3.times { @item.images.build}
   end
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
-    if @item.valid?
+    if @item.save
       redirect_to root_path
     else
-      render = 'new'
+      @item.images.build
+      render :new
     end
   end
 
@@ -40,7 +39,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path(params[:id])
     else
-      render = "edit"
+      render :edit
     end
   end
 
