@@ -4,9 +4,11 @@ class PurchasesController < ApplicationController
 
   def index
     @images = @item.images
+    @user = User.find(current_user.id)
+    
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "cards", action: "new"
+      redirect_to new_user_card_path(@user)
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
@@ -32,6 +34,7 @@ class PurchasesController < ApplicationController
   end
 
   private
+
 
   def set_card
     @card = Card.find_by(user_id: current_user)

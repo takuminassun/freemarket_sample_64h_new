@@ -36,8 +36,7 @@ Rails.application.routes.draw do
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
   get '/ancestry', to: "items#ancestry"
-  root to: 'posts#index'
-
+  
   root to: 'items#index'
 
 end

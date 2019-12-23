@@ -30,31 +30,23 @@
         font-size: 14px;
         cursor: pointer;
         
-
-
-
         &__icon{
           height: 60px;
           width: 60px;
           margin: 20px auto 0 auto;
           border-radius: 50%;
         }
-
         h2{
           margin-top: 8px;
         }
-
         &__number{
           margin-top: 8px;
-
           &__box{
             display: inline-block;
             margin-right: 16px;
-
             &__text{
               float: left;
             }
-
             &__count{
               margin-left: 10px;
               float: left;
@@ -65,7 +57,6 @@
         }
       }
     }
-
     .mypaga-head{
       margin-top: 40px;
       padding: 0 16px 0 16px;
@@ -75,7 +66,6 @@
       font-size: 16px;
       line-height: 72px;
     }
-
     .mypaga-log{
       width: 700px;
       display: inline-block;
@@ -85,29 +75,27 @@
         width: 700px;
         height: 74px;
 
-          &__active{
-            width: 350px;
-            height: 74px;
-            border-top: solid 2px #e21d23;
-            float: left;
-            text-align: center;
-            line-height: 74px;
-            font-size: 16px;
-          }
+        &__active{
+          width: 350px;
+          height: 74px;
+          border-top: solid 2px #e21d23;
+          float: left;
+          text-align: center;
+          line-height: 74px;
+          font-size: 16px;
+        }
 
-          &__do{
-            width: 350px;
-            height: 74px;
-            background-color: #e2e2e2;
-            float: left;
-            text-align: center;
-            line-height: 74px;
-            font-size: 16px;
-          }
+        &__do{
+          width: 350px;
+          height: 74px;
+          background-color: #e2e2e2;
+          float: left;
+          text-align: center;
+          line-height: 74px;
+          font-size: 16px;
+        }
       }
-
       &__content{
-
         ul{
           display: inline-block;
 
@@ -154,12 +142,10 @@
                     font-size: 16px;
                     margin: 2px 5px 0 20px;
                   }
-                  
                 }
               }
             }
           }
-
           .list{
             border-bottom: solid 1px rgb(240, 240, 240);
           }
@@ -176,7 +162,6 @@
               text-align: center;
               line-height: 48px;
             }
-            
           }
         }
       }
