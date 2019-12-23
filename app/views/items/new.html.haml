@@ -12,6 +12,9 @@
           %span.required-1
             必須
         %p 最大10枚までアップロードできます
+        - if @item.errors['images.image'].any?
+          .error-message
+            %p 入力してください
         #image-box-1
           = f.fields_for :images do |i|
             .input-area
@@ -27,6 +30,7 @@
           %span.required 必須
           %br/
           =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
+          = render 'layouts/error_messages', model: f.object
         .group
           %label 商品の説明
           %span.required 必須

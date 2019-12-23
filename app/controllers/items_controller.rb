@@ -19,12 +19,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      flash[:notice] = '商品を出品しました'
+    # binding.pry
+    if @item.valid?
       redirect_to root_path
     else
-      flash.now[:alert] = '商品を出品できませんでした'
-      render :new
+      render = 'new'
     end
   end
 
