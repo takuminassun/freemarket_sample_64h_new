@@ -52,7 +52,7 @@ class User < ApplicationRecord
 
 
   # 漢字のみ許可
-  with_options format: { with: /\A[一-龥]+\z/ } do
+  with_options format: { with: /\A[一-龥乃ぁ-ん]+\z/ } do
     validates :first_name
     validates :last_name
   end
