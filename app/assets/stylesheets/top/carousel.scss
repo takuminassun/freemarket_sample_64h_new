@@ -9,7 +9,7 @@
   }
 }
 .slick-track {
-  // background-image:image-url("top_back.jpg");
+  height: 300px;
   margin:0 auto;
   .first-slide{
   position: relative;
@@ -52,6 +52,7 @@
 }
 
 .slick-track{ 
+  height: 300px;
   .slide-img{
   background-color: #f5f5f5;
   img{
