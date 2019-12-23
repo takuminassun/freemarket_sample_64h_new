@@ -1,9 +1,11 @@
 document.addEventListener(
   "DOMContentLoaded", e =>{
-    if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
+    if (document.getElementById("token_submit") != null) { 
+      //token_submitというidがnullの場合、下記コードを実行しない
       Payjp.setPublicKey("pk_test_e3999572a348afbbe0d9d3a7"); //公開鍵直書き
       let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得される
       btn.addEventListener("click", e => { //ボタンが押されてイベント発火
+        console.log(this)
         e.preventDefault();
         let card = {
           number: document.getElementById("card_number").value,
@@ -24,8 +26,9 @@ document.addEventListener(
             alert("Error");
           }
         });
-      }
-    },
-    false
-  );
-})
+      });
+    }
+  },
+  false
+);
+

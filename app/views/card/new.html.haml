@@ -51,7 +51,7 @@
               %label.text セキュリティーコード
               %span.required 必須
               .credits__contents__body
-                = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
+                = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", id: "cvc"
               .credits__contents__body_box1
                 %i.fas.fa-question-circle.card-number
                   %label.card-number カード裏面の番号とは
