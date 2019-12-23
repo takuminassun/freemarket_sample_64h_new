@@ -1,18 +1,18 @@
 FactoryBot.define do
 
-  factory :items do
-    name              {"abe"}
-    user_id           {"00"}
-    category_id       {"00000000"}
-    brand_id          {"00000000"}
-    price             {"00000000"}
-    status            {"abeabe"}
-    description       {"abe"}
-    shipping_burden   {"abeabe"}
-    shipping_method   {"abeabe"}
-    shipping_date     {"abeabe"}
-    size              {"000000000"}
-    image_id          {"00000000"}
-    prefecture_id     {"00000000"}
+  factory :item do
+    name              {"ピカチュウ"}
+    brand_id          {"1"}
+    price             {"100"}
+    status            {"新品、未使用"}
+    description       {""}
+    shipping_burden   {""}
+    shipping_method   {"nil"}
+    shipping_date     {""}
+    size              {"nil"}
+    # image_id          {"1"}
+    prefecture_id     {"1"}
+    user
+    category
   end
 end

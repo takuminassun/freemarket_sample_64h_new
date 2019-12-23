@@ -1,7 +1,11 @@
 require 'rails_helper'
+
 describe Item do
-  describe '#index' do
-    it "is invalid without a name, user_id, category_id, brand_id, price, status, description, shipping_burden, shipping_method, shipping_date, size, created_at" do
+  describe '#create' do
+    it "存在すれば登録できるよ！" do
+      item = create(:item, name: nil)
+      item.valid?
+      expect(item.errors[:name]).to include('Can not be blank')
     end
   end
 end
