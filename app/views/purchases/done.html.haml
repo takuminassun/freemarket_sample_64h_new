@@ -16,8 +16,10 @@
         出品者からの発送通知をお待ちください
     .buy__main__item
       .buy__main__item__bx
-        .buy__main__item__bx__image
-          = image_tag "/fmarket_logo_red.svg", size:"80x80"
+        = form_for @item do |f|
+          = f.fields_for :images do |i|
+            .buy__main__item__bx__image
+              = image_tag i.object.image.url, size:"80x80"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name

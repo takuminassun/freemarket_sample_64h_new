@@ -8,8 +8,10 @@
       購入内容の確認
     .buy__main__item
       .buy__main__item__bx
-        .buy__main__item__bx__image
-          = image_tag "/fmarket_logo_red.svg", size:"80x80"
+        = form_for @item do |f|
+          = f.fields_for :images do |k|
+            .buy__main__item__bx__image
+              = image_tag k.object.image.url, size:"80x80"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name
@@ -22,6 +24,7 @@
           .buy__main__buyinfo__content__upper__detail
             支払い金額 
           .buy__main__buyinfo__content__upper__price
+            - i_price = @item.price.to_s
             = "¥" + i_price
         .buy__main__buyinfo__content__under
           %input{type:"checkbox", value:"1"}/
@@ -42,7 +45,7 @@
               = "**** **** **** " + @default_card_information.last4
             %br 有効期限
           .card-logo
-            = image_tag "/logo_gray.svg", size: "15x49", alt:"visa"
+            = image_tag src="/images/credit-card_28.png", size: "40x25", alt:"visa"
         .buy__main__buyinfo__content__adress
           .buy__main__buyinfo__content__adress__upper
             .buy__main__buyinfo__content__adress__upper__detail
@@ -59,7 +62,6 @@
             %br/
             hoge 太郎
         .buy__main__buyinfo__buybutton
-          .buy__main__buyinfo__buybutton__link
           =link_to pay_item_purchases_path, method: :post do
             購入
   =render "devise/layouts/footer"
