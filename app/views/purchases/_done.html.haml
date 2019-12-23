@@ -4,34 +4,31 @@
       = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
 .buy
   .buy__main
-    .buy__alert
-      .buy__alert__top
-        %i.far.fa-clock.alert__icon
-        .buy__alert__top__text
+    .buy__main__centerbox
+      購入が完了しました
+    .buy__main__alert
+      .buy__main__alert__box
+        .buy__main__alert__box__top
+          %i.far.fa-clock.alert__icon
+        .buy__main__alert__box__text
           発送をお待ちください
-      .buy__alert__bottom
+      .buy__main__alert__bottom
         出品者からの発送通知をお待ちください
-    .buy__centerbox
-      .buy__centerbox__head
-        購入が完了しました
-      .buy__centerbox__item
-        .buy__centerbox__item__bx
-          .buy__centerbox__item__bx__image
-            = image_tag "/fmarket_logo_red.svg"
-          .buy__centerbox__item__bx__right
-            .buy__centerbox__item__bx__right__name
-              //= @item.name
-            .buy__centerbox__item__bx__right__detail
-              //- i_price = @item.price.to_s
-              //= "¥" + i_price + " (税込) 送料込み"
-      .buy__centerbox__buyinfo
-        .buy__centerbox__buyinfo__price
-          .buy__centerbox__buyinfo__price__upper
-            .buy__centerbox__buyinfo__price__upper__detail
-              支払い金額 
-            .buy__centerbox__buyinfo__vprice__upper__price
-              //= "¥" + i_price
-        .buy__centerbox__buyinfo__buybutton
-          = link_to root_path do
-            %button.btn{type:"submit",class:"buy__centerbox__buyinfo__buybutton__red"} 戻る
+    .buy__main__item
+      .buy__main__item__bx
+        .buy__main__item__bx__image
+          = image_tag "/fmarket_logo_red.svg", size:"80x80"
+        .buy__main__item__bx__right
+          .buy__main__item__bx__right__name
+            = @item.name
+          .buy__main__item__bx__right__detail
+            - i_price = @item.price.to_s
+            = "¥" + i_price + " (税込) 送料込み"
+    .buy__main__buyinfo
+      .buy__main__buyinfo__detail
+        支払い金額 
+      .buy__main__buyinfo__price
+        = "¥" + i_price
+    .buy__main__buybutton
+      = link_to "戻る", root_path
   =render "devise/layouts/footer"
