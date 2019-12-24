@@ -64,6 +64,12 @@ describe User do
       user.valid?
     end
 
+    it "is invalid without a nickname" do
+      profile = build(:profile, nickname: nil)
+      profile.valid?
+    end
+
+
 
     # 重複したemailが存在する場合登録できないこと
     it "is invalid with a duplicate email address" do

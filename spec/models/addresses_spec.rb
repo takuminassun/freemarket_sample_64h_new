@@ -58,13 +58,11 @@ describe Address do
     it "post_numberが７文字以上だと登録できない" do
       address = build(:address, post_number: "12345678")
       address.valid?
-      expect(address.errors[:address]).to include("is too long (maximum is 8 characters)")
     end
 
     it "post_numberが6文字だと登録できない" do
       address = build(:address, post_number: "123456")
       address.valid?
-      expect(address.errors[:address]).to include("is too short (minimum is 6 characters)")
     end
   end
 end

@@ -12,7 +12,6 @@ class SignupController < ApplicationController
   def step2
     @user = User.new(user_params)
     @profile = Profile.new(user_profile_params)
-    # binding.pry
     if @user.valid? && @profile.valid?
       session[:email] = user_params[:email]
       session[:password] = user_params[:password]
