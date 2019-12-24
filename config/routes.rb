@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       collection do 
         post 'pay', to: 'purchases#pay'
         get 'done', to: 'purchases#done'
+        get 'search'
       end
     end
   end
