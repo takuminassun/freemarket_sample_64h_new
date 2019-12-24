@@ -1,0 +1,23 @@
+.item.item
+  .item__name
+    .item__name__box      
+      新着アイテム
+    .item__name__details 
+  .item__main
+  .item__main__content
+    .item__main__content__image
+      =link_to item_path(item.id) do
+        .item__main__content__image__picture
+          - item.images.first(1).each do |img|
+            = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+        .item__main__content__image__price
+          .item__main__content__image__price__money
+            ¥
+            = item.price.to_s(:delimited)
+        .item__main__content__text
+          .item__main__content__text__sale
+            = item.name
+        -if item.buyer_id.present? 
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD

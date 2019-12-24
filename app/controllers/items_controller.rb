@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
     @items = Item.order("created_at DESC").page(params[:page]).per(8)
     @images = Image.all
     @categorys = Category.limit(4)
-
   end
 
   
