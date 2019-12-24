@@ -10,7 +10,6 @@ describe User do
     it "is invalid without a phone_number" do
       user = build(:user, phone_number: nil)
       user.invalid?
-      # expect(user.errors[:phone_number]).to include("can't be blank")
     end
 
     it "is invalid without a email" do
@@ -19,53 +18,73 @@ describe User do
       expect(user.errors[:email]).to include("can't be blank")
     end
 
-    # 4. passwordが空では登録できないこと
     it "is invalid without a password" do
       user = build(:user, password: nil)
       user.valid?
       expect(user.errors[:password]).to include("can't be blank")
     end
 
-  #   # 5. passwordが存在してもpassword_confirmationが空では登録できないこと
-  #   it "is invalid without a password_confirmation although with a password" do
-  #     user = build(:user, password_confirmation: "")
-  #     user.valid?
-  #     expect(user.errors[:password_confirmation]).to include("doesn't match Password")
-  #   end
+    it "is invalid without a first_name" do
+      user = build(:user, first_name: nil)
+      user.valid?
+    end
 
-  #   # 6. nicknameが7文字以上であれば登録できないこと
-  #   it "is invalid with a nickname that has more than 7 characters " do
-  #     user = build(:user, nickname: "aaaaaaaa")
-  #     user.valid?
-  #     expect(user.errors[:nickname]).to include("is too long (maximum is 6 characters)")
-  #   end
+    it "first_nameが平仮名だと登録できない" do
+      user = build(:user, first_name: "アカギ")
+      user.valid?
+    end
 
-  #   # 7. nicknameが6文字以下では登録できること
-  #   it "is valid with a nickname that has less than 6 characters " do
-  #     user = build(:user, nickname: "aaaaaa")
-  #     expect(user).to be_valid
-  #   end
+    it "is invalid without a last_name" do
+      user = build(:user, last_name: nil)
+      user.valid?
+    end
 
-  #   # 8. 重複したemailが存在する場合登録できないこと
-  #   it "is invalid with a duplicate email address" do
-  #     user = create(:user)
-  #     another_user = build(:user, email: user.email)
-  #     another_user.valid?
-  #     expect(another_user.errors[:email]).to include("has already been taken")
-  #   end
+    it "is invalid without a first_name_kana" do
+      user = build(:user, first_name_kana: nil)
+      user.valid?
+    end
 
-  #   # 9. passwordが6文字以上であれば登録できること
-  #   it "is valid with a password that has more than 6 characters " do
-  #     user = build(:user, password: "000000", password_confirmation: "000000")
-  #     user.valid?
-  #     expect(user).to be_valid
-  #   end
+    it "is invalid without a last_name_kana" do
+      user = build(:user, last_name_kana: nil)
+      user.valid?
+    end
 
-  #   # 10. passwordが5文字以下であれば登録できないこと
-  #   it "is invalid with a password that has less than 5 characters " do
-  #     user = build(:user, password: "00000", password_confirmation: "00000")
-  #     user.valid?
-  #     expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
-  #   end
+    it "is invalid without a born_year" do
+      user = build(:user, born_year: nil)
+      user.valid?
+    end
+
+    it "is invalid without a born_month" do
+      user = build(:user, born_month: nil)
+      user.valid?
+    end
+
+    it "is invalid without a born_day" do
+      user = build(:user, born_day: nil)
+      user.valid?
+    end
+
+
+    # 重複したemailが存在する場合登録できないこと
+    it "is invalid with a duplicate email address" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("has already been taken")
+    end
+
+    # passwordが6文字以上であれば登録できること
+    it "is valid with a password that has more than 6 characters " do
+      user = build(:user, password: "000000", password_confirmation: "000000")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    # passwordが5文字以下であれば登録できないこと
+    it "is invalid with a password that has less than 5 characters " do
+      user = build(:user, password: "00000", password_confirmation: "00000")
+      user.valid?
+      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
+    end
   end
 end
