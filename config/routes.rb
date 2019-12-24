@@ -14,11 +14,11 @@ Rails.application.routes.draw do
       post "step3"
     end
   end
-  
+
+  namespace :items do
+    resources :searches, only: :index
+  end
   resources :items do
-    collection do 
-      get 'search'
-    end
     resources :purchases, only: [:index] do
       collection do 
         post 'pay', to: 'purchases#pay'
