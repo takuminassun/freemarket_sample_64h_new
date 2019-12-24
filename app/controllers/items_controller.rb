@@ -50,10 +50,10 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def ancestry
     @parents = Category.all.order("id ASC").limit(13)
   end
+
   
   private
 
