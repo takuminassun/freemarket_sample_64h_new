@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :edit]
   before_action :correct_user, only: :edit
-  before_action :logged_in_user, only: :new
 
   def index
     @items = Item.order("created_at DESC").page(params[:page]).per(8)
@@ -78,13 +78,10 @@ class ItemsController < ApplicationController
       flash[:danger] = "Please log in."
       redirect_to new_user_session_path
     end
-end
+  end
 
-def logged_in?
-  !current_user.nil?
-end
-
-
-  
+  def logged_in?
+    !current_user.nil?
+  end
 
 end
