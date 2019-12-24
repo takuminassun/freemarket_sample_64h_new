@@ -9,7 +9,7 @@
           .item__image__box
             .item__image__box__main
               - @images.each do |image|
-                = image_tag image.image.url
+                = image_tag image.image.url,size:"300x420"
             .item__image__box__sub
               - @images.each do |image|
                 .item__image__box__sub__img
