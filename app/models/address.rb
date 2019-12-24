@@ -12,6 +12,6 @@ class Address < ApplicationRecord
     validates :address_last_name_kana
   end
 
-  validates :post_number, length: { is: 7 }
-
+  validates :post_number, format: { with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}$|^\d{5}$|^\d{7}\z/}
+  
 end
