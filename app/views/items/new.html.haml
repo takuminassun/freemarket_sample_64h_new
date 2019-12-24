@@ -12,6 +12,9 @@
           %span.required-1
             必須
         %p 最大10枚までアップロードできます
+        - if @item.errors.messages[:images].any?
+          .error-message
+            %p 画像がありません
         #image-box-1
           = f.fields_for :images do |i|
             .input-area
@@ -20,18 +23,23 @@
                 %i.fas.fa-camera.camera
             .item-num-0#image-box__container
 
-
       .listing__contents__name
         .group
           %label 商品名 
           %span.required 必須
           %br/
           =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
+          - if @item.errors[:name].any?
+            .error-message
+              %p 入力してください
         .group
           %label 商品の説明
           %span.required 必須
           %br/
           =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          -if @item.errors[:description].any?
+            .error-message
+              %p 入力してください
       .listing__contents__detail
         %h3 商品の詳細
         .form-box
@@ -41,11 +49,17 @@
             .select
               =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
               %br/
+              - if @item.errors[:category_id].any?
+                .error-message
+                  %p 選択してください
           .group
             %label 商品の状態
             %span.required 必須
             .select
-              =f.select :status, ["---", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]
+              =f.select :status, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---"
+              - if @item.errors[:status].any?
+                .error-message
+                  %p 選択してください
       .listing__contents__deliver
         %h3 配送について
         .form-box
@@ -53,19 +67,28 @@
             %label 配送料の負担
             %span.required 必須
             .select
-              =f.select :shipping_burden, ["---", "送料込み（出品者負担)", "着払い（購入者負担)"]
+              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
               %br/
+              - if @item.errors[:shipping_burden].any?
+                .error-message
+                  %p 選択してください
           .group
             %label 発送元の地域
             %span.required 必須
             .select-1
               =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
               %br/
+              - if @item.errors[:prefecture_id].any?
+                .error-message
+                  %p 選択してください
           .group
             %label 発送までの日数
             %span.required 必須
             .select
-              =f.select :shipping_date, ["---", "1~2日で発送", "2~3日で発送", "4~7日で発送"]
+              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
+              - if @item.errors[:shipping_date].any?
+                .error-message
+                  %p 選択してください
       .listing__contents__price
         %h3 販売価格(300~9,999,999)
         %ul.price-box
@@ -78,6 +101,9 @@
                 .input
                   ￥
                 =f.text_field :price, class: "price", placeholder: "例）300"
+          - if @item.errors[:price].any?
+            .error-message
+              %p 300以上9999999以下で入力してください
 
       .listing__contents__confirms
         .listing__contents__confirms-confirm

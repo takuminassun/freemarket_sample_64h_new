@@ -13,16 +13,14 @@ class ItemsController < ApplicationController
   def new 
     @item = Item.new
     @item.images.build
-    # 3.times { @item.images.build}
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = '商品を出品しました'
       redirect_to root_path
     else
-      flash.now[:alert] = '商品を出品できませんでした'
+      @item.images.build
       render :new
     end
   end
@@ -40,7 +38,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path(params[:id])
     else
-      render = "edit"
+      render :edit
     end
   end
 

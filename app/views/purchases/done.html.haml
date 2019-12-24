@@ -1,25 +1,20 @@
+.single
+  .single__header
+    .single__header-logo
+      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
 .buy
-  .buy__header
-    = link_to root_path do
-      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
-  .buy__alert
-    .buy__alert__top
-      %i.far.fa-clock.alert__icon
-      .buy__alert__top__text
-        発送をお待ちください
-    .buy__alert__bottom
-      出品者からの発送通知をお待ちください
-  .buy__centerbox
-    .buy__centerbox__head
+  .buy__main
+    .buy__main__centerbox
       購入が完了しました
-<<<<<<< HEAD
+
     .buy__centerbox__item
       .buy__centerbox__item__bx
         .buy__centerbox__item__bx__image
           = image_tag "/fmarket_logo_red.svg"
         .buy__centerbox__item__bx__right
           .buy__centerbox__item__bx__right__name
-=======
+
+
     .buy__main__alert
       .buy__main__alert__box
         .buy__main__alert__box__top
@@ -30,18 +25,18 @@
         出品者からの発送通知をお待ちください
     .buy__main__item
       .buy__main__item__bx
+
         - @items.first(1).each do |i| 
           .buy__main__item__bx__image
             - i.images.first(1).each do |img|
               = image_tag img.image.url, width: "80px", hight: "80px"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
->>>>>>> 81096ab... 配送先
             = @item.name
-          .buy__centerbox__item__bx__right__detail
+          .buy__main__item__bx__right__detail
             - i_price = @item.price.to_s
             = "¥" + i_price + " (税込) 送料込み"
-<<<<<<< HEAD
+
     .buy__centerbox__buyinfo
       .buy__centerbox__buyinfo__price
         .buy__centerbox__buyinfo__price__upper
@@ -61,7 +56,7 @@
         = link_to '', "/", id: "buy__footer__box__atag"
         = image_tag "/logo_gray.svg", size: "100x85", class: "single_header__img"
       %p#p ©Meruari,Inc
-=======
+
     .buy__main__buyinfo
       .buy__main__buyinfo__detail
         支払い金額 
@@ -70,5 +65,3 @@
     .buy__main__buybutton
       = link_to "戻る", root_path
   =render "devise/layouts/footer"
-  
->>>>>>> 81096ab... 配送先
