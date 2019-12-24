@@ -4,11 +4,11 @@
       .mercarilogo
         = link_to image_tag(src="fmarket_logo_red.svg",alt:"fmarket",width: "134",height:"36",class: "mercaribox"), items_path
       .form
-        = form_with(url: items_searches_path, local: true, method: :get, name: "keyword",type: "search") do |f| 
+        = form_with(url: items_searches_path, local: true, method: :get ) do |f| 
+          = f.text_field :keyword, placeholder: "何かお探しですか", class: "input-default"
           .form__btn
             %i.fa.fa-search
-            = f.text_field :keyword, placeholder: "何かお探しですか", class: "input-default"
-            = f.submit "検索", class: "search-btn" 
+            = f.submit "", class: "form__btn" 
           -# class: "input-default"
     .menu
       .menu__left
