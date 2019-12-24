@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   end
   
   resources :items do
+    collection do 
+      get 'search'
+    end
     resources :purchases, only: [:index] do
       collection do 
         post 'pay', to: 'purchases#pay'
         get 'done', to: 'purchases#done'
-        get 'search'
       end
     end
   end

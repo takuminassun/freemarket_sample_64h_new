@@ -55,6 +55,11 @@ class ItemsController < ApplicationController
   def ancestry
     @parents = Category.all.order("id ASC").limit(13)
   end
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   
   private
 
