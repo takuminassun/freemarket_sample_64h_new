@@ -53,8 +53,7 @@
           送料込み
       -if user_signed_in? && current_user.id == @item.user_id
         - if  @item.buyer_id.present?
-          %button.deletebtn{name: "delete", type: "submit", value: ""}
-            = link_to "削除する", item_path(@item.id), method: :delete
+          = link_to "削除する", item_path(@item.id), method: :delete, class: "deletebtn"
         - else 
           %span
             = link_to "編集する", edit_item_path(@item.id), class: "pricebtn"
@@ -64,10 +63,9 @@
         - if user_signed_in? && @item.buyer_id.present?
           .gray-no-link
             売り切れました 
-        - else   
-          %button.pricebtn{name: "price", type: "submit", value: ""}
-            %span
-              = link_to "購入画面へ進む", item_purchases_path(@item.id)
+        - else
+          %span
+            = link_to "購入画面へ進む", item_purchases_path(@item.id),class:"pricebtn"
       - else 
         %button.pricebtn{name: "price", type: "submit", value: ""}
           %span

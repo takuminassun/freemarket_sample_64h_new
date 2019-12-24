@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :edit]
   before_action :correct_user, only: :edit
 
   def index
@@ -50,10 +51,10 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def ancestry
     @parents = Category.all.order("id ASC").limit(13)
   end
+
   
   private
 
@@ -70,6 +71,17 @@ class ItemsController < ApplicationController
     unless @item
       redirect_to root_path
     end
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to new_user_session_path
+    end
+  end
+
+  def logged_in?
+    !current_user.nil?
   end
 
 end

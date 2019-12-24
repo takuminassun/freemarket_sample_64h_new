@@ -25,7 +25,6 @@
         出品者からの発送通知をお待ちください
     .buy__main__item
       .buy__main__item__bx
-
         - @items.first(1).each do |i| 
           .buy__main__item__bx__image
             - i.images.first(1).each do |img|
@@ -65,3 +64,4 @@
     .buy__main__buybutton
       = link_to "戻る", root_path
   =render "devise/layouts/footer"
+  

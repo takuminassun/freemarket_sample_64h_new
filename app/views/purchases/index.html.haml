@@ -25,10 +25,10 @@
 
     .buy__main__item
       .buy__main__item__bx
-        = form_for @item do |f|
-          = f.fields_for :images do |k|
-            .buy__main__item__bx__image
-              = image_tag k.object.image.url, size:"80x80"
+        - @items.first(1).each do |i| 
+          .buy__main__item__bx__image
+            - i.images.first(1).each do |img|
+              = image_tag img.image.url, width: "80px", hight: "80px"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name
@@ -121,18 +121,25 @@
                   変更する
           .buy__main__buyinfo__content__adress__under
 
+
             = @address.post_number
             %br/
             //= @address.prefectere.name
             = @address.city
             = @address.town
+
+            = @address.post_number
             %br/
-            hoge 太郎
+            = @address.prefecture.name
+            = @address.city
+            = @address.town
+            = @address.building
+
+            %br/
+            = @address.address_first_name
+            = @address.address_last_name
         .buy__main__buyinfo__buybutton
           =link_to pay_item_purchases_path, method: :post do
             購入
-
-  =render "devise/layouts/footer"
->>>>>>> 81096ab... 配送先
 
   =render "devise/layouts/footer"
