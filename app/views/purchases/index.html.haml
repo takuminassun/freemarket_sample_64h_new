@@ -57,11 +57,13 @@
           .buy__main__buyinfo__content__adress__under
             = @address.post_number
             %br/
-            //= @address.prefectere.name
+            = @address.prefecture.name
             = @address.city
             = @address.town
+            = @address.building
             %br/
-            hoge 太郎
+            = @address.address_first_name
+            = @address.address_last_name
         .buy__main__buyinfo__buybutton
           =link_to pay_item_purchases_path, method: :post do
             購入
