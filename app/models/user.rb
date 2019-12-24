@@ -70,7 +70,7 @@ class User < ApplicationRecord
   end
 
   validates :born_year, length: { in: 1..2019 }
-  validates :morn_month, length: { in: 1..12 }
+  validates :born_month, length: { in: 1..12 }
   validates :born_day, length: { in: 1..31 }
   
 end
