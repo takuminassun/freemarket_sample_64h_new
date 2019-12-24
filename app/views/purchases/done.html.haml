@@ -16,10 +16,10 @@
         出品者からの発送通知をお待ちください
     .buy__main__item
       .buy__main__item__bx
-        = form_for @item do |f|
-          = f.fields_for :images do |i|
-            .buy__main__item__bx__image
-              = image_tag i.object.image.url, size:"80x80"
+        - @items.first(1).each do |i| 
+          .buy__main__item__bx__image
+            - i.images.first(1).each do |img|
+              = image_tag img.image.url, width: "80px", hight: "80px"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name
@@ -34,3 +34,4 @@
     .buy__main__buybutton
       = link_to "戻る", root_path
   =render "devise/layouts/footer"
+  

@@ -9,7 +9,7 @@
           .item__image__box
             .item__image__box__main
               - @images.each do |image|
-                = image_tag image.image.url
+                = image_tag image.image.url,size:"300x420"
             .item__image__box__sub
               - @images.each do |image|
                 .item__image__box__sub__img
@@ -53,8 +53,7 @@
           送料込み
       -if user_signed_in? && current_user.id == @item.user_id
         - if  @item.buyer_id.present?
-          %button.deletebtn{name: "delete", type: "submit", value: ""}
-            = link_to "削除する", item_path(@item.id), method: :delete
+          = link_to "削除する", item_path(@item.id), method: :delete, class: "deletebtn"
         - else 
           %span
             = link_to "編集する", edit_item_path(@item.id), class: "pricebtn"
@@ -64,10 +63,9 @@
         - if user_signed_in? && @item.buyer_id.present?
           .gray-no-link
             売り切れました 
-        - else   
-          %button.pricebtn{name: "price", type: "submit", value: ""}
-            %span
-              = link_to "購入画面へ進む", item_purchases_path(@item.id)
+        - else
+          %span
+            = link_to "購入画面へ進む", item_purchases_path(@item.id),class:"pricebtn"
       - else 
         %button.pricebtn{name: "price", type: "submit", value: ""}
           %span

@@ -8,10 +8,10 @@
       購入内容の確認
     .buy__main__item
       .buy__main__item__bx
-        = form_for @item do |f|
-          = f.fields_for :images do |k|
-            .buy__main__item__bx__image
-              = image_tag k.object.image.url, size:"80x80"
+        - @items.first(1).each do |i| 
+          .buy__main__item__bx__image
+            - i.images.first(1).each do |img|
+              = image_tag img.image.url, width: "80px", hight: "80px"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name
@@ -55,12 +55,15 @@
                 .buy__main__buyinfo__content__adress__upper__change__text
                   変更する
           .buy__main__buyinfo__content__adress__under
-            〒000-0001
+            = @address.post_number
             %br/
-            兵庫県 宝塚市
-            〇〇町0-0-3
+            = @address.prefecture.name
+            = @address.city
+            = @address.town
+            = @address.building
             %br/
-            hoge 太郎
+            = @address.address_first_name
+            = @address.address_last_name
         .buy__main__buyinfo__buybutton
           =link_to pay_item_purchases_path, method: :post do
             購入
