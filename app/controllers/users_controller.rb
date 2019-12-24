@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def confirmation
+    @user = User.find(current_user.id)
   end
 
   def profile 
