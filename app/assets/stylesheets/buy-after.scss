@@ -1,0 +1,78 @@
+.buy{
+  background-color: $fma-bg-gray;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  display: block;
+
+  &__main{
+    width: 700px;
+    margin: 0 auto;
+    background-color: $fma-white;
+    padding: 32px 16px 48px;
+
+    &__centerbox{
+      width: calc(100%-64px);
+      padding: 32px;
+      font-size: 22px;
+      text-align: center;
+      border-bottom: solid 1px $fma-bg-gray;
+      font-weight: bold;
+    }
+
+    &__alert{
+      width: 37%;
+      margin: 20px auto 0;
+      font-size: 14px;
+
+      &__box{
+
+        &__top{
+          display: inline-block;
+          float: left;
+          margin-right: 5px;
+          margin-top: 1px;
+        }
+
+        &__text{
+          width: 90%;
+          float: left;
+        }
+      }
+    }
+
+    &__buyinfo{
+      width: 350px;
+      margin: 0 auto;
+      border-bottom: solid 1px $fma-bg-gray;
+
+      &__detail{
+        width: 60%;
+        font-weight: bold;
+        margin-top: 5px;
+        float: left;
+      }
+
+      &__price{
+        width: 40%;
+        font-size: 30px;
+        font-weight: bold;
+        float: left;
+        text-align: end;
+      }
+    }
+
+    &__buybutton{
+      width: 350px;
+      margin: 32px auto;
+
+      a{
+        display: block;
+        width: 350px;
+        height: 50px;
+        background-color: $fma-red;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+    }
+  }
+}

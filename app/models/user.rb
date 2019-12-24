@@ -50,9 +50,8 @@ class User < ApplicationRecord
     return user
   end
 
-
-  # 漢字のみ許可
-  with_options format: { with: /\A[一-龥]+\z/ } do
+  # 漢字とひらがなと々許可
+  with_options format: { with: /\A[一-龥々ぁ-んァ-ヶー－]+\z/ } do
     validates :first_name
     validates :last_name
   end
