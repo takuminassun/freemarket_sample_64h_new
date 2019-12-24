@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
     @category_children13 = Category.where(ancestry:926)
   end
 
+
   private
 
   def production?
@@ -32,8 +33,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:sns_name])
   end
+  
 end

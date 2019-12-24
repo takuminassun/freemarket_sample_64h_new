@@ -22,6 +22,10 @@
       
         &__image{
           float: left;
+
+          img{
+            height: 80px;
+          }
         }
         
         &__right{
