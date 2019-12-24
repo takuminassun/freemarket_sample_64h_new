@@ -24,8 +24,10 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 
   def self.search(search)
-    return Item.all unless search
-    Item.where('name LIKE(?)', "%#{search}%")
+    if search
+      Item.where('name LIKE(?) OR description LIKE(?)', "%#{search}%","%#{search}%")
+    else
+      Item.all
+    end
   end
-
 end

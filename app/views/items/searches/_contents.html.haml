@@ -1,0 +1,11 @@
+.item
+  .item__name
+    .item__name__box        
+      検索結果
+      .item__name__box__text
+        - if params[:keyword].present? 
+          = params[:keyword]
+        - else
+          全ての商品
+    .item__name__details 
+

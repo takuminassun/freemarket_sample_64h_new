@@ -1,7 +1,6 @@
 .wrapper
   = render "shared/header"
-  = render "shared/slick"
-  = render "items/contents"
+  = render "contents",locals:{ keyword: @keyword}
   .item
     .item__main
       - @items.each do |item|
