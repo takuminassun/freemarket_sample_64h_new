@@ -12,7 +12,6 @@ class SignupController < ApplicationController
   def step2
     @user = User.new(user_params)
     @profile = Profile.new(user_profile_params)
-    # binding.pry
     if @user.valid? && @profile.valid?
       session[:email] = user_params[:email]
       session[:password] = user_params[:password]
@@ -44,6 +43,7 @@ class SignupController < ApplicationController
 
   def create
     @address = Address.new(address_params)
+    binding.pry
     if @address.valid?
       @user = User.new(
         email: session[:email],
@@ -72,6 +72,7 @@ class SignupController < ApplicationController
           address_first_name_kana: address_params[:address_first_name_kana],
           address_last_name_kana: address_params[:address_last_name_kana],
           post_number: address_params[:post_number],
+          prefecture_id: address_params[:prefecture_id],
           city: address_params[:city],
           town: address_params[:town],
           building: address_params[:building],
@@ -124,6 +125,7 @@ class SignupController < ApplicationController
       :address_first_name_kana,
       :address_last_name_kana,
       :post_number,
+      :prefecture_id,
       :city,
       :town,
       :building,

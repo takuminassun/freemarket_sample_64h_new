@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   require 'payjp'
+
   def index 
     @user = User.find(current_user.id)
   end
@@ -30,7 +31,6 @@ class CardController < ApplicationController
         redirect_to action: "create"
       end
     end
-
   end
   
 end

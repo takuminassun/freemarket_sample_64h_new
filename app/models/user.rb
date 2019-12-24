@@ -51,7 +51,7 @@ class User < ApplicationRecord
   end
 
   # 漢字とひらがなと々許可
-  with_options format: { with: /\A[一-龥々ぁ-んァ-ヶー－]+\z/ } do
+  with_options format: { with: /\A[一-龥ぁ-んァ-ヶー－]+\z/ } do
     validates :first_name
     validates :last_name
   end
@@ -68,5 +68,9 @@ class User < ApplicationRecord
     validates :born_month
     validates :born_day
   end
+
+  validates :born_year, length: { in: 1..2019 }
+  validates :born_month, length: { in: 1..12 }
+  validates :born_day, length: { in: 1..31 }
   
 end

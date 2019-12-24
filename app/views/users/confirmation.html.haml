@@ -17,13 +17,13 @@
           =link_to "本人確認書類のアップロードにについて＞"
         .form-group
           %label お名前
-          %p 谷脇大斗
+          %p #{(@user.first_name + @user.last_name)}
         .form-group
           %label お名前カナ
-          %p タニワキヒロト
+          %p #{(@user.first_name_kana + @user.last_name_kana)}
         .form-group
           %label 生年月日
-          %p 1996/09/27
+          %p #{("#{@user.born_year}" + "/" + "#{@user.born_month}" + "/" + "#{@user.born_day}")}
 
         .form-group
           %label 郵便番号
