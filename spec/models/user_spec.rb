@@ -9,7 +9,7 @@ describe User do
 
     it "is invalid without a phone_number" do
       user = build(:user, phone_number: nil)
-      user.invalid?
+      user.valid?
     end
 
     it "is invalid without a email" do
