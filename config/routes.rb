@@ -22,18 +22,20 @@ Rails.application.routes.draw do
         get 'done', to: 'purchases#done'
       end
     end
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
   end
   resources :users, only: :show do 
     resources :card, only: [:index, :new, :create]
   end
-  resources :items
+
   get '/mypage', to: "users#mypage"
   get '/profile', to: "users#profile"
   get '/confirmation', to: "users#confirmation"
   get '/logout', to: "users#logout"
-  get '/product-listing', to: "posts#product-listing"
-  get '/purchase', to: "posts#purchase"
-  get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
   get '/ancestry', to: "items#ancestry"
   

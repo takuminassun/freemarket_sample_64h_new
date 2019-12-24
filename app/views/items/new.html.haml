@@ -43,12 +43,25 @@
       .listing__contents__detail
         %h3 商品の詳細
         .form-box
-          .group
-            %label カテゴリー
-            %span.required 必須
-            .select
-              =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
-              %br/
+          .listing-form-box
+            .listing-product-detail__category
+              = f.label 'カテゴリー', class: 'listing-default__label'
+              %span.listing-default--require 必須
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                  %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+         
+         
+         
+         
+         
+          -# .group
+          -#   %label カテゴリー
+          -#   %span.required 必須
+          -#   .select
+          -#     =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
+          -#     %br/
               - if @item.errors[:category_id].any?
                 .error-message
                   %p 選択してください
