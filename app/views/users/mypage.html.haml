@@ -12,15 +12,15 @@
       .back-image
         .user
           = image_tag "mypage.jpg",size:"60x60",class: "user__icon"
-          %h2 
-            = @user.nickname
+          %h2
+            = @profile.nickname
           .user__number
             .user__number__box
             .user__number__box
               .user__number__box__text
                 出品数
               .user__number__box__count
-                63
+                = @user.items.length
                 
       .mypaga-log
         .mypaga-log__tab
