@@ -13,13 +13,9 @@
         .user
           = image_tag "mypage.jpg",size:"60x60",class: "user__icon"
           %h2 
-            = @user.first_name
+            = @user.nickname
           .user__number
             .user__number__box
-              .user__number__box__text
-                評価
-              .user__number__box__count
-                143
             .user__number__box
               .user__number__box__text
                 出品数

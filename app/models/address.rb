@@ -11,5 +11,7 @@ class Address < ApplicationRecord
     validates :address_first_name_kana
     validates :address_last_name_kana
   end
+
+  validates :post_number, length: { is: 7 } 
   
 end

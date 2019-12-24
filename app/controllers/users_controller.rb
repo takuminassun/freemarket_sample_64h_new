@@ -1,18 +1,22 @@
-class UsersController < ApplicationController  
+class UsersController < ApplicationController
+
+  before_action :set_action
   
   def mypage
-    @user = User.find(current_user.id)
   end
 
   def logout
-    @user = User.find(current_user.id)
   end
 
   def confirmation
-    @user = User.find(current_user.id)
   end
 
   def profile 
+  end
+
+  private
+  
+  def set_action
     @user = User.find(current_user.id)
   end
 
