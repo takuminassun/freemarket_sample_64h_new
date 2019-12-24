@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
   before_action :correct_user, only: :edit
+  before_action :user_logged_in?, only: :new
 
   def index
     @items = Item.order("created_at DESC").page(params[:page]).per(8)
@@ -70,6 +71,20 @@ class ItemsController < ApplicationController
     unless @item
       redirect_to root_path
     end
+  end
+
+  def user_logged_in?
+    if session[:user_id]
+      begin
+        @current_user = User.find_by(user_id: session[:user_id])
+      rescue ActiveRecord::RecordNotFound
+        reset_user_session
+      end
+    end
+    return if @current_user
+    # @current_userが取得できなかった場合はログイン画面にリダイレクト
+    flash[:referer] = request.fullpath
+    redirect_to new_user_session_path
   end
 
 end
