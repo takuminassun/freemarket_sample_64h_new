@@ -5,14 +5,14 @@ FactoryBot.define do
     brand_id          {"1"}
     price             {"100"}
     status            {"新品、未使用"}
-    description       {""}
-    shipping_burden   {""}
+    description       {"ピッカー"}
+    shipping_burden   {"着払い(購入者負担)"}
     shipping_method   {"nil"}
-    shipping_date     {""}
+    shipping_date     {"1~2日で発送"}
     size              {"nil"}
-    # image_id          {"1"}
     prefecture_id     {"1"}
     user
     category
+    image
   end
 end
