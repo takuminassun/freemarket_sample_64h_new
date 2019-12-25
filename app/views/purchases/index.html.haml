@@ -93,53 +93,53 @@
         = image_tag "/logo_gray.svg", size: "100x85", class: "single_header__img"
       %p#p ©Meruari,Inc
 
-          %label{for:"status_all"} ポイントを使用 (所持ポイント: P0)  
-        .buy__main__buyinfo__content__card
-          .buy__main__buyinfo__content__card__upper
-            .buy__main__buyinfo__content__card__upper__detail
-              支払い方法
-            .buy__main__buyinfo__content__card__upper__change
-              =link_to "#" do
-                .buy__main__buyinfo__content__card__upper__change__text
-                  変更する
-          .buy__main__buyinfo__content__card__under
-            %h2 クレジットカード
-            - if @default_card_information.blank?
-              %br/
-            - else
-              = "**** **** **** " + @default_card_information.last4
-            %br 有効期限
-          .card-logo
-            = image_tag src="/images/credit-card_28.png", size: "40x25", alt:"visa"
-        .buy__main__buyinfo__content__adress
-          .buy__main__buyinfo__content__adress__upper
-            .buy__main__buyinfo__content__adress__upper__detail
-              配送先
-            .buy__main__buyinfo__content__adress__upper__change
-              =link_to "#" do 
-                .buy__main__buyinfo__content__adress__upper__change__text
-                  変更する
-          .buy__main__buyinfo__content__adress__under
-
-
-            = @address.post_number
+      %label{for:"status_all"} ポイントを使用 (所持ポイント: P0)  
+      .buy__main__buyinfo__content__card
+        .buy__main__buyinfo__content__card__upper
+          .buy__main__buyinfo__content__card__upper__detail
+            支払い方法
+          .buy__main__buyinfo__content__card__upper__change
+            =link_to "#" do
+              .buy__main__buyinfo__content__card__upper__change__text
+                変更する
+        .buy__main__buyinfo__content__card__under
+          %h2 クレジットカード
+          - if @default_card_information.blank?
             %br/
-            //= @address.prefectere.name
-            = @address.city
-            = @address.town
+          - else
+            = "**** **** **** " + @default_card_information.last4
+          %br 有効期限
+        .card-logo
+          = image_tag src="/images/credit-card_28.png", size: "40x25", alt:"visa"
+      .buy__main__buyinfo__content__adress
+        .buy__main__buyinfo__content__adress__upper
+          .buy__main__buyinfo__content__adress__upper__detail
+            配送先
+          .buy__main__buyinfo__content__adress__upper__change
+            =link_to "#" do 
+              .buy__main__buyinfo__content__adress__upper__change__text
+                変更する
+        .buy__main__buyinfo__content__adress__under
 
-            = @address.post_number
-            %br/
-            = @address.prefecture.name
-            = @address.city
-            = @address.town
-            = @address.building
 
-            %br/
-            = @address.address_first_name
-            = @address.address_last_name
-        .buy__main__buyinfo__buybutton
-          =link_to pay_item_purchases_path, method: :post do
-            購入
+          = @address.post_number
+          %br/
+          //= @address.prefectere.name
+          = @address.city
+          = @address.town
+
+          = @address.post_number
+          %br/
+          = @address.prefecture.name
+          = @address.city
+          = @address.town
+          = @address.building
+
+          %br/
+          = @address.address_first_name
+          = @address.address_last_name
+      .buy__main__buyinfo__buybutton
+        =link_to pay_item_purchases_path, method: :post do
+          購入
 
   =render "devise/layouts/footer"
