@@ -6,7 +6,6 @@ class PurchasesController < ApplicationController
   def index
     @images = @item.images
     @user = User.find(current_user.id)
-    @items = Item.order("created_at DESC").page(params[:page]).per(8)
     @address = current_user.address
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
