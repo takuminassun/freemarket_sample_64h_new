@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update, :destroy]
-  # before_action :correct_user, only: :edit
-  # テストのためにコメントアウト
+  before_action :correct_user, only: :edit
 
   def index
     @items = Item.order("created_at DESC").page(params[:page]).per(8)
