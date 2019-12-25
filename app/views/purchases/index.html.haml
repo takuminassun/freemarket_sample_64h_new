@@ -6,12 +6,10 @@
   .buy__main
     .buy__main__item
       購入内容の確認
-    .buy__main__item
       .buy__main__item__bx
-        - @items.first(1).each do |i| 
-          .buy__main__item__bx__image
-            - i.images.first(1).each do |img|
-              = image_tag img.image.url, width: "80px", hight: "80px"
+        .buy__main__item__bx__image
+          - @images.first(1).each do |img|
+            = image_tag img.image.url, width: "80px", hight: "80px"
         .buy__main__item__bx__right
           .buy__main__item__bx__right__name
             = @item.name
