@@ -4,11 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
-
-  has_one :address, inverse_of: :user
-  has_one :profile, inverse_of: :user
+  has_one :card
+  has_one :address 
+  has_one :profile
   has_many :items
-
   has_many :sns_credentials, dependent: :destroy
 
   def self.find_oauth(auth)
@@ -30,10 +29,10 @@ class User < ApplicationRecord
           sns_name: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
-          first_name: "first-name",
-          last_name: "last-name",
-          first_name_kana: "first_name_kana",
-          last_name_kana: "last_name_kana",
+          first_name: "苗字",
+          last_name: "名前",
+          first_name_kana: "ミョウジカナ",
+          last_name_kana: "ナマエカナ",
           born_year: 2000,
           born_month: 1,
           born_day: 1,
@@ -51,9 +50,8 @@ class User < ApplicationRecord
     return user
   end
 
-
-  # 漢字のみ許可
-  with_options format: { with: /\A[一-龥]+\z/ } do
+  # 漢字とひらがなと々許可
+  with_options format: { with: /\A[一-龥ぁ-んァ-ヶー－]+\z/ } do
     validates :first_name
     validates :last_name
   end
@@ -70,5 +68,9 @@ class User < ApplicationRecord
     validates :born_month
     validates :born_day
   end
+
+  validates :born_year, length: { in: 1..2019 }
+  validates :born_month, length: { in: 1..12 }
+  validates :born_day, length: { in: 1..31 }
   
 end

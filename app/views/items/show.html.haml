@@ -8,11 +8,12 @@
         .item__image
           .item__image__box
             .item__image__box__main
-            - @images.each_with_index do |image, index|
-              - if index == 0
-                = image_tag image.image.url, width: "300"
-              - else
-                = image_tag image.image.url, width: "145"
+              - @images.each do |image|
+                = image_tag image.image.url,size:"300x420"
+            .item__image__box__sub
+              - @images.each do |image|
+                .item__image__box__sub__img
+                  = image_tag image.image.url, size: "60x60"
         .item__date
           %table
             %tr 
@@ -50,15 +51,26 @@
           (税込)
         %span.price__postage
           送料込み
-      
-      %button.pricebtn{name: "price", type: "submit", value: ""}
-        %span
-          -if user_signed_in? && current_user.id == @item.user_id
-            = link_to "編集する", edit_item_path(@item.id)
-            %button.deletebtn{name: "delete", type: "submit", value: ""}
-              = link_to "削除する", item_path(@item.id), method: :delete
-          -else 
-            = link_to "購入画面へ進む"
+      -if user_signed_in? && current_user.id == @item.user_id
+        - if  @item.buyer_id.present?
+          = link_to "削除する", item_path(@item.id), method: :delete, class: "deletebtn"
+        - else 
+          %span
+            = link_to "編集する", edit_item_path(@item.id), class: "pricebtn"
+          %span
+            = link_to "削除する", item_path(@item.id), method: :delete, class: "deletebtn"
+      - elsif user_signed_in?
+        - if user_signed_in? && @item.buyer_id.present?
+          .gray-no-link
+            売り切れました 
+        - else
+          %span
+            = link_to "購入画面へ進む", item_purchases_path(@item.id),class:"pricebtn"
+      - else 
+        %button.pricebtn{name: "price", type: "submit", value: ""}
+          %span
+            = link_to "fmarketにログインする", new_user_session_path
+
       .item__text
         .itemtext__bb
           =@item.description

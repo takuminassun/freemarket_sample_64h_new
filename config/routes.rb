@@ -14,10 +14,20 @@ Rails.application.routes.draw do
       post "step3"
     end
   end
-  
-  resources :items, only: [:index, :new, :create, :show]
+
+  namespace :items do
+    resources :searches, only: :index
+  end
+  resources :items do
+    resources :purchases, only: [:index] do
+      collection do 
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
+  end
   resources :users, only: :show do 
-    resources :card, only: :index
+    resources :card, only: [:index, :new, :create]
   end
   resources :items
   get '/mypage', to: "users#mypage"
@@ -29,8 +39,7 @@ Rails.application.routes.draw do
   get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
   get '/ancestry', to: "items#ancestry"
-  root to: 'posts#index'
-
+  
   root to: 'items#index'
 
 end

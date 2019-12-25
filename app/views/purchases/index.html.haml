@@ -1,0 +1,70 @@
+.single
+  .single__header
+    .single__header-logo
+      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
+.buy
+  .buy__main
+    .buy__main__item
+      購入内容の確認
+    .buy__main__item
+      .buy__main__item__bx
+        - @items.first(1).each do |i| 
+          .buy__main__item__bx__image
+            - i.images.first(1).each do |img|
+              = image_tag img.image.url, width: "80px", hight: "80px"
+        .buy__main__item__bx__right
+          .buy__main__item__bx__right__name
+            = @item.name
+          .buy__main__item__bx__right__detail
+            - i_price = @item.price.to_s
+            = "¥" + i_price + " (税込) 送料込み"
+    .buy__main__buyinfo
+      .buy__main__buyinfo__content
+        .buy__main__buyinfo__content__upper
+          .buy__main__buyinfo__content__upper__detail
+            支払い金額 
+          .buy__main__buyinfo__content__upper__price
+            - i_price = @item.price.to_s
+            = "¥" + i_price
+        .buy__main__buyinfo__content__under
+          %input{type:"checkbox", value:"1"}/
+          %label{for:"status_all"} ポイントを使用 (所持ポイント: P0)  
+        .buy__main__buyinfo__content__card
+          .buy__main__buyinfo__content__card__upper
+            .buy__main__buyinfo__content__card__upper__detail
+              支払い方法
+            .buy__main__buyinfo__content__card__upper__change
+              =link_to "#" do
+                .buy__main__buyinfo__content__card__upper__change__text
+                  変更する
+          .buy__main__buyinfo__content__card__under
+            %h2 クレジットカード
+            - if @default_card_information.blank?
+              %br/
+            - else
+              = "**** **** **** " + @default_card_information.last4
+            %br 有効期限
+          .card-logo
+            = image_tag src="/images/credit-card_28.png", size: "40x25", alt:"visa"
+        .buy__main__buyinfo__content__adress
+          .buy__main__buyinfo__content__adress__upper
+            .buy__main__buyinfo__content__adress__upper__detail
+              配送先
+            .buy__main__buyinfo__content__adress__upper__change
+              =link_to "#" do 
+                .buy__main__buyinfo__content__adress__upper__change__text
+                  変更する
+          .buy__main__buyinfo__content__adress__under
+            = @address.post_number
+            %br/
+            = @address.prefecture.name
+            = @address.city
+            = @address.town
+            = @address.building
+            %br/
+            = @address.address_first_name
+            = @address.address_last_name
+        .buy__main__buyinfo__buybutton
+          =link_to pay_item_purchases_path, method: :post do
+            購入
+  =render "devise/layouts/footer"

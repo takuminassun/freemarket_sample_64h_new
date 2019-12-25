@@ -9,14 +9,14 @@
           %p ニックネーム
           %p2.requiredtext 必須
           = f.fields_for @profile do |p|
-            = p.text_field :nickname,placeholder: "例)フリマ太郎"
+            = p.text_field :nickname, autofocus: true, placeholder: "例)フリマ太郎"
               - if @profile.errors[:nickname].any?
               .error-message
                 %p もう一度入力してください！
         .content__form__mail.content-box
           %p メールアドレス
           %p2.requiredtext 必須
-          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
+          = f.email_field :email, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
         .content__form__password.content-box
           %p パスワード
           %p2.requiredtext 必須

@@ -1,8 +1,12 @@
-
 .wrapper
   = render "shared/header"
   = render "shared/slick"
   = render "contents"
+  .item
+    .item__main
+      - @items.each do |item|
+        = render partial: 'items', locals: { item: item }
+  = render "contentsbottom"  
   = render "shared/footer"
   = render "shared/Exhibit_button"
 

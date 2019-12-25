@@ -1,0 +1,10 @@
+.wrapper
+  = render "shared/header"
+  = render "contents",locals:{ keyword: @keyword}
+  .item
+    .item__main
+      - @items.each do |item|
+        = render partial: 'items', locals: { item: item }
+  = render "items/contentsbottom"  
+  = render "shared/footer"
+  = render "shared/Exhibit_button"

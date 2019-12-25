@@ -46,8 +46,8 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -85,6 +85,7 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'pry-rails'
 gem 'kaminari'
+gem 'payjp'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'

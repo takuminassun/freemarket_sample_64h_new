@@ -1,13 +1,14 @@
 .header
   .header__all
-    
     .headerform
       .mercarilogo
         = link_to image_tag(src="fmarket_logo_red.svg",alt:"fmarket",width: "134",height:"36",class: "mercaribox"), items_path
       .form
-        %input.input-default{name: "keywrod", placeholder: "何かお探しですか？", type: "search"}
-        .form__btn
-          %i.fa.fa-search
+        = form_with(url: items_searches_path, local: true, method: :get ) do |f| 
+          = f.text_field :keyword, placeholder: "何かお探しですか", class: "input-default"
+          .form__btn
+            %i.fa.fa-search
+            = f.submit "", class: "form__btn" 
     .menu
       .menu__left
         %ul
@@ -112,7 +113,7 @@
                 %h2 
                   = link_to "マイページ", mypage_path(current_user)
         - else
-          = link_to step1_signup_index_path do
+          = link_to signup_index_path do
             .signup-box
               新規会員登録
           = link_to new_user_session_path do

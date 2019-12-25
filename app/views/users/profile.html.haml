@@ -13,7 +13,7 @@
         .side-profile__contents__back-image__box
           .side-profile__contents__back-image__box__dual
             = image_tag "mypage.jpg",size:"60x60",class: "profile-icon"
-            %input.profile-text{placeholder: "#{@user.first_name}",type: "text",value: ""}
+            %input.profile-text{placeholder: "#{@profile.nickname}",type: "text",value: ""}
       .side-profile__contents__under
         %textarea.profile-comment{placeholder: "例）こんにちは☆"}
         %button.change-btn{type: "submit",value: ""}

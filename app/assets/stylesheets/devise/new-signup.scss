@@ -9,20 +9,21 @@
     height: 48px;
     background-color: $fma-red;
     margin-bottom: 15px;
+    cursor: pointer;
 
     .mail__icon{
       color: #fff;
       display: flex;
       font-size: 30px;
       float: left;
-      line-height: 48px;
+      line-height: 46px;
       margin-left: 10px;
     }
 
     p{
       color: white;
       font-size: 15px;
-      line-height: 48px;
+      line-height: 46px;
       display: inline-block;
     }
   }
@@ -31,19 +32,21 @@
     width: 100%;
     height: 48px;
     background-color: #385185;
+    cursor: pointer;
+
 
     .facebook-icon{
       color: #fff;
       display: inline-block;
       font-size: 30px;
       float: left;
-      line-height: 48px;
+      line-height: 46px;
       margin-left: 10px;
     }
     p{
       color: white;
       font-size: 15px;
-      line-height: 48px;
+      line-height: 46px;
       display: inline-block;
     }
   }
@@ -53,19 +56,21 @@
     background-color: #fff;
     border: solid 1px $fma-gray;
     margin: 15px 0 30px 0;
+    cursor: pointer;
+
 
     .google-icon{
       color: green;
       display: inline-block;
       font-size: 30px;
       float: left;
-      line-height: 48px;
+      line-height: 46px;
       margin-left: 10px;
     }
     p{
       color: black;
       font-size: 15px;
-      line-height: 48px;
+      line-height: 46px;
       display: inline-block;
     }
   }
