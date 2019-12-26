@@ -6,8 +6,7 @@ Rails.application.routes.draw do
    }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get "signup", to: "signup#index"
-  resources :signup do
+  resources :signup, only: [:index, :create] do
     collection do
       get "step1"
       post "step2"
@@ -29,16 +28,11 @@ Rails.application.routes.draw do
   resources :users, only: :show do 
     resources :card, only: [:index, :new, :create]
   end
-  resources :items
   get '/mypage', to: "users#mypage"
   get '/profile', to: "users#profile"
   get '/confirmation', to: "users#confirmation"
   get '/logout', to: "users#logout"
-  get '/product-listing', to: "posts#product-listing"
-  get '/purchase', to: "posts#purchase"
-  get '/show', to: "posts#show"
   get '/login', to: "devise/registration#login"
-  get '/ancestry', to: "items#ancestry"
   
   root to: 'items#index'
 

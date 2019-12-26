@@ -43,7 +43,6 @@ class SignupController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    binding.pry
     if @address.valid?
       @user = User.new(
         email: session[:email],
