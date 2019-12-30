@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2019_12_24_032056) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -102,7 +111,7 @@ ActiveRecord::Schema.define(version: 2019_12_24_032056) do
     t.integer "born_year", null: false
     t.integer "born_month", null: false
     t.integer "born_day", null: false
-    t.string "phone_number"
+    t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sns_name"
