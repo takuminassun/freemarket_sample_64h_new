@@ -4,24 +4,47 @@
       = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
   .listing__contents
     = form_for @item do |f|
-      .listing__contents__info
-        %h2 商品の情報を入力
+      %h2.listing__contents__info
+        商品の情報を入力
       .listing__contents__image
-        .listing__contents__image__head
-          %h3 出品画像
+        %h3.listing__contents__image__head
+          出品画像
           %span.required-1
             必須
-        %p 最大10枚までアップロードできます
-        - if @item.errors.messages[:images].any?
-          .error-message
-            %p 画像がありません
-        #image-box-1
-          = f.fields_for :images do |i|
-            .input-area
-              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value: "", style: "display:none", id: "img-file", multiple: true
-              %label{for: "img-file"}
-                %i.fas.fa-camera.camera
-            .item-num-0#image-box__container
+        %p 最大5枚までアップロードできます
+        .drop__box__container
+          .prev-content
+          .lavel-content
+            %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hiddne-content
+            = f.fields_for :images do |i|
+              = i.file_field :image, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "item[images_attirbutes][1][image]", id: "item_images_attributes_1_image"}
+              %input{class:"hidden-field", type: "file", name: "item[images_attirbutes][2][image]", id: "item_images_attributes_2_image"}
+              %input{class:"hidden-field", type: "file", name: "item[images_attirbutes][3][image]", id: "item_images_attributes_3_image"}
+              %input{class:"hidden-field", type: "file", name: "item[images_attirbutes][4][image]", id: "item_images_attributes_4_image"}
+
+
+
+      -# .listing__contents__info
+      -#   %h2 商品の情報を入力
+      -# .listing__contents__image
+      -#   .listing__contents__image__head
+      -#     %h3 出品画像
+      -#     %span.required-1
+      -#       必須
+      -#   %p 最大10枚までアップロードできます
+      -#   - if @item.errors.messages[:images].any?
+      -#     .error-message
+      -#       %p 画像がありません
+      -#   #image-box-1
+      -#     = f.fields_for :images do |i|
+      -#       .input-area
+      -#         = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value: "", style: "display:none", id: "img-file", multiple: true
+      -#         %label{for: "img-file"}
+      -#           %i.fas.fa-camera.camera
+      -#       .item-num-0#image-box__container
 
       .listing__contents__name
         .group
